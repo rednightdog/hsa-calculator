@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { Search, Filter, Download, ArrowUpDown, ExternalLink, AlertCircle } from 'lucide-react';
-import type { LineData } from '@/types'; // We'll define types later inline if needed for simplicity
+// Types defined locally below
 
 // Types
 type LineRecord = {

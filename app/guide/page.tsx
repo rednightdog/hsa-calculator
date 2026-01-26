@@ -39,7 +39,7 @@ export default function GuidePage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <Card title="Drag (Kalama)" icon={<Anchor className="w-4 h-4" />}>
-                            Makinenin ip verme direnci. Balık asıldığında ipin kopmaması için makinenin 'cırcır' sesi çıkarerek ip salmasıdır. İyi ayarlanmış drag hayat kurtarır.
+                            Makinenin ip verme direnci. Balık asıldığında ipin kopmaması için makinenin &apos;cırcır&apos; sesi çıkarerek ip salmasıdır. İyi ayarlanmış drag hayat kurtarır.
                         </Card>
                         <Card title="PE Değeri" icon={<HelpCircle className="w-4 h-4" />}>
                             Japon ip kalınlık standardı. mm cinsinden değil, ağırlık bazlı bir ölçümdür. Numara düştükçe ip incelir (örn: 0.2 PE çok incedir).
@@ -51,7 +51,7 @@ export default function GuidePage() {
                             Kamışla yapılan sert vurdurma hareketi. Sahteye yaralı balık taklidi yaptırır. Kofana ve Levrek avında sık kullanılır.
                         </Card>
                         <Card title="WTD (Walk The Dog)" icon={<ArrowRight className="w-4 h-4" />}>
-                            Su üstü sahtelerine, kamış ucuyla zikzak çizdirme aksiyonu. "Köpeği gezdirme" anlamına gelir.
+                            Su üstü sahtelerine, kamış ucuyla zikzak çizdirme aksiyonu. &quot;Köpeği gezdirme&quot; anlamına gelir.
                         </Card>
                         <Card title="Devir (Gear Ratio)" icon={<Search className="w-4 h-4" />}>
                             Makine kolunun bir turunda kafanın kaç tur attığı. Yüksek devir (6.2:1) hızlı sarım için, düşük devir (4.8:1) güç için tercih edilir.
@@ -141,7 +141,7 @@ export default function GuidePage() {
                             <p className="text-sm text-slate-400 mb-3">Büyük balık (Levrek, Akya) yakalamak için en iyi yem, canlı küçük balıktır (Kefal, İstavrit, Zargana).</p>
                             <ul className="space-y-2 text-sm text-slate-400">
                                 <li>• <strong>Kıbrıs Oltası:</strong> Kefal yakalamak için ekmek sarılan çok iğneli düzenek.</li>
-                                <li>• <strong>Çapari:</strong> İstavrit yakalamak için tüylü 10'lu iğne takımı.</li>
+                                <li>• <strong>Çapari:</strong> İstavrit yakalamak için tüylü 10&apos;lu iğne takımı.</li>
                                 <li>• <strong>Şişe Tuzağı:</strong> Pet şişenin ağzı ters çevrilerek içine hamur konur, sığ suya bırakılır (Gümüş/İlarya için).</li>
                             </ul>
                         </div>

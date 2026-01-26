@@ -18,9 +18,8 @@ export default function AffiliateSection({ discipline }: AffiliateSectionProps) 
     const [budget, setBudget] = useState<string>('');
     const [showDetails, setShowDetails] = useState(true);
 
-    // Safety check
+    // Safety check - handled inside hooks or before render
     const data = AFFILIATE_LINKS[discipline];
-    if (!data) return null;
 
     // Determine region based on language
     const region = language === 'tr' ? 'tr' : 'global';
@@ -28,6 +27,7 @@ export default function AffiliateSection({ discipline }: AffiliateSectionProps) 
 
     // Calculate Set Totals
     const setTotals = useMemo(() => {
+        if (!data) return { budget: 0, value: 0, premium: 0 };
         const types: ('budget' | 'value' | 'premium')[] = ['budget', 'value', 'premium'];
         const totals: Record<string, number> = {};
 
@@ -46,14 +46,14 @@ export default function AffiliateSection({ discipline }: AffiliateSectionProps) 
 
     // Determine recommended tier based on budget
     const recommendedTier = useMemo(() => {
-        if (!budget) return null;
+        if (!budget || !data) return null;
         const b = parseFloat(budget);
         if (isNaN(b) || b <= 0) return null;
 
         if (b >= setTotals.premium * 0.9) return 'premium'; // 10% flexibility
         if (b >= setTotals.value * 0.9) return 'value';
         return 'budget';
-    }, [budget, setTotals]);
+    }, [budget, setTotals, data]);
 
 
     const tabs: { id: Category; label: string; icon: any }[] = [
@@ -92,7 +92,7 @@ export default function AffiliateSection({ discipline }: AffiliateSectionProps) 
 
     // Helper to get items for the recommended set
     const recommendedSetItems = useMemo(() => {
-        if (!recommendedTier) return [];
+        if (!recommendedTier || !data) return [];
         return [
             { type: 'rod', ...data.rod[recommendedTier][region], icon: TrendingUp, label: 'Kamış' },
             { type: 'reel', ...data.reel[recommendedTier][region], icon: Star, label: 'Makine' },
@@ -100,6 +100,8 @@ export default function AffiliateSection({ discipline }: AffiliateSectionProps) 
             { type: 'hook', ...data.hook[recommendedTier][region], icon: Fish, label: 'İğne' },
         ];
     }, [recommendedTier, data, region]);
+
+    if (!data) return null;
 
     return (
         <div className="mt-8 pt-6 border-t border-gray-700/50">
@@ -196,7 +198,7 @@ export default function AffiliateSection({ discipline }: AffiliateSectionProps) 
                                         {language === 'tr' ? 'Önerilen Paket' : 'Recommended Package'}
                                     </div>
                                     <p className={`text-lg font-bold ${recommendedTier === 'premium' ? 'text-purple-400' :
-                                            recommendedTier === 'value' ? 'text-blue-400' : 'text-green-400'
+                                        recommendedTier === 'value' ? 'text-blue-400' : 'text-green-400'
                                         }`}>
                                         {tiers.find(t => t.id === recommendedTier)?.label}
                                     </p>

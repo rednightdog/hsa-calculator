@@ -103,7 +103,7 @@ export default function Home() {
             </p>
             <p>
               <strong>Kalın PE + Hafif Sahte = SORUN:</strong><br />
-              2 gram jighead + 0.6 PE kullanırsanız, misina su direncinden dolayı sahteyi "frenler". Sahte doğal düşüş hızıyla inemez, yapay bir şekilde asılı kalır ve balık saldırmaz.
+              2 gram jighead + 0.6 PE kullanırsanız, misina su direncinden dolayı sahteyi &quot;frenler&quot;. Sahte doğal düşüş hızıyla inemez, yapay bir şekilde asılı kalır ve balık saldırmaz.
             </p>
             <p>
               <strong>İnce PE + Hafif Sahte = ÇÖZÜM:</strong><br />
@@ -158,7 +158,7 @@ export default function Home() {
             <div className="mt-12 p-6 bg-slate-800 rounded-2xl">
               <h3 className="text-lg font-bold text-white mb-2">💡 Altın Kural</h3>
               <p className="text-slate-300 m-0">
-                Sahte ağırlığını gram olarak al, 10 ile çarp, sonucu 100'e böl = Optimal PE değeri.
+                Sahte ağırlığını gram olarak al, 10 ile çarp, sonucu 100&apos;e böl = Optimal PE değeri.
                 <br /><br />
                 <span className="text-cyan-400">Örnek:</span> 3 gram sahte → (3 × 10) ÷ 100 = <strong>0.3 PE</strong>
               </p>
