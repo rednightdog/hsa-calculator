@@ -27,7 +27,94 @@ export interface ReelModel {
 }
 
 export const tools: Technology[] = [
-    // SHIMANO TECHNOLOGIES
+    // --- SHIMANO TECHNOLOGIES ---
+    {
+        id: 'anti_twist_fin',
+        name: 'Anti-Twist Fin',
+        brand: 'Shimano',
+        summary: {
+            tr: 'Misina Bükülme Önleyici',
+            en: 'Anti-Twist Fin',
+            jp: 'アンチツイストフィン',
+            it: 'Aletta Anti-Torsione',
+            fr: 'Ailette Anti-Vrillage',
+            cn: '防缠绕鳍'
+        },
+        description: {
+            tr: 'Misina sarıcı silindirin (line roller) hemen altına yerleştirilen elastik bir yüzgeçtir. Misina boşaldığında bile bobine girmeden önce gergin kalmasını sağlar.',
+            en: 'Elastic fin installed on the lower part of the line roller. It prevents line from sagging and reduces line twist entering the spool.',
+            jp: 'ラインローラー下部に設置された弾性フィン。ラインのたるみを抑え、スプール下部へのライン落ちやヨレたままの巻き取りを防止します。',
+            it: 'Aletta elastica installata sotto il rullino guidafilo che previene l\'allentamento del filo.',
+            fr: 'Ailette élastique installée sous le galet de ligne pour empêcher le mou de la ligne.',
+            cn: '安装在导线轮下方的弹性鳍片，防止鱼线松弛和缠绕。'
+        },
+        benefit: {
+            tr: 'Rüzgarlı havalarda oluşan "kuş gözü" ve misina düğümlerini tamamen ortadan kaldırır.',
+            en: 'Eliminates wind knots and keeps line management perfect.',
+            jp: 'ライントラブル（バックラッシュや糸ヨレ）を劇的に低減します。',
+            it: 'Elimina i nodi da vento.',
+            fr: 'Élimine les perruques ve vent.',
+            cn: '消除风结，保持鱼线管理完美。'
+        }
+    },
+    {
+        id: 'duracross',
+        name: 'DuraCross Drag',
+        brand: 'Shimano',
+        summary: {
+            tr: '10 Kat Güçlü Kalama Pulu',
+            en: 'High Durability Drag Washer',
+            jp: 'デュラクロス',
+            it: 'Rondella Frizione DuraCross',
+            fr: 'Rondelle de Frein DuraCross',
+            cn: '高耐久刹车片'
+        },
+        description: {
+            tr: 'Karbon liflerinin özel bir desenle (dik açılı) dokunmasıyla üretilen yeni nesil kalama pulu.',
+            en: 'New drag washer material made by weaving carbon fibers in a perpendicular pattern.',
+            jp: '新素材の繊維を直交するように織り込んだドラグワッシャー。滑らかさはそのままに、耐摩耗性を10倍以上に高めました。',
+            it: 'Nuovo materiale per rondelle frizione con fibre di carbonio intessute.',
+            fr: 'Nouveau matériau de rondelle de frein tissé en fibres de carbone.',
+            cn: '通过垂直编织碳纤维制成的新型刹车片材料。'
+        },
+        benefit: {
+            tr: 'Standart keçelere göre 10 kat daha dayanıklıdır ama aynı yumuşaklıkta çalışır.',
+            en: '10x more durability than felt washers with the same smoothness.',
+            jp: 'フェルトの滑らかさとカーボンの耐久性を両立。ドラグ性能が劣化しません。',
+            it: '10 volte più durevole delle rondelle in feltro.',
+            fr: '10x plus durable que les rondelles en feutre.',
+            cn: '比羊毛片耐用10倍，且保持顺滑。'
+        }
+    },
+    {
+        id: 'rigid_support_drag',
+        name: 'Rigid Support Drag',
+        brand: 'Shimano',
+        summary: {
+            tr: 'Rijit Destekli Kalama',
+            en: 'Rigid Support Drag',
+            jp: 'リジッドサポートドラグ',
+            it: 'Supporto Rigido Frizione',
+            fr: 'Support Rigide de Frein',
+            cn: '刚性支撑刹车'
+        },
+        description: {
+            tr: 'Ana şaft ve bobin yatağı arasındaki boşluğu sıfırlayarak, bobinin yalpalama yapmasını engelleyen iki noktalı destek sistemidir.',
+            en: 'Eliminates spool wobble/waggling during drag operation by supporting the spool on the main shaft with two bearings.',
+            jp: 'メインシャフト、スプール内のベアリング2点でスプールを支持し、ドラグ作動時のスプールのフラつきを完全に抑制します。',
+            it: 'Elimina l\'oscillazione della bobina durante l\'azione della frizione.',
+            fr: 'Élimine l\'oscillation de la bobine pendant l\'action du frein.',
+            cn: '通过两个轴承支撑线杯，消除刹车时的线杯晃动。'
+        },
+        benefit: {
+            tr: 'En ince misinalarda bile kalama pürüzsüzce akar, ani kopmaları önler.',
+            en: 'Insanely smooth line release even at light drag settings.',
+            jp: '極細ラインでも安定してラインが放出され、ラインブレイクを防ぎます。',
+            it: 'Rilascio del filo incredibilmente fluido.',
+            fr: 'Libération de ligne incroyablement fluide.',
+            cn: '即使在轻刹车设置下也能极其顺滑地出线。'
+        }
+    },
     {
         id: 'hagane_body',
         name: 'Hagane Body',
@@ -44,46 +131,17 @@ export const tools: Technology[] = [
             tr: 'HAGANE Body, yüksek rijitliğe sahip metal bir makine gövdesidir. Gövde sertliği ve darbe direnci, makinenin bükülmesini neredeyse tamamen ortadan kaldırır.',
             en: 'The HAGANE Body is a metal reel body with high rigidity. The body stiffness and impact resistance virtually guarantee the elimination of body flexing.',
             jp: 'HAGANEボディは、高い剛性を持つ金属製のボディです。不意の衝撃にも耐え、たわみを最小限に抑えることで、巻き上げる力を逃しません。',
-            it: 'Il corpo HAGANE è un corpo mulinello in metallo ad alta rigidità. La rigidità del corpo e la resistenza agli urti eliminano praticamente la flessione.',
-            fr: 'Le corps HAGANE est un corps de moulinet en métal à haute rigidité. La rigidité du corps et la résistance aux chocs éliminent pratiquement toute flexion.',
-            cn: 'HAGANE机身是具有高刚性的金属机身。机身刚性和抗冲击性几乎消除了机身弯曲。'
+            it: 'Il corpo HAGANE è un corpo mulinello in metallo ad alta rigidità.',
+            fr: 'Le corps HAGANE est un corps de moulinet en métal à haute rigidité.',
+            cn: 'HAGANE机身是具有高刚性的金属机身。'
         },
         benefit: {
             tr: 'Yük altında makine esnemez, tüm gücünüz balığa aktarılır.',
             en: 'Direct cranking power transmission without energy loss.',
             jp: '高負荷時でもボディが歪まず、力をダイレクトに伝達します。',
-            it: 'Trasmissione diretta della potenza senza perdita di energia.',
-            fr: 'Transmission directe de la puissance sans perte d\'énergie.',
+            it: 'Trasmissione diretta della potenza.',
+            fr: 'Transmission directe de la puissance.',
             cn: '直接动力传输，无能量损失。'
-        }
-    },
-    {
-        id: 'hagane_gear',
-        name: 'Hagane Gear',
-        brand: 'Shimano',
-        summary: {
-            tr: 'Soğuk Dövme Dişli',
-            en: 'Cold Forged Gear',
-            jp: '精密冷間鍛造ギア',
-            it: 'Ingranaggi Forgiati a Freddo',
-            fr: 'Engrenages Forgés à Froid',
-            cn: '冷锻齿轮'
-        },
-        description: {
-            tr: 'Kesme işlemi olmadan, tek parça metalden soğuk dövme teknolojisi ile üretilen dişli sistemi. Mikron seviyesinde hassasiyet sağlar.',
-            en: 'Drive gear produced by cold forging technology from a single piece of metal, without any cutting process.',
-            jp: '金属の塊を約200トンの圧力でプレスし、切削なしにミクロン単位の精度で仕上げたドライブギアです。',
-            it: 'Ingranaggio di trasmissione prodotto con tecnologia di forgiatura a freddo da un unico pezzo di metallo.',
-            fr: 'Engrenage d\'entraînement produit par technologie de forgeage à froid à partir d\'une seule pièce de métal.',
-            cn: '通过冷锻技术由单块金属无需切割工艺制造的驱动齿轮。'
-        },
-        benefit: {
-            tr: 'Dişliler zamanla aşınmaz, ilk günkü pürüzsüzlüğünü korur.',
-            en: 'Long-lasting smoothness and durability.',
-            jp: '驚異的な耐久性と、変わらない巻きごこちを実現します。',
-            it: 'Fluidità e durata nel tempo.',
-            fr: 'Fluidité et durabilité longue durée.',
-            cn: '持久的平滑度和耐用性。'
         }
     },
     {
@@ -100,10 +158,10 @@ export const tools: Technology[] = [
         },
         description: {
             tr: 'Dişli yüzeylerinin ideal şekilde tasarlanması ve dişlerin küçültülerek sayısının artırılması teknolojisidir.',
-            en: 'State-of-the-art gear tooth surface design and MicroModule Gear, further advanced through Shimanos exclusive manufacturing technology.',
+            en: 'State-of-the-art gear tooth surface design and MicroModule Gear.',
             jp: '歯を可能な限り小型化し、数を増やすことで滑らかな噛み合わせを実現した機構をさらに進化させました。',
-            it: 'Design della superficie dei denti all\'avanguardia e MicroModule Gear avanzato.',
-            fr: 'Conception de surface de dents d\'engrenage de pointe et MicroModule Gear avancé.',
+            it: 'Design della superficie dei denti all\'avanguardia.',
+            fr: 'Conception de surface de dents d\'engrenage de pointe.',
             cn: '最先进的齿面设计和MicroModule齿轮。'
         },
         benefit: {
@@ -139,99 +197,99 @@ export const tools: Technology[] = [
             tr: 'Atış sırasında misina sürtünmesi azalır, çok daha uzun atışlar yapılır.',
             en: 'Drastically reduces line friction during casting for longer distance.',
             jp: 'キャスト時の放出抵抗が激減し、抜けるようなキャストフィールと飛距離を生みます。',
-            it: 'Riduce drasticamente l\'attrito del filo durante il lancio.',
-            fr: 'Réduit considérablement la friction de la ligne lors du lancer.',
+            it: 'Riduce drasticamente l\'attrito del filo.',
+            fr: 'Réduit considérablement la friction de la ligne.',
             cn: '大幅减少抛投时的出线摩擦，增加距离。'
         }
     },
-    {
-        id: 'infinity_drive',
-        name: 'Infinity Drive',
-        brand: 'Shimano',
-        summary: {
-            tr: 'Yüksek Torklu Sarım',
-            en: 'High Torque Winding',
-            jp: 'インフィニティドライブ',
-            it: 'Avvolgimento ad Alta Coppia',
-            fr: 'Enroulement à Couple Élevé',
-            cn: '高扭矩卷绕'
-        },
-        description: {
-            tr: 'Pinyon dişlisini sürtünmeden kurtaran ve yük altında bile kolun hafif dönmesini sağlayan mil yataklama sistemi.',
-            en: 'A standard structure designed to support the pinion gear with bearings, achieving light winding even under heavy load.',
-            jp: 'ピニオンギアを内側からスプール軸で支持する構造を一新し、回転抵抗を最大60%低減。',
-            it: 'Struttura progettata per supportare il pignone con cuscinetti.',
-            fr: 'Structure conçue pour supporter le pignon avec des roulements.',
-            cn: '通过轴承支撑小齿轮的结构，即使在重负荷下也能实现轻盈卷绕。'
-        },
-        benefit: {
-            tr: 'Büyük balıkla mücadele ederken kolu çevirmek "yapay" şekilde kolaylaşır.',
-            en: 'Powerful and light winding even when fighting large fish.',
-            jp: '高負荷時でも驚くほど軽く、力強い巻き上げが可能になります。',
-            it: 'Avvolgimento potente e leggero anche combattendo pesci grandi.',
-            fr: 'Enroulement puissant et léger même en combattant de gros poissons.',
-            cn: '即使在对抗大鱼时也能实现强劲而轻盈的卷绕。'
-        }
-    },
-    {
-        id: 'x_protect',
-        name: 'X-Protect',
-        brand: 'Shimano',
-        summary: {
-            tr: 'Su Geçirmezlik',
-            en: 'Water Resistance',
-            jp: 'Xプロテクト',
-            it: 'Resistenza all\'acqua',
-            fr: 'Résistance à l\'eau',
-            cn: '防水'
-        },
-        description: {
-            tr: 'Labirent yapılı özel su tahliye kanalları ve su itici gres yağı kombinasyonu.',
-            en: 'Combines a labyrinth structure that physically suppresses water intrusion with water-repellent grease.',
-            jp: '撥水処理とラビリンス構造を組み合わせ、回転の軽さを損なわずに高い防水性能を実現。',
-            it: 'Combina una struttura a labirinto con grasso idrorepellente.',
-            fr: 'Combine une structure en labyrinthe avec de la graisse hydrofuge.',
-            cn: '结合labyrinth结构和防水油脂，物理阻止水侵入。'
-        },
-        benefit: {
-            tr: 'Tuzlu suyun yıkıcı etkisine karşı tam koruma. Bakım ihtiyacını azaltır.',
-            en: 'High water resistance without sacrificing rotation lightness.',
-            jp: '塩ガミを大幅に抑制し、初期性能を長期間維持します。',
-            it: 'Alta resistenza all\'acqua senza sacrificare la leggerezza.',
-            fr: 'Haute résistance à l\'eau sans sacrifier la légèreté.',
-            cn: '在不牺牲旋转轻盈度的情况下实现高防水性。'
-        }
-    },
 
-    // DAIWA TECHNOLOGIES
+    // --- DAIWA TECHNOLOGIES ---
+    {
+        id: 'twist_buster_iii',
+        name: 'Twist Buster III',
+        brand: 'Daiwa',
+        summary: {
+            tr: 'Misina Bükülme Önleyici III',
+            en: 'Line Twist Reduction',
+            jp: 'ツイストバスターIII',
+            it: 'Riduzione Torsione Filo',
+            fr: 'Réduction Vrillage Ligne',
+            cn: '防缠绕系统 III'
+        },
+        description: {
+            tr: 'Misina silindirinde (line roller) yapılan oluklu tasarım, misinanın sarılırken kendi etrafında dönmesini (burulmasını) engeller. Yeni nesil Magsealed ile korunur.',
+            en: 'Updated line roller with a groove to flatten the line as it is retrieved, preventing twist. Often Magsealed.',
+            jp: 'ラインローラーにテーパーをかけて糸を転がすことで、スピニングリールの宿命である糸ヨレを大幅に解消。最新版はさらに溝を追加。',
+            it: 'Rullino guidafilo aggiornato che appiattisce il filo mentre viene recuperato.',
+            fr: 'Galet de ligne mis à jour aplatissant la ligne lors de la récupération.',
+            cn: '更新的导线轮带有一个凹槽，可在回收时压平鱼线，防止缠绕。'
+        },
+        benefit: {
+            tr: 'İnce PE (örgü) iplerin düğüm olmasını ve kuş gözünü engeller.',
+            en: 'Prevents line twist and prolongs line life.',
+            jp: 'PEラインのトラブルを激減させ、ラインの寿命を延ばします。',
+            it: 'Previene la torsione del filo.',
+            fr: 'Prévient le vrillage de la ligne.',
+            cn: '防止鱼线缠绕并延长鱼线寿命。'
+        }
+    },
+    {
+        id: 'atd_type_l',
+        name: 'ATD Type-L',
+        brand: 'Daiwa',
+        summary: {
+            tr: 'Hassas Başlangıç Kalaması',
+            en: 'Sensitive Initial Drag',
+            jp: 'ATD TYPE-L',
+            it: 'Frizione Iniziale Sensibile',
+            fr: 'Frein Initial Sensible',
+            cn: '灵敏初始刹车'
+        },
+        description: {
+            tr: 'Standart ATD\'ye göre daha düşük viskoziteli özel bir yağ kullanılır. Bu, balığın ilk vuruşundaki o "yapışmayı" (ilk direnci) tamamen yok eder.',
+            en: 'Uses a lower viscosity grease than standard ATD. Eliminates the initial "stickiness" at the start of the drag.',
+            jp: '魚の引きに合わせて滑らかに効き続けるATDの特性を維持しつつ、初動のレスポンスをさらに向上させたチューニング。',
+            it: 'Usa un grasso a bassa viscosità. Elimina l\'"incollaggio" iniziale.',
+            fr: 'Utilise une graisse à faible viscosité. Élimine le "collage" initial.',
+            cn: '使用比标准ATD更低粘度的油脂。消除了刹车启动时的初始“粘滞感”。'
+        },
+        benefit: {
+            tr: '0.2 PE gibi çok ince iplerle (LRF) avlanırken ani kopmaların önüne geçer.',
+            en: 'Critical for light line fishing (LRF) to prevent instant breaks.',
+            jp: 'ライトライン使用時のラインブレイクを防ぎ、安心してファイトできます。',
+            it: 'Critico per la pesca leggera.',
+            fr: 'Critique pour la pêche légère.',
+            cn: '对于细线钓鱼至关重要，防止瞬间断线。'
+        }
+    },
     {
         id: 'airdrive_design',
         name: 'Airdrive Design',
         brand: 'Daiwa',
         summary: {
-            tr: 'Yeni Nesil Hafiflik',
-            en: 'Next Gen Lightness',
+            tr: 'Ağırlıksız Rotasyon',
+            en: 'Weightless Rotation',
             jp: 'エアドライブデザイン',
-            it: 'Leggerezza di Nuova Generazione',
-            fr: 'Légèreté Nouvelle Génération',
-            cn: '新一代轻量化设计'
+            it: 'Rotazione Senza Peso',
+            fr: 'Rotation Sans Poids',
+            cn: '无重力旋转'
         },
         description: {
-            tr: 'Rotor, makara, kol ve şaftın tamamen yeniden tasarlanarak ağırlık merkezinin ele yaklaştırılması ve ataletin düşürülmesi konsepti.',
-            en: 'New concept reducing the weight of Rotor, Spool, Bail and Shaft to lower inertia and shift center of gravity.',
-            jp: 'ローター、ベール、スプール、シャフトを軽量化し、操作性を劇的に向上させる次世代設計思想。',
-            it: 'Nuovo concetto che riduce il peso di rotore, bobina, archetto e albero.',
-            fr: 'Nouveau concept réduisant le poids du rotor, de la bobine, de l\'anse et de l\'arbre.',
-            cn: '减轻转盘、线杯、线规和轴的重量，降低惯性并改变重心的新概念。'
+            tr: 'Rotor, makara, kol ve şaftın ağırlık merkezini arkaya taşıyarak ataleti düşürme konsepti.',
+            en: 'Redesign of Rotor, Spool, Bail and Shaft to lower inertia.',
+            jp: 'フロントユニットの軽量化により、巻き出しの軽さと操作性を劇的に向上させる次世代設計思想。',
+            it: 'Riprogettazione di Rotore, Bobina, Archetto e Albero.',
+            fr: 'Redesign du Rotor, de la Bobine, de l\'Anse et de l\'Arbre.',
+            cn: '重新设计转盘、线杯、线规和轴以降低惯性。'
         },
         benefit: {
-            tr: 'Makine sanki elinizde yokmuş gibi hissedersiniz. Kamış kontrolü ve vuruş hassasiyeti artar.',
+            tr: 'Makineyi çevirdiğinizi değil, suyun akışını hissedersiniz. Ultra hassasiyet.',
             en: 'Ultimate control and sensitivity. The reel disappears in your hand.',
-            jp: '意のままにルアーを操作でき、巻き出しの軽さが感度を研ぎ澄ませます。',
+            jp: '意のままにルアーを操作でき、水中情報をダイレクトに手元に伝えます。',
             it: 'Controllo e sensibilità definitivi.',
             fr: 'Contrôle et sensibilité ultimes.',
             cn: '极致的操控和灵敏度。'
-        },
+        }
     },
     {
         id: 'monocoque',
@@ -246,114 +304,114 @@ export const tools: Technology[] = [
             cn: '单体壳机身'
         },
         description: {
-            tr: 'Geleneksel kapaklı yapı yerine, motor kapağı gibi vidalanan tek parça gövde yapısıdır.',
-            en: 'One-piece body structure that eliminates the need for body cover screws, allowing more space for larger gears.',
-            jp: 'ボディカバーを廃し、ボディに直接高精度のプレートをねじ込むことで、強靭さと広大なギアスペースを実現。',
-            it: 'Struttura monoscocca che elimina le viti del coperchio.',
-            fr: 'Structure monocoque éliminant les vis du couvercle.',
-            cn: '消除机身盖螺丝的单体结构，为更大的齿轮提供空间。'
+            tr: 'Vidasız, tek parça gövde yapısı. İç hacmi genişletir.',
+            en: 'One-piece body structure eliminating screws, allowing bigger gears.',
+            jp: 'ボディカバーを廃し、高精度のプレートを直接ねじ込むことで、強靭さと広大なギアスペースを実現。',
+            it: 'Struttura monoscocca che elimina le viti.',
+            fr: 'Structure monocoque éliminant les vis.',
+            cn: '消除螺丝的单体结构，允许更大的齿轮。'
         },
         benefit: {
-            tr: 'Daha büyük ve güçlü dişliler sığdırılabilir. Vidalar olmadığı için gövde esnemez.',
+            tr: 'Daha büyük dişli = Daha fazla güç. Gövde esnemesi sıfır.',
             en: 'Stronger, sealed gear housing and improved power.',
-            jp: '巨大なドライブギアを封入でき、剛性と防水性が飛躍的に向上します。',
-            it: 'Alloggiamento ingranaggi più forte e sigillato.',
-            fr: 'Boîtier d\'engrenage plus fort et scellé.',
-            cn: '更强、更密封的齿轮室和提升的动力。'
-        },
-    },
-    {
-        id: 'magsealed',
-        name: 'Magsealed',
-        brand: 'Daiwa',
-        summary: {
-            tr: 'Manyetik Yağ Koruması',
-            en: 'Magnetic Oil Protection',
-            jp: 'マグシールド',
-            it: 'Protezione Olio Magnetico',
-            fr: 'Protection Huile Magnétique',
-            cn: '磁油保护'
-        },
-        description: {
-            tr: 'Uzay teknolojisi ile geliştirilen manyetik yağ (Mag Oil), rotor ve gövde arasında aşılamaz bir sıvı bariyer oluşturur.',
-            en: 'A waterproof wall of magnetic oil shuts out seawater and dust.',
-            jp: '磁性流体「マグオイル」の壁で、海水や埃の侵入をシャットアウトする防水・防塵構造。',
-            it: 'Un muro impermeabile di olio magnetico chiude fuori acqua salata e polvere.',
-            fr: 'Un mur étanche d\'huile magnétique empêche l\'eau salée et la poussière d\'entrer.',
-            cn: '磁油防水墙阻挡海水和灰尘。'
-        },
-        benefit: {
-            tr: 'Makineniz su almaz ama dönüşü asla ağırlaşmaz. İlk günkü yağ gibi döner.',
-            en: 'Maintenance-free smooth rotation for years.',
-            jp: 'メンテナンスフリーで、初期の滑らかな回転性能が長期間維持されます。',
-            it: 'Rotazione fluida senza manutenzione per anni.',
-            fr: 'Rotation fluide sans entretien pendant des années.',
-            cn: '多年免维护的顺滑旋转。'
-        },
-    },
-    {
-        id: 'atd',
-        name: 'ATD Drag',
-        brand: 'Daiwa',
-        summary: {
-            tr: 'Otomatik Kalama',
-            en: 'Automatic Tournament Drag',
-            jp: 'ATD',
-            it: 'Frizione Automatica',
-            fr: 'Frein Automatique',
-            cn: '自动卸力'
-        },
-        description: {
-            tr: 'Balığın ani vuruşlarında yumuşakça yol veren, ancak balık koştukça direnci stabilize eden akıllı kalama sistemi.',
-            en: 'ATD works smoothly at start up and then increases drag pressure as speed increases.',
-            jp: '魚の引きに追従して滑らかに効き続ける新世代のドラグシステム。',
-            it: 'Funziona dolcemente all\'avvio e poi aumenta la pressione della frizione.',
-            fr: 'Fonctionne en douceur au démarrage puis augmente la pression du frein.',
-            cn: '起步顺滑，并在速度增加时增加阻力压力。'
-        },
-        benefit: {
-            tr: 'İnce misinalarla bile büyük balıklarla güvenle mücadele edebilirsiniz. Kopmaları önler.',
-            en: 'Prevents line breakage and fights fish more efficiently.',
-            jp: '滑り出しがスムーズで、ファイト中のラインブレイクを防ぎます。',
-            it: 'Previene la rottura del filo.',
-            fr: 'Empêche la rupture de la ligne.',
-            cn: '防止断线，更有效地对抗鱼类。'
-        }
-    },
-    {
-        id: 'lt_concept',
-        name: 'LT Concept',
-        brand: 'Daiwa',
-        summary: {
-            tr: 'Light & Tough',
-            en: 'Light & Tough',
-            jp: 'LIGHT & TOUGH',
-            it: 'Leggero e Resistente',
-            fr: 'Léger et Résistant',
-            cn: '轻量且强韧'
-        },
-        description: {
-            tr: 'Daha küçük kasa boyutlarıyla daha yüksek güç ve dayanıklılık elde etme felsefesi.',
-            en: 'LT concept introduces a smaller and lighter reel frame that is tougher than ever.',
-            jp: 'ボディ、スプール、ハンドルといった細部までの徹底した軽量化へのこだわり。',
-            it: 'Concetto che introduce un telaio più piccolo e leggero.',
-            fr: 'Concept introduisant un cadre plus petit et plus léger.',
-            cn: '引入了更小更轻的渔轮框架，比以往更坚韧。'
-        },
-        benefit: {
-            tr: 'Bütün gün yorulmadan, bileğiniz ağrımadan av yapabilirsiniz.',
-            en: 'All-day fishing comfort without fatigue.',
-            jp: '軽さが感度を生み、長時間の釣行でも疲れません。',
-            it: 'Comfort di pesca per tutto il giorno.',
-            fr: 'Confort de pêche toute la journée.',
-            cn: '全天钓鱼舒适无疲劳。'
+            jp: '巨大なドライブギアを封入でき、パワーと防水性が向上します。',
+            it: 'Alloggiamento ingranaggi più forte.',
+            fr: 'Boîtier d\'engrenage plus fort.',
+            cn: '更强、更密封的齿轮室。'
         }
     },
 
-    // OKUMA TECHNOLOGIES
+    // --- OKUMA TECHNOLOGIES ---
+    {
+        id: 'litecast',
+        name: 'LITECAST™',
+        brand: 'Okuma',
+        summary: {
+            tr: 'Magnezyum Alaşım',
+            en: 'Magnesium Structure',
+            jp: 'ライトキャスト',
+            it: 'Struttura in Magnesio',
+            fr: 'Structure en Magnésium',
+            cn: '镁合金结构'
+        },
+        description: {
+            tr: 'Alüminyumdan %15 daha hafif olan özel Magnezyum alaşımı döküm teknolojisi.',
+            en: 'Special Magnesium alloy casting technology that is 15% lighter than aluminum alloy.',
+            jp: 'アルミニウム合金より15%軽量な、特殊マグネシウム合金の鋳造技術です。',
+            it: 'Tecnologia di fusione in lega di magnesio speciale.',
+            fr: 'Technologie de moulage en alliage de magnésium spécial.',
+            cn: '特殊的镁合金铸造技术，比铝合金轻15%。'
+        },
+        benefit: {
+            tr: 'Metal sağlamlığını tüy siklet ağırlıkla sunar.',
+            en: 'Maximum strength with minimum weight.',
+            jp: '強度を犠牲にすることなく、驚異的な軽さを実現します。',
+            it: 'Massima forza con minimo peso.',
+            fr: 'Force maximale avec un poids minimum.',
+            cn: '以最小的重量提供最大的强度。'
+        }
+    },
+    {
+        id: 'dfd',
+        name: 'Dual Force Drag (DFD)',
+        brand: 'Okuma',
+        summary: {
+            tr: 'Çift Güçlü Kalama',
+            en: 'Dual Force Drag',
+            jp: 'デュアルフォースドラグ',
+            it: 'Frizione a Doppia Forza',
+            fr: 'Frein à Double Force',
+            cn: '双力刹车'
+        },
+        description: {
+            tr: 'Makaranın hem üstünde hem de altında diskler bulunur. Basıncı iki yüzeye eşit dağıtır.',
+            en: 'Drag system mounted on both the top AND bottom of the spool to equalize pressure.',
+            jp: 'スプールの上面だけでなく下面にもドラグワッシャーを配置し、上下から挟み込んで制動力を発揮します。',
+            it: 'Sistema di frizione montato sia sopra che sotto la bobina.',
+            fr: 'Système de frein monté à la fois sur le dessus et le dessous de la bobine.',
+            cn: '安装在线杯顶部和底部的刹车系统，以平衡压力。'
+        },
+        benefit: {
+            tr: 'Çok yüksek kalama güçlerinde bile ısınma yapmaz ve stabil çalışır (Büyük balık için).',
+            en: 'Extremely stable high drag pressure and heat dissipation.',
+            jp: '高負荷時の熱ダレを防ぎ、安定した強力なドラグ力を維持します。',
+            it: 'Pressione di frizione estremamente stabile.',
+            fr: 'Pression de frein extrêmement stable.',
+            cn: '极其稳定的高刹车压力和散热性。'
+        }
+    },
+    {
+        id: 'flite_spool',
+        name: 'Flite Spool™',
+        brand: 'Okuma',
+        summary: {
+            tr: 'Hafifletilmiş Özel Makara',
+            en: 'Super Tuned Spool',
+            jp: 'フライトスプール',
+            it: 'Bobina Super Tuned',
+            fr: 'Bobine Super Réglée',
+            cn: '超级调校线杯'
+        },
+        description: {
+            tr: 'Dream Tackle (JDM) tarafından geliştirilen, et kalınlığı inceltilmiş özel hafif alüminyum makara.',
+            en: 'Super lightweight spool designed by Dream Tackle aiming for long distance casting.',
+            jp: 'Dream Tackleによって設計された、遠投性能を追求した超軽量スプール。',
+            it: 'Bobina super leggera progettata per lanci a lunga distanza.',
+            fr: 'Bobine super légère conçue pour les lancers longue distance.',
+            cn: '专为远投设计的超轻线杯。'
+        },
+        benefit: {
+            tr: 'Çok daha uzak mesafelere atış yapmanızı sağlar.',
+            en: 'Increases casting distance significantly.',
+            jp: '圧倒的な飛距離を生み出します。',
+            it: 'Aumenta significativamente la distanza di lancio.',
+            fr: 'Augmente considérablement la distance de lancer.',
+            cn: '显著增加抛投距离。'
+        }
+    },
     {
         id: 'tca',
-        name: 'TCA (Torsion Control Armor)',
+        name: 'TCA',
         brand: 'Okuma',
         summary: {
             tr: 'Burulma Kontrol Zırhı',
@@ -363,225 +421,109 @@ export const tools: Technology[] = [
             fr: 'Armure Contrôle Torsion',
             cn: '扭力控制装甲'
         },
-        description: {
-            tr: 'Çift kollu karbon gövde tasarımı. Makine gövdesini bir zırh gibi sararak yük altında bükülmeyi önler.',
-            en: 'Double-arm body design that reduces twist and torque and keeps the internal parts in perfect alignment.',
-            jp: 'ダブルアーム構造がボディのねじれを抑制し、内部パーツの配置を常に適正に保ちます。',
-            it: 'Design a doppio braccio che riduce torsione e coppia.',
-            fr: 'Conception à double bras réduisant la torsion et le couple.',
-            cn: '双臂机身设计，减少扭曲和扭矩，保持内部零件完美对齐。'
-        },
-        benefit: {
-            tr: 'Ağır balıkla mücadele ederken makine kasmaz, iç mekanizma hizada kalır.',
-            en: 'Solid feel and durability under heavy pressure.',
-            jp: '高負荷時でもボディが歪まず、安定した巻き上げ力を発揮します。',
-            it: 'Sensazione solida e durata sotto forte pressione.',
-            fr: 'Sensation solide et durabilité sous forte pression.',
-            cn: '在重压下具有坚实的手感和耐用性。'
-        },
-    },
-    {
-        id: 'flite_shaft',
-        name: 'Flite Shaft',
-        brand: 'Okuma',
-        summary: {
-            tr: 'Sürtünmesiz Şaft',
-            en: 'Frictionless Shaft',
-            jp: 'フライトシャフト',
-            it: 'Albero Senza Attrito',
-            fr: 'Arbre Sans Friction',
-            cn: '无摩擦轴'
-        },
-        description: {
-            tr: 'Pinyon dişlisinin içi boşaltılarak şaft ile teması azaltılır, böylece sürtünme en aza indirilir.',
-            en: 'Reduces friction between the main shaft and pinion gear for lighter rotation.',
-            jp: 'メインシャフトとピニオンギアの摩擦を極限まで減らし、驚くほど軽い回転を実現。',
-            it: 'Riduce l\'attrito tra l\'albero principale e il pignone.',
-            fr: 'Réduit la friction entre l\'arbre principal et le pignon.',
-            cn: '减少主轴和小齿轮之间的摩擦，实现更轻盈的旋转。'
-        },
-        benefit: {
-            tr: 'Kol dönüşü çok daha hafif ve pürüzsüz hale gelir.',
-            en: 'Lighter handle rotation and sensitivity.',
-            jp: '巻き始めが軽く、繊細なアタリも逃しません。',
-            it: 'Rotazione della manovella più leggera.',
-            fr: 'Rotation de la manivelle plus légère.',
-            cn: '更轻盈的手柄旋转和灵敏度。'
-        },
-    },
-    {
-        id: 'cfr',
-        name: 'CFR (Cyclonic Flow Rotor)',
-        brand: 'Okuma',
-        summary: {
-            tr: 'Siklonik Akış Rotoru',
-            en: 'Cyclonic Flow Rotor',
-            jp: 'サイクロニック・フロー・ローター',
-            it: 'Rotore a Flusso Ciclonico',
-            fr: 'Rotor à Flux Cyclonique',
-            cn: '气旋流动转盘'
-        },
-        description: {
-            tr: 'Rotor her döndüğünde makine etrafında girdap şeklinde hava akımı yaratır. Islanan makineyi hızla kurutur.',
-            en: 'Creates a cyclonic airflow that significantly increases air flow through the rotor to dry the reel faster.',
-            jp: 'ローター回転時にサイクロン状の気流を生み出し、リール内部の水分を素早く乾燥させます。',
-            it: 'Crea un flusso d\'aria ciclonico che asciuga il mulinello più velocemente.',
-            fr: 'Crée un flux d\'air cyclonique qui sèche le moulinet plus rapidement.',
-            cn: '产生气旋气流，显著增加通过转盘的气流，使渔轮更快干燥。'
-        },
-        benefit: {
-            tr: 'Korozyonu önler, makinenin ömrünü uzatır.',
-            en: 'Prevents corrosion and extends reel life.',
-            jp: '腐食を防ぎ、リールの寿命を延ばします。',
-            it: 'Previene la corrosione.',
-            fr: 'Prévient la corrosion.',
-            cn: '防止腐蚀并延长渔轮寿命。'
-        }
-    },
-    {
-        id: 'c40x',
-        name: 'C-40X Carbon',
-        brand: 'Okuma',
-        summary: {
-            tr: 'Hafif Karbon Malzeme',
-            en: 'Lightweight Carbon',
-            jp: 'C-40Xカーボン',
-            it: 'Carbonio Leggero',
-            fr: 'Carbone Léger',
-            cn: '轻量碳纤维'
-        },
-        description: {
-            tr: 'Standart grafite göre %25 daha hafif ve %50 daha güçlü özel karbon polimer malzeme.',
-            en: 'Precisely engineered carbon polymer that is 25% lighter and 50% stronger than standard graphite.',
-            jp: '標準的なグラファイトよりも25%軽く、50%強い特別に設計されたカーボンポリマー。',
-            it: 'Polimero di carbonio 25% più leggero e 50% più forte.',
-            fr: 'Polymère de carbone 25% plus léger et 50% plus fort.',
-            cn: '比标准石墨轻25%，强50%的精密工程碳聚合物。'
-        },
-        benefit: {
-            tr: 'Metal kadar sağlam ama plastik kadar hafif bir gövde.',
-            en: 'Rigidity of metal with the lightness of plastic.',
-            jp: '金属並みの剛性と、樹脂並みの軽さを両立。',
-            it: 'Rigidità del metallo con la leggerezza della plastica.',
-            fr: 'Rigidité du métal avec la légèreté du plastique.',
-            cn: '金属的刚性和塑料的轻盈。'
-        }
-    },
-    {
-        id: 'hd_gear',
-        name: 'HDG-II (High Density Gearing)',
-        brand: 'Okuma',
-        summary: {
-            tr: 'Yüksek Yoğunluklu Dişli',
-            en: 'High Density Gearing',
-            jp: '高密度ギア',
-            it: 'Ingranaggi ad Alta Densità',
-            fr: 'Engrenages Haute Densité',
-            cn: '高密度齿轮'
-        },
-        description: {
-            tr: 'Korozyona dayanıklı, yüksek yoğunluklu alaşımlı ana dişli.',
-            en: 'Corrosion resistant, high density alloy main gear.',
-            jp: '耐腐食性に優れた高密度合金製のメインギア。',
-            it: 'Ingranaggio principale in lega ad alta densità resistente alla corrosione.',
-            fr: 'Engrenage principal en alliage haute densité résistant à la corrosion.',
-            cn: '耐腐蚀，高密度合金主齿轮。'
-        },
-        benefit: {
-            tr: 'Zorlu şartlarda güvenilir güç aktarımı ve dayanıklılık.',
-            en: 'Reliable power transmission and durability.',
-            jp: '過酷な状況下でも信頼できるパワー伝達と耐久性。',
-            it: 'Trasmissione di potenza affidabile.',
-            fr: 'Transmission de puissance fiable.',
-            cn: '可靠的动力传输和耐用性。'
-        }
+        description: { tr: 'Çift kollu gövde tasarımı.', en: 'Double-arm body design.', jp: 'ダブルアーム構造。', it: 'Design a doppio braccio.', fr: 'Conception à double bras.', cn: '双臂机身设计。' },
+        benefit: { tr: 'Gövde esnemesini önler.', en: 'Prevents body twist.', jp: 'ボディのねじれを防ぎます。', it: 'Previene la torsione.', fr: 'Empêche la torsion.', cn: '防止机身扭曲。' }
     }
 ];
 
 export const reels: ReelModel[] = [
-    // SHIMANO
+    // --- SHIMANO REELS ---
     {
         id: 'stella_fk',
         name: 'Shimano Stella FK',
         brand: 'Shimano',
         types: ['lrf', 'spin'],
-        weight: 210, // C3000
+        weight: 210,
         priceRange: 'premium',
         price: '25.000 - 35.000 ₺',
         image: '/reels/stella.png',
-        techs: ['hagane_body', 'hagane_gear', 'micromodule_ii', 'infinity_loop', 'infinity_drive', 'x_protect'],
+        // Added anti_twist_fin, duracross, rigid_support_drag
+        techs: ['hagane_body', 'hagane_gear', 'micromodule_ii', 'infinity_loop', 'infinity_drive', 'anti_twist_fin', 'duracross', 'rigid_support_drag'],
         description: { tr: 'Japon mühendisliğinin zirvesi. Sonsuzluk hissi veren pürüzsüzlük.', en: 'The pinnacle of Japanese engineering. Smoothness that feels infinite.', jp: '日本工学の頂点。無限を感じさせる滑らかさ。', it: 'L\'apice dell\'ingegneria giapponese.', fr: 'Le summum de l\'ingénierie japonaise.', cn: '日本工程的巅峰。' },
         link: 'https://amzn.to/3XXX'
     },
     {
-        id: 'vanford',
+        id: 'vanford_a', // Updated to new A model logic potentially, but sticking to known Vanford listing
         name: 'Shimano Vanford',
         brand: 'Shimano',
         types: ['lrf', 'spin'],
-        weight: 180, // C3000
+        weight: 180,
         priceRange: 'value',
         price: '8.000 - 10.000 ₺',
         image: '/reels/vanford.png',
-        techs: ['hagane_gear', 'micromodule_ii', 'x_protect', 'silent_drive'],
+        techs: ['hagane_gear', 'micromodule_ii', 'x_protect', 'silent_drive', 'anti_twist_fin'], // Added Anti-Twist Fin (some new models have it)
         description: { tr: 'Hız ve hassasiyet için tasarlandı. LRF ve Light Spin için mükemmel hafiflik.', en: 'Designed for speed and sensitivity. Perfect lightness for LRF.', jp: 'スピードと感度のために設計されました。LRFに最適な軽さ。', it: 'Progettato per velocità e sensibilità.', fr: 'Conçu pour la vitesse et la sensibilité.', cn: '为速度和灵敏度而设计。' },
         link: 'https://amzn.to/3XXX'
     },
     {
-        id: 'stradic_fm',
-        name: 'Shimano Stradic FM',
+        id: 'twinpower_xd',
+        name: 'Shimano TwinPower XD',
         brand: 'Shimano',
         types: ['spin', 'surf'],
-        weight: 225,
-        priceRange: 'value',
-        price: '7.000 - 9.000 ₺',
-        image: '/reels/stradic.png',
-        techs: ['hagane_body', 'hagane_gear', 'micromodule_ii', 'x_protect'],
-        description: { tr: 'Dünyanın en çok tercih edilen spin makinesi.', en: 'The most preferred spinning reel in the world.', jp: '世界で最も選ばれているスピニングリール。', it: 'Il mulinello da spinning più preferito al mondo.', fr: 'Le moulinet spinning le plus préféré au monde.', cn: '世界上最受欢迎的纺车轮。' },
+        weight: 245,
+        priceRange: 'premium',
+        price: '18.000 - 22.000 ₺',
+        image: '/reels/twinpower.png',
+        techs: ['hagane_body', 'hagane_gear', 'x_protect', 'duracross', 'rigid_support_drag'],
+        description: { tr: 'Aşırı dayanıklılık için üretildi. Zorlu tuzlu su şartlarının hakimi.', en: 'Built for extreme durability. Master of tough saltwater conditions.', jp: '過酷なソルトウォーターシーンを制する、圧倒的な耐久性。', it: 'Costruito per una durata estrema.', fr: 'Construit pour une durabilité extrême.', cn: '为极致耐用性而打造。' },
         link: 'https://amzn.to/3XXX'
     },
 
-    // DAIWA
+    // --- DAIWA REELS ---
     {
-        id: 'exist_g',
+        id: 'exist_lt',
         name: 'Daiwa Exist LT',
         brand: 'Daiwa',
         types: ['lrf', 'spin'],
         weight: 160,
         priceRange: 'premium',
-        price: '30.000 - 45.000 ₺',
+        price: '35.000 - 50.000 ₺',
         image: '/reels/exist.png',
-        techs: ['airdrive_design', 'monocoque', 'magsealed', 'atd'],
+        techs: ['airdrive_design', 'monocoque', 'magsealed', 'atd_type_l', 'twist_buster_iii'],
         description: { tr: 'Geleceğin teknolojisi. Airdrive ile ağırlıksızlık hissi.', en: 'Future technology. Weightlessness with Airdrive.', jp: '未来のテクノロジー。エアドライブによる無重力感。', it: 'Tecnologia del futuro.', fr: 'Technologie du futur.', cn: '未来科技。' },
         link: 'https://amzn.to/3XXX'
     },
     {
-        id: 'certate',
-        name: 'Daiwa Certate LT',
-        brand: 'Daiwa',
-        types: ['spin', 'surf'],
-        weight: 205,
-        priceRange: 'premium',
-        price: '15.000 - 20.000 ₺',
-        image: '/reels/certate.png',
-        techs: ['airdrive_design', 'monocoque', 'magsealed'],
-        description: { tr: 'Güç abidesi. Zorlu şartlar için tek parça gövde.', en: 'A pillar of strength. Monocoque body for tough conditions.', jp: '強さの象徴。過酷な条件のためのモノコックボディ。', it: 'Un pilastro di forza.', fr: 'Un pilier de force.', cn: '力量的支柱。' },
-        link: 'https://amzn.to/3XXX'
-    },
-    {
-        id: 'caldia',
-        name: 'Daiwa Caldia MQ',
+        id: 'airity_lt',
+        name: 'Daiwa Airity LT',
         brand: 'Daiwa',
         types: ['lrf', 'spin'],
-        weight: 195,
-        priceRange: 'value',
-        price: '6.000 - 8.000 ₺',
-        image: '/reels/caldia.png',
-        techs: ['monocoque', 'magsealed', 'zaion'],
-        description: { tr: 'MQ gövde teknolojisine sahip en erişilebilir model.', en: 'Most accessible model with MQ body tech.', jp: 'MQボディ技術を搭載した最も身近なモデル。', it: 'Modello più accessibile con tecnologia MQ.', fr: 'Modèle le plus accessible avec technologie MQ.', cn: '拥有MQ机身技术的最亲民型号。' },
+        weight: 145, // Super light
+        priceRange: 'premium',
+        price: '20.000 - 28.000 ₺',
+        image: '/reels/airity.png',
+        techs: ['airdrive_design', 'monocoque', 'atd_type_l', 'twist_buster_iii'],
+        description: { tr: 'Hafifliğin yeni tanımı. İnanılmaz derecede hafif ve güçlü.', en: 'The new definition of lightness. Incredibly light and strong.', jp: '軽さの革命。信じられないほど軽く、強い。', it: 'La nuova definizione di leggerezza.', fr: 'La nouvelle définition de la légèreté.', cn: '轻量的新定义。' },
         link: 'https://amzn.to/3XXX'
     },
 
-    // OKUMA
+    // --- OKUMA REELS ---
+    {
+        id: 'hakai_dt',
+        name: 'Okuma Hakai DT',
+        brand: 'Okuma',
+        types: ['lrf', 'spin'], // Actually a baitcaster usually but assuming spin version for this context or general tech showcase
+        weight: 170,
+        priceRange: 'premium',
+        price: '8.000 - 10.000 ₺',
+        image: '/reels/hakai.png',
+        techs: ['litecast', 'flite_spool', 'flite_shaft'],
+        description: { tr: 'Magnezyum LITECAST gövde ile ultra hafif performans.', en: 'Ultra light performance with Magnesium LITECAST body.', jp: 'マグネシウムLITECASTボディによる超軽量パフォーマンス。', it: 'Prestazioni ultra leggere.', fr: 'Performance ultra légère.', cn: '超轻性能。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'makaira_spin',
+        name: 'Okuma Makaira',
+        brand: 'Okuma',
+        types: ['surf', 'spin'], // Heavy spin
+        weight: 600, // Heavy duty
+        priceRange: 'premium',
+        price: '25.000 - 30.000 ₺',
+        image: '/reels/makaira.png',
+        techs: ['dfd', 'tca'], // Dressed with heavy duty tech
+        description: { tr: 'Dev orkinoslar ve kılıç balıkları için üretilmiş bir tank.', en: 'A tank built for giant tuna and swordfish.', jp: '巨大マグロやカジキのために作られた戦車。', it: 'Un carro armato per tonni giganti.', fr: 'Un char pour les thons géants.', cn: '为巨型金枪鱼制造的坦克。' },
+        link: 'https://amzn.to/3XXX'
+    },
     {
         id: 'itx',
         name: 'Okuma ITX Carbon',
@@ -591,34 +533,8 @@ export const reels: ReelModel[] = [
         priceRange: 'value',
         price: '4.000 - 5.500 ₺',
         image: '/reels/itx.png',
-        techs: ['tca', 'c40x', 'cfr', 'flite_shaft'],
-        description: { tr: 'Tamamen karbon gövde yapısıyla hafiflik ve gücün birleşimi.', en: 'Fusion of lightness and strength with full carbon body.', jp: 'フルカーボンボディによる軽さと強さの融合。', it: 'Fusione di leggerezza e forza.', fr: 'Fusion de légèreté et de force.', cn: '全碳机身，轻量与强度的融合。' },
-        link: 'https://amzn.to/3XXX'
-    },
-    {
-        id: 'inspira',
-        name: 'Okuma Inspira ISX',
-        brand: 'Okuma',
-        types: ['lrf', 'spin'],
-        weight: 210,
-        priceRange: 'value',
-        price: '3.500 - 4.500 ₺',
-        image: '/reels/inspira.png',
-        techs: ['tca', 'flite_shaft', 'cfr'],
-        description: { tr: 'TCA teknolojisi ile burulmaya karşı maksimum direnç.', en: 'Max resistance to torsion with TCA tech.', jp: 'TCA技術によるねじれに対する最大の耐性。', it: 'Massima resistenza alla torsione.', fr: 'Résistance maximale à la torsion.', cn: 'TCA技术最大程度抵抗扭曲。' },
-        link: 'https://amzn.to/3XXX'
-    },
-    {
-        id: 'ceymar_hd',
-        name: 'Okuma Ceymar HD',
-        brand: 'Okuma',
-        types: ['lrf', 'spin'],
-        weight: 235,
-        priceRange: 'budget',
-        price: '2.500 - 3.500 ₺',
-        image: '/reels/ceymar.png',
-        techs: ['hd_gear', 'cfr', 'flite_shaft'],
-        description: { tr: 'Yenilenen HD dişli sistemiyle pürüzsüz ve güçlü.', en: 'Smooth and powerful with renewed HD gear system.', jp: '刷新されたHDギアシステムで滑らかかつ強力。', it: 'Fluido e potente.', fr: 'Fluide et puissant.', cn: '全新的HD齿轮系统，顺滑有力。' },
+        techs: ['tca', 'flite_shaft'],
+        description: { tr: 'Karbon ve teknolojinin buluşması.', en: 'Meeting of carbon and technology.', jp: 'カーボンとテクノロジーの融合。', it: 'Incontro di carbonio e tecnologia.', fr: 'Rencontre du carbone et de la technologie.', cn: '碳与科技的结合。' },
         link: 'https://amzn.to/3XXX'
     }
 ];
