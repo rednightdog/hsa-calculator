@@ -101,8 +101,27 @@ export default function Dashboard() {
         </div>
 
         {/* Knowledge Base Link */}
-        <div className="max-w-6xl mx-auto mt-12 w-full">
-          <Link href="/guide" className="block w-full bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700 p-8 rounded-3xl hover:border-emerald-500/50 transition-all group relative overflow-hidden">
+        <div className="max-w-6xl mx-auto mt-12 w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          {/* Reel Expert Link (NEW) */}
+          <Link href="/reel-expert" className="group relative bg-slate-900/80 border border-slate-700/50 p-8 rounded-3xl hover:border-cyan-500/50 transition-all overflow-hidden flex flex-col justify-between">
+            <div className="absolute top-0 right-0 p-4">
+              <span className="bg-cyan-500 text-white text-[10px] font-bold px-2 py-1 rounded-full animate-pulse">YENİ</span>
+            </div>
+            <div className="relative z-10">
+              <h2 className="text-2xl font-bold text-white mb-2 flex items-center gap-3">
+                🔬 Makine Laboratuvarı
+              </h2>
+              <p className="text-slate-400 mb-6 text-sm">
+                Teknolojileri uzman gözüyle inceleyin. Hagane, Magsealed ve daha fazlası ne işe yarar? Sizin için en doğru makineyi bulun.
+              </p>
+              <div className="flex items-center px-4 py-2 bg-slate-800 rounded-full text-cyan-400 text-sm font-bold w-fit group-hover:bg-cyan-500 group-hover:text-white transition-all">
+                Teknolojileri İncele <ArrowRight className="w-4 h-4 ml-2" />
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/guide" className="group relative bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700/50 p-8 rounded-3xl hover:border-emerald-500/50 transition-all overflow-hidden flex flex-col justify-between">
             <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
               <Book className="w-64 h-64 text-emerald-500 -rotate-12 translate-x-20 -translate-y-20" />
             </div>
