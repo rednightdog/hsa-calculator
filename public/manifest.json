@@ -1,6 +1,6 @@
 {
-    "name": "Balık Hesaplama - HSA",
-    "short_name": "Balık Asistanı",
+    "name": "Fishing Gear Guru",
+    "short_name": "Gear Guru",
     "description": "Balıkçılar için şok lideri, spin ve surf hesaplama asistanı.",
     "start_url": "/",
     "display": "standalone",

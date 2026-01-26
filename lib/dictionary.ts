@@ -30,7 +30,7 @@ export const translations: Record<LanguageCode, any> = {
             }
         },
         home: {
-            title: "Balıkçılık Asistanı",
+            title: "Fishing Gear Guru",
             subtitle: "Av disiplininizi seçin, takımınızı bilimsel verilerle optimize edin.",
             hsa_desc: "Hafif Sahte Avcılığı. 0.5g - 10g arası hassas takımlar için.",
             spin_desc: "Levrek ve Lüfer avı. 10g - 60g arası güçlü takımlar için.",
@@ -103,7 +103,7 @@ export const translations: Record<LanguageCode, any> = {
             }
         },
         home: {
-            title: "Fishing Assistant",
+            title: "Fishing Gear Guru",
             subtitle: "Choose your discipline, optimize your gear with scientific data.",
             hsa_desc: "Light Rock Fishing. For sensitive gear between 0.5g - 10g (1/64oz - 3/8oz).",
             spin_desc: "Seabass and Bluefish. For power gear between 10g - 60g (3/8oz - 2oz).",
@@ -171,7 +171,7 @@ export const translations: Record<LanguageCode, any> = {
             units: { weight: "gr", largeWeight: "kg", length: "m", force: "kg" }
         },
         home: {
-            title: "Assistente Pesca",
+            title: "Fishing Gear Guru",
             subtitle: "Scegli la tua disciplina, ottimizza la tua attrezzatura.",
             hsa_desc: "Light Rock Fishing. Per attrezzature sensibili 0.5g - 10g.",
             spin_desc: "Spinning. Per predatori come Spigola e Serra (10g - 60g).",
@@ -239,7 +239,7 @@ export const translations: Record<LanguageCode, any> = {
             units: { weight: "gr", largeWeight: "kg", length: "m", force: "kg" }
         },
         home: {
-            title: "Assistant Pêche",
+            title: "Fishing Gear Guru",
             subtitle: "Choisissez votre discipline, optimisez votre matériel.",
             hsa_desc: "Rockfishing (LRF). Pour matériel sensible 0.5g - 10g.",
             spin_desc: "Spinning. Pour Bar et Tassergal (10g - 60g).",
@@ -307,7 +307,7 @@ export const translations: Record<LanguageCode, any> = {
             units: { weight: "克", largeWeight: "千克", length: "米", force: "千克" }
         },
         home: {
-            title: "钓鱼助手",
+            title: "Fishing Gear Guru",
             subtitle: "选择您的钓法，科学优化您的装备。",
             hsa_desc: "微物路亚 (LRF/HSA)。适用于 0.5g - 10g 精细作钓。",
             spin_desc: "泛用路亚 (Spinning)。适用于海鲈、蓝鱼等 (10g - 60g)。",

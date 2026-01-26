@@ -7,34 +7,34 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL('https://hsa-calculator-five.vercel.app'),
   title: {
-    default: "Balıkçı Asistanı | Profesyonel LRF, Spin ve Surf Hesaplama",
-    template: "%s | Balıkçı Asistanı"
+    default: "Fishing Gear Guru | Profesyonel Balıkçılık Ekipman Rehberi",
+    template: "%s | Fishing Gear Guru"
   },
-  description: "Türkiye'nin en gelişmiş balıkçılık hesaplama aracı. LRF (HSA), Spin ve Surf avlarınız için ideal misina, kamış ve makine kombinasyonunu bilimsel verilerle hesaplayın.",
-  keywords: ["balıkçılık", "lrf", "hsa", "spin", "surf casting", "pe hesaplama", "misina kalınlığı", "light rock fishing", "balık avı", "olta takımı"],
+  description: "Fishing Gear Guru ile LRF, Spin ve Surf avlarınız için ideal ekipman kombinasyonunu hesaplayın. Bilimsel verilerle doğru kamış, makine ve misina seçimi.",
+  keywords: ["fishing gear guru", "balıkçılık", "lrf", "hsa", "spin", "surf casting", "pe hesaplama", "misina kalınlığı", "light rock fishing", "balık avı", "olta takımı"],
   authors: [{ name: "Aras Demiray" }],
   creator: "Aras Demiray",
   openGraph: {
     type: "website",
     locale: "tr_TR",
     url: "https://hsa-calculator-five.vercel.app",
-    title: "Balıkçı Asistanı - Hedef Balığınıza Uygun Ekipmanı Bulun",
-    description: "Av stilinizi ve bütçenizi seçin, yapay zeka destekli algoritmamız size en uygun takımı saniyeler içinde oluştursun.",
-    siteName: "Balıkçı Asistanı",
+    title: "Fishing Gear Guru - En İyi Kombinasyonu Bulun",
+    description: "Av stilinizi seçin, Fishing Gear Guru yapay zekası size en uygun takımı saniyeler içinde önersin.",
+    siteName: "Fishing Gear Guru",
     images: [
       {
-        url: "/og-image.jpg", // We might need to add this image later or use a default
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Balıkçı Asistanı Arayüzü",
+        alt: "Fishing Gear Guru Interface",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Balıkçı Asistanı | Akıllı Ekipman Seçimi",
-    description: "LRF, Spin ve Surf avları için bilimsel hesaplama aracı.",
-    creator: "@arasdemiray", // Optional placeholder
+    title: "Fishing Gear Guru | Akıllı Ekipman Seçimi",
+    description: "LRF, Spin ve Surf avları için profesyonel ekipman rehberi.",
+    creator: "@arasdemiray",
   },
   robots: {
     index: true,
