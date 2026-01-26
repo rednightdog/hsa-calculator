@@ -2,6 +2,13 @@ import HSACalculator from '@/components/HSACalculator';
 import { BookOpen, CheckCircle, HelpCircle, Anchor, Database, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "HSA (LRF) Hesaplama | Hafif Sahte Avcılığı",
+  description: "LRF avlarınız için sahte ağırlığınıza göre en doğru PE misina, şok lider ve makine boyutunu hesaplayın. Japon standartlarına uygun hassas öneriler.",
+};
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0f172a] text-slate-300 font-sans selection:bg-cyan-500/30">

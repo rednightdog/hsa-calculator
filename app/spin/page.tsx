@@ -2,6 +2,13 @@ import SpinCalculator from '@/components/SpinCalculator';
 import { Anchor, Wind, Swords, Home } from 'lucide-react';
 import Link from 'next/link';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Spin (At-Çek) Hesaplama | Levrek ve Lüfer Avı",
+    description: "Spin disiplini için ideal kamış atarı, makine boyutu ve misina kalınlığını hesaplayın. Levrek, Lüfer ve Kofana avları için optimize edildi.",
+};
+
 export default function SpinPage() {
     return (
         <main className="min-h-screen bg-[#0f172a] text-slate-300 font-sans selection:bg-purple-500/30">

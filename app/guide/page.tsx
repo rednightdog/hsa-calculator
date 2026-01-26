@@ -1,6 +1,13 @@
 import { Book, Compass, Wind, Sun, Search, Anchor, ArrowRight, Home, HelpCircle, Fish, Bug } from 'lucide-react';
 import Link from 'next/link';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Balıkçılık Rehberi | Terimler, Yemler ve Taktikler",
+    description: "Balıkçılıkta kullanılan terimler (Drag, PE, Jerk vb.), hedef balıklara göre yem seçimi ve mera okuma rehberi.",
+};
+
 export default function GuidePage() {
     return (
         <main className="min-h-screen bg-[#0f172a] text-slate-300 font-sans selection:bg-emerald-500/30">

@@ -2,6 +2,13 @@ import SurfCalculator from '@/components/SurfCalculator';
 import { Waves, TrendingUp, Anchor, Home } from 'lucide-react';
 import Link from 'next/link';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Surf Casting Hesaplama | Uzak Atış ve Beklemeli Av",
+    description: "Surf avlarında en uzağa atış yapabilmek için ideal kurşun ağırlığı, shock leader ve misina kombinasyonunu hesaplayın.",
+};
+
 export default function SurfPage() {
     return (
         <main className="min-h-screen bg-[#0f172a] text-slate-300 font-sans selection:bg-orange-500/30">
