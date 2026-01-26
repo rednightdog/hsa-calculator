@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { LanguageCode } from '@/lib/dictionary';
 
+// ... (Keep existing Type and Dictionary)
 type FilterType = ReelType | 'All';
 
 // UI Dictionary for static elements
@@ -30,6 +31,7 @@ const uiTexts: Record<LanguageCode, {
     premium: string;
     performance: string;
     budget: string;
+    weight: string;
 }> = {
     en: {
         backToHome: "Back to Home",
@@ -50,7 +52,8 @@ const uiTexts: Record<LanguageCode, {
         amazon: "Check on Amazon",
         premium: "Premium",
         performance: "Performance",
-        budget: "Budget"
+        budget: "Budget",
+        weight: "Weight"
     },
     tr: {
         backToHome: "Ana Sayfaya Dön",
@@ -71,7 +74,8 @@ const uiTexts: Record<LanguageCode, {
         amazon: "Amazon'da İncele",
         premium: "Premium",
         performance: "F/P Kralı",
-        budget: "Bütçe Dostu"
+        budget: "Bütçe Dostu",
+        weight: "Ağırlık"
     },
     jp: {
         backToHome: "ホームに戻る",
@@ -92,7 +96,8 @@ const uiTexts: Record<LanguageCode, {
         amazon: "Amazonで見る",
         premium: "プレミアム",
         performance: "パフォーマンス",
-        budget: "バジェット"
+        budget: "バジェット",
+        weight: "重量"
     },
     it: {
         backToHome: "Torna alla Home",
@@ -113,7 +118,8 @@ const uiTexts: Record<LanguageCode, {
         amazon: "Vedi su Amazon",
         premium: "Premium",
         performance: "Performance",
-        budget: "Economico"
+        budget: "Economico",
+        weight: "Peso"
     },
     fr: {
         backToHome: "Retour à l'accueil",
@@ -134,7 +140,8 @@ const uiTexts: Record<LanguageCode, {
         amazon: "Voir sur Amazon",
         premium: "Premium",
         performance: "Performance",
-        budget: "Budget"
+        budget: "Budget",
+        weight: "Poids"
     },
     cn: {
         backToHome: "返回首页",
@@ -155,7 +162,8 @@ const uiTexts: Record<LanguageCode, {
         amazon: "在亚马逊查看",
         premium: "高端",
         performance: "高性能",
-        budget: "预算"
+        budget: "预算",
+        weight: "重量"
     }
 };
 
@@ -189,7 +197,6 @@ export default function ReelExpertPage() {
         }
     };
 
-    // Helper for safe translation of data objects
     const translateData = (obj: any) => obj[language] || obj['en'] || obj['tr'] || "Text not available";
 
     return (
@@ -205,7 +212,7 @@ export default function ReelExpertPage() {
 
                     <div className="text-center">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-900/30 border border-cyan-800 text-cyan-400 text-xs font-medium mb-6">
-                            <Filter className="w-3 h-3" /> v2.1
+                            <Filter className="w-3 h-3" /> v2.2
                         </div>
                         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                             {t.title}
@@ -349,44 +356,69 @@ export default function ReelExpertPage() {
                             </button>
                         </div>
                     ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                             {filteredReels.map(reel => (
-                                <div key={reel.id} className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-slate-600 transition-all group flex flex-col">
-                                    {/* Image Area Placeholder */}
-                                    <div className="h-48 bg-slate-950 flex items-center justify-center relative shrink-0">
-                                        <span className="text-slate-700 font-bold text-4xl opacity-20">{reel.brand}</span>
-                                        <div className="absolute top-4 right-4 bg-slate-900/80 backdrop-blur px-3 py-1 rounded-full text-xs font-medium text-white border border-slate-700">
-                                            {reel.priceRange === 'premium' ? t.premium : reel.priceRange === 'value' ? t.performance : t.budget}
-                                        </div>
-                                        <div className="absolute bottom-4 left-4 bg-slate-900/80 backdrop-blur px-3 py-1 rounded-full text-xs font-medium text-slate-300 border border-slate-700 flex items-center gap-1">
-                                            <Scale className="w-3 h-3" /> {reel.weight}g
+                                <div key={reel.id} className={`
+                    border rounded-3xl overflow-hidden hover:border-slate-500 transition-all group flex flex-col relative
+                    ${reel.brand === 'Shimano' ? 'bg-gradient-to-br from-blue-900/20 to-slate-900 border-blue-900/50' :
+                                        reel.brand === 'Daiwa' ? 'bg-gradient-to-br from-orange-900/20 to-slate-900 border-orange-900/50' :
+                                            'bg-gradient-to-br from-emerald-900/20 to-slate-900 border-emerald-900/50'}
+                  `}>
+
+                                    {/* Header: Brand & Badges */}
+                                    <div className="p-6 pb-2 flex justify-between items-start">
+                                        <span className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded bg-black/40 ${reel.brand === 'Shimano' ? 'text-blue-400' :
+                                                reel.brand === 'Daiwa' ? 'text-orange-400' :
+                                                    'text-emerald-400'
+                                            }`}>
+                                            {reel.brand}
+                                        </span>
+
+                                        <div className="flex flex-col items-end gap-2">
+                                            <span className={`text-[10px] font-bold px-2 py-1 rounded-full text-white ${reel.priceRange === 'premium' ? 'bg-amber-500' :
+                                                    reel.priceRange === 'value' ? 'bg-purple-600' : 'bg-slate-600'
+                                                }`}>
+                                                {reel.priceRange === 'premium' ? t.premium : reel.priceRange === 'value' ? t.performance : t.budget}
+                                            </span>
                                         </div>
                                     </div>
 
-                                    <div className="p-6 flex flex-col items-start flex-1">
-                                        <div className="flex justify-between items-start w-full mb-2">
-                                            <div>
-                                                <p className="text-xs text-slate-500 uppercase font-bold">{reel.brand}</p>
-                                                <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">{reel.name}</h3>
-                                            </div>
+                                    <div className="px-6">
+                                        <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">
+                                            {reel.name}
+                                        </h3>
+                                        <div className="flex items-center gap-4 text-sm text-slate-400 mb-4">
+                                            <span className="flex items-center gap-1 font-medium text-white">
+                                                <Scale className="w-4 h-4 text-slate-500" /> {reel.weight}g
+                                            </span>
+                                            <span className="text-emerald-400 font-bold tracking-wide">
+                                                {reel.price}
+                                            </span>
                                         </div>
-                                        <span className="text-sm font-bold text-emerald-400 mb-4 block">{reel.price}</span>
 
-                                        <p className="text-slate-400 text-sm mb-6 h-10 line-clamp-2">{translateData(reel.description)}</p>
+                                        <p className="text-slate-400 text-sm mb-6 min-h-[40px] leading-relaxed">
+                                            {translateData(reel.description)}
+                                        </p>
+                                    </div>
 
-                                        {/* Tech Chips */}
-                                        <div className="flex flex-wrap gap-2 mb-6 mt-auto">
-                                            {reel.techs.slice(0, 3).map(tId => {
+                                    {/* Tech Chips Area - Filling the void of image */}
+                                    <div className="px-6 pb-6 mt-auto">
+                                        <div className="w-full h-px bg-slate-800 mb-4"></div>
+                                        <p className="text-[10px] text-slate-500 uppercase font-bold mb-2 tracking-wider">
+                                            {t.technologies}
+                                        </p>
+                                        <div className="flex flex-wrap gap-2 mb-6">
+                                            {reel.techs.slice(0, 5).map(tId => {
                                                 const tool = tools.find(tool => tool.id === tId);
                                                 return tool ? (
-                                                    <span key={tId} className="px-2 py-1 bg-slate-800 rounded text-[10px] text-slate-400 border border-slate-700">
+                                                    <span key={tId} className="px-2 py-1 bg-slate-800/80 rounded text-[10px] text-slate-300 border border-slate-700/50">
                                                         {tool.name}
                                                     </span>
                                                 ) : null;
                                             })}
-                                            {reel.techs.length > 3 && (
-                                                <span className="px-2 py-1 bg-slate-800 rounded text-[10px] text-slate-500 border border-slate-700">
-                                                    +{reel.techs.length - 3}
+                                            {reel.techs.length > 5 && (
+                                                <span className="px-2 py-1 bg-slate-800/80 rounded text-[10px] text-slate-500 border border-slate-700/50">
+                                                    +{reel.techs.length - 5}
                                                 </span>
                                             )}
                                         </div>
@@ -395,9 +427,9 @@ export default function ReelExpertPage() {
                                             href={reel.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="mt-auto flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl text-white font-bold hover:from-blue-500 hover:to-cyan-500 transition-all shadow-lg shadow-cyan-900/20"
+                                            className="flex items-center justify-center gap-2 w-full py-3 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-xl text-white font-bold transition-all group-hover:bg-cyan-900/30 group-hover:border-cyan-500/50 group-hover:text-cyan-400"
                                         >
-                                            <ShoppingBag className="w-4 h-4" /> {t.amazon}
+                                            <ShoppingBag className="w-4 h-4" /> {t.amazon} <ArrowRight className="w-4 h-4 opacity-50 group-hover:translate-x-1 transition-transform" />
                                         </a>
                                     </div>
                                 </div>

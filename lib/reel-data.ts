@@ -20,7 +20,7 @@ export interface ReelModel {
     weight: number; // grams
     priceRange: 'budget' | 'value' | 'premium';
     price: string;
-    image: string;
+    // image property removed
     techs: string[];
     description: Record<LanguageCode, string>;
     link: string;
@@ -202,6 +202,122 @@ export const tools: Technology[] = [
             cn: '大幅减少抛投时的出线摩擦，增加距离。'
         }
     },
+    {
+        id: 'infinity_drive',
+        name: 'Infinity Drive',
+        brand: 'Shimano',
+        summary: {
+            tr: 'Sürtünmesiz Dönüş',
+            en: 'Frictionless Rotation',
+            jp: 'インフィニティドライブ',
+            it: 'Rotazione Senza Attrito',
+            fr: 'Rotation Sans Friction',
+            cn: '无摩擦旋转'
+        },
+        description: {
+            tr: 'Pinyon dişlisini destekleyen yeni bir yapı.',
+            en: 'A new structure that supports the pinion gear.',
+            jp: 'ピニオンギアを支える新構造。',
+            it: 'Nuova struttura che supporta il pignone.',
+            fr: 'Nouvelle structure supportant le pignon.',
+            cn: '支撑小齿轮的新结构。'
+        },
+        benefit: {
+            tr: 'Daha güçlü ve hafif sarım.',
+            en: 'More powerful and lighter winding.',
+            jp: 'より力強く、軽い巻き上げ。',
+            it: 'Avvolgimento più potente e leggero.',
+            fr: 'Enroulement plus puissant et léger.',
+            cn: '更强力、更轻盈的收线。'
+        }
+    },
+    {
+        id: 'silent_drive',
+        name: 'Silent Drive',
+        brand: 'Shimano',
+        summary: {
+            tr: 'Sessiz Sürüş',
+            en: 'Silent Drive',
+            jp: 'サイレントドライブ',
+            it: 'Guida Silenziosa',
+            fr: 'Entraînement Silencieux',
+            cn: '静音驱动'
+        },
+        description: {
+            tr: 'Gövde içindeki en ufak boşlukları ve sesleri ortadan kaldıran tasarım.',
+            en: 'Design that eliminates the smallest gaps and noises inside the body.',
+            jp: 'ボディ内部の微細なガタやノイズを排除した設計。',
+            it: 'Design che elimina i più piccoli spazi e rumori.',
+            fr: 'Conception éliminant les plus petits espaces et bruits.',
+            cn: '消除机身内部最小间隙和噪音的设计。'
+        },
+        benefit: {
+            tr: 'Pürüzsüz ve sessiz performans.',
+            en: 'Smooth and silent performance.',
+            jp: '滑らかで静かな性能。',
+            it: 'Prestazioni fluide e silenziose.',
+            fr: 'Performance fluide et silencieuse.',
+            cn: '平滑且静音的性能。'
+        }
+    },
+    {
+        id: 'x_protect',
+        name: 'X-Protect',
+        brand: 'Shimano',
+        summary: {
+            tr: 'Su Geçirmezlik',
+            en: 'Water Resistance',
+            jp: 'Xプロテクト',
+            it: 'Resistenza all\'acqua',
+            fr: 'Résistance à l\'eau',
+            cn: '防水'
+        },
+        description: {
+            tr: 'Labirent yapısı ile suyun iç aksama girmesini engeller.',
+            en: 'Prevents water intrusion with a labyrinth structure.',
+            jp: 'ラビリンス構造で水の浸入を防ぎます。',
+            it: 'Previene l\'intrusione d\'acqua con una struttura a labirinto.',
+            fr: 'Empêche l\'intrusion d\'eau avec une structure en labyrinthe.',
+            cn: '通过迷宫结构防止进水。'
+        },
+        benefit: {
+            tr: 'Tuzlu suyun zararlı etkilerine karşı tam koruma.',
+            en: 'Full protection against saltwater.',
+            jp: '塩水による腐食から守ります。',
+            it: 'Protezione completa contro l\'acqua salata.',
+            fr: 'Protection complète contre l\'eau salée.',
+            cn: '完全防止盐水腐蚀。'
+        }
+    },
+    {
+        id: 'hagane_gear',
+        name: 'Hagane Gear',
+        brand: 'Shimano',
+        summary: {
+            tr: 'Soğuk Dövme Dişli',
+            en: 'Cold Forged Gear',
+            jp: 'HAGANEギア',
+            it: 'Ingranaggio Forgiato a Freddo',
+            fr: 'Engrenage Forgé à Froid',
+            cn: '冷锻齿轮'
+        },
+        description: {
+            tr: 'Kesme işlemi olmadan, moleküler yapısı bozulmadan preslenen metal dişli.',
+            en: 'Metal gear pressed without cutting, preserving molecular structure.',
+            jp: '切削なしでプレスされた金属ギア。',
+            it: 'Ingranaggio pressato senza taglio.',
+            fr: 'Engrenage pressé sans coupe.',
+            cn: '无切削压制的金属齿轮。'
+        },
+        benefit: {
+            tr: 'Yıllarca bozulmayan pürüzsüzlük ve güç.',
+            en: 'Long-lasting smoothness and power.',
+            jp: '長期間続く滑らかさと強さ。',
+            it: 'Fluidità e potenza durature.',
+            fr: 'Fluidité et puissance durables.',
+            cn: '持久的顺滑和强力。'
+        }
+    },
 
     // --- DAIWA TECHNOLOGIES ---
     {
@@ -263,6 +379,35 @@ export const tools: Technology[] = [
         }
     },
     {
+        id: 'atd',
+        name: 'ATD',
+        brand: 'Daiwa',
+        summary: {
+            tr: 'Otomatik Turnuva Kalaması',
+            en: 'Automatic Tournament Drag',
+            jp: 'ATD',
+            it: 'Frizione Automatica da Torneo',
+            fr: 'Frein Automatique de Tournoi',
+            cn: '自动竞技刹车'
+        },
+        description: {
+            tr: 'Balığın çekişine göre direncini otomatik ayarlayan akıllı kalama.',
+            en: 'Smart drag that adjusts resistance based on fish pull.',
+            jp: '魚の引きに合わせて滑らかに作動。',
+            it: 'Frizione intelligente.',
+            fr: 'Frein intelligent.',
+            cn: '智能刹车。'
+        },
+        benefit: {
+            tr: 'Misinayı korur ve balığı daha çabuk yorar.',
+            en: 'Protects line and tires fish faster.',
+            jp: 'ラインを守り、魚を早く疲れさせる。',
+            it: 'Protegge il filo.',
+            fr: 'Protège la ligne.',
+            cn: '保护鱼线。'
+        }
+    },
+    {
         id: 'airdrive_design',
         name: 'Airdrive Design',
         brand: 'Daiwa',
@@ -320,6 +465,122 @@ export const tools: Technology[] = [
             cn: '更强、更密封的齿轮室。'
         }
     },
+    {
+        id: 'magsealed',
+        name: 'Magsealed',
+        brand: 'Daiwa',
+        summary: {
+            tr: 'Manyetik Yağ Kalkanı',
+            en: 'Magnetic Oil Shield',
+            jp: 'マグシールド',
+            it: 'Scudo a Olio Magnetico',
+            fr: 'Bouclier d\'Huile Magnétique',
+            cn: '磁油密封'
+        },
+        description: {
+            tr: 'Uzay teknolojisi. Manyetik yağ ile suyun geçişini %100 engeller.',
+            en: 'Space tech. Blocks water passage 100% with magnetic oil.',
+            jp: '磁性流体で水の浸入をシャットアウト。',
+            it: 'Blocca l\'acqua al 100%.',
+            fr: 'Bloque l\'eau à 100%.',
+            cn: '100%阻挡水。'
+        },
+        benefit: {
+            tr: 'Sürtünmesiz su geçirmezlik.',
+            en: 'Frictionless waterproofing.',
+            jp: '回転性能を損なわず防水。',
+            it: 'Impermeabilità senza attrito.',
+            fr: 'Étanchéité sans friction.',
+            cn: '无摩擦防水。'
+        }
+    },
+    {
+        id: 'zaion',
+        name: 'Zaion / Zaion V',
+        brand: 'Daiwa',
+        summary: {
+            tr: 'Yüksek Yoğunluklu Karbon',
+            en: 'High Density Carbon',
+            jp: 'ザイオン',
+            it: 'Carbonio ad Alta Densità',
+            fr: 'Carbone Haute Densité',
+            cn: '高密度碳'
+        },
+        description: {
+            tr: 'Metal kadar sert ve magnezyum kadar hafif özel karbon kompozit.',
+            en: 'Special carbon composite as hard as metal and light as magnesium.',
+            jp: '金属に匹敵する強さと、マグネシウムより軽い素材。',
+            it: 'Duro come il metallo, leggero come il magnesio.',
+            fr: 'Dur comme le métal, léger comme le magnésium.',
+            cn: '硬如金属，轻如镁。'
+        },
+        benefit: {
+            tr: 'Paslanmaz ve ultra hafiftir.',
+            en: 'Corrosion proof and ultra light.',
+            jp: '腐食せず、超軽量。',
+            it: 'Anticorrosione e ultra leggero.',
+            fr: 'Anticorrosion et ultra léger.',
+            cn: '耐腐蚀且超轻。'
+        }
+    },
+    {
+        id: 'digigear',
+        name: 'Digigear',
+        brand: 'Daiwa',
+        summary: {
+            tr: 'Dijital Dişli Tasarımı',
+            en: 'Digital Gear Design',
+            jp: 'デジギア',
+            it: 'Design Ingranaggi Digitale',
+            fr: 'Conception d\'Engrenage Numérique',
+            cn: '数字齿轮设计'
+        },
+        description: {
+            tr: 'Dijital olarak tasarlanmış ve işlenmiş hassas dişliler.',
+            en: 'Digitally designed and machined precision gears.',
+            jp: 'デジタル設計された精密ギア。',
+            it: 'Ingranaggi di precisione progettati digitalmente.',
+            fr: 'Engrenages de précision conçus numériquement.',
+            cn: '数字设计的精密齿轮。'
+        },
+        benefit: {
+            tr: 'Pürüzsüz dönüş ve dayanıklılık.',
+            en: 'Smooth rotation and durability.',
+            jp: '滑らかな回転と耐久性。',
+            it: 'Rotazione fluida e durata.',
+            fr: 'Rotation fluide et durabilité.',
+            cn: '平滑旋转和耐用性。'
+        }
+    },
+    {
+        id: 'hardbodyz',
+        name: 'HardBodyz',
+        brand: 'Daiwa',
+        summary: {
+            tr: 'Metal Alaşım Gövde',
+            en: 'Metal Alloy Body',
+            jp: 'ハードボディーズ',
+            it: 'Corpo in Lega Metallica',
+            fr: 'Corps en Alliage Métallique',
+            cn: '金属合金机身'
+        },
+        description: {
+            tr: 'Ağır yük altında esnemeyen sağlam alüminyum gövde.',
+            en: 'Sturdy aluminum body that does not flex under heavy load.',
+            jp: '高負荷でも歪まないアルミボディ。',
+            it: 'Corpo in alluminio robusto.',
+            fr: 'Corps en aluminium robuste.',
+            cn: '重负荷下不弯曲的坚固铝机身。'
+        },
+        benefit: {
+            tr: 'Büyük balıklarla mücadele için maksimum güç.',
+            en: 'Maximum power for fighting big fish.',
+            jp: '大物とのファイトに最大のパワー。',
+            it: 'Massima potenza.',
+            fr: 'Puissance maximale.',
+            cn: '最大力量。'
+        }
+    },
 
     // --- OKUMA TECHNOLOGIES ---
     {
@@ -349,7 +610,7 @@ export const tools: Technology[] = [
             it: 'Massima forza con minimo peso.',
             fr: 'Force maximale avec un poids minimum.',
             cn: '以最小的重量提供最大的强度。'
-        }
+        },
     },
     {
         id: 'dfd',
@@ -423,11 +684,127 @@ export const tools: Technology[] = [
         },
         description: { tr: 'Çift kollu gövde tasarımı.', en: 'Double-arm body design.', jp: 'ダブルアーム構造。', it: 'Design a doppio braccio.', fr: 'Conception à double bras.', cn: '双臂机身设计。' },
         benefit: { tr: 'Gövde esnemesini önler.', en: 'Prevents body twist.', jp: 'ボディのねじれを防ぎます。', it: 'Previene la torsione.', fr: 'Empêche la torsion.', cn: '防止机身扭曲。' }
+    },
+    {
+        id: 'flite_shaft',
+        name: 'Flite Shaft',
+        brand: 'Okuma',
+        summary: {
+            tr: 'Sürtünmesiz Şaft',
+            en: 'Frictionless Shaft',
+            jp: 'フライトシャフト',
+            it: 'Albero Senza Attrito',
+            fr: 'Arbre Sans Friction',
+            cn: '无摩擦轴'
+        },
+        description: {
+            tr: 'Şaft ile pinyon arasındaki sürtünmeyi azaltan tasarım.',
+            en: 'Design that reduces friction between shaft and pinion.',
+            jp: 'シャフトとピニオン間の摩擦を低減。',
+            it: 'Riduce l\'attrito.',
+            fr: 'Réduit la friction.',
+            cn: '减少摩擦。'
+        },
+        benefit: {
+            tr: 'Daha pürüzsüz sarım.',
+            en: 'Smoother winding.',
+            jp: 'より滑らかな巻き心地。',
+            it: 'Avvolgimento più fluido.',
+            fr: 'Enroulement plus fluide.',
+            cn: '更顺滑的收线。'
+        }
+    },
+    {
+        id: 'hd_gear',
+        name: 'HD Gear',
+        brand: 'Okuma',
+        summary: {
+            tr: 'Yüksek Yoğunluklu Dişli',
+            en: 'High Density Gear',
+            jp: 'HDギア',
+            it: 'Ingranaggio ad Alta Densità',
+            fr: 'Engrenage Haute Densité',
+            cn: '高密度齿轮'
+        },
+        description: {
+            tr: 'Güçlendirilmiş ve boyutu büyütülmüş ana dişli.',
+            en: 'Reinforced and oversized main gear.',
+            jp: '強化された大型メインギア。',
+            it: 'Ingranaggio principale rinforzato.',
+            fr: 'Engrenage principal renforcé.',
+            cn: '强化的大尺寸主齿轮。'
+        },
+        benefit: {
+            tr: 'Dayanıklılık ve güç.',
+            en: 'Durability and power.',
+            jp: '耐久性とパワー。',
+            it: 'Durata e potenza.',
+            fr: 'Durabilité et puissance.',
+            cn: '耐用性和力量。'
+        }
+    },
+    {
+        id: 'cfr',
+        name: 'CFR',
+        brand: 'Okuma',
+        summary: {
+            tr: 'Siklonik Akış Rotoru',
+            en: 'Cyclonic Flow Rotor',
+            jp: 'サイクロニックフローローター',
+            it: 'Rotore a Flusso Ciclonico',
+            fr: 'Rotor à Flux Cyclonique',
+            cn: '气旋流动转盘'
+        },
+        description: {
+            tr: 'Hava akışını artırarak makinenin içini kurutan rotor tasarımı.',
+            en: 'Rotor design that dries the reel internals by increasing airflow.',
+            jp: '空気の流れを増やしてリール内部を乾燥させるローター。',
+            it: 'Asciuga l\'interno del mulinello.',
+            fr: 'Sèche l\'intérieur du moulinet.',
+            cn: '干燥渔轮内部。'
+        },
+        benefit: {
+            tr: 'Korozyonu önler.',
+            en: 'Prevents corrosion.',
+            jp: '腐食を防ぐ。',
+            it: 'Previene la corrosione.',
+            fr: 'Prévient la corrosion.',
+            cn: '防止腐蚀。'
+        }
+    },
+    {
+        id: 'corrosion_resistant',
+        name: 'Corrosion Resistant Body',
+        brand: 'Okuma',
+        summary: {
+            tr: 'Korozyon Dirençli Gövde',
+            en: 'Corrosion Resistant Body',
+            jp: '耐腐食ボディ',
+            it: 'Corpo Resistente alla Corrosione',
+            fr: 'Corps Résistant à la Corrosion',
+            cn: '耐腐蚀机身'
+        },
+        description: {
+            tr: 'Tuzlu suya dayanıklı grafit gövde.',
+            en: 'Saltwater resistant graphite body.',
+            jp: '海水に強いグラファイトボディ。',
+            it: 'Corpo in grafite resistente all\'acqua salata.',
+            fr: 'Corps en graphite résistant à l\'eau salée.',
+            cn: '耐盐水石墨机身。'
+        },
+        benefit: {
+            tr: 'Uzun ömürlü kullanım.',
+            en: 'Long lasting use.',
+            jp: '長持ち。',
+            it: 'Lunga durata.',
+            fr: 'Longue durée.',
+            cn: '持久使用。'
+        }
     }
 ];
 
 export const reels: ReelModel[] = [
-    // --- SHIMANO REELS ---
+    // --- SHIMANO ---
     {
         id: 'stella_fk',
         name: 'Shimano Stella FK',
@@ -436,40 +813,108 @@ export const reels: ReelModel[] = [
         weight: 210,
         priceRange: 'premium',
         price: '25.000 - 35.000 ₺',
-        image: '/reels/stella.png',
-        // Added anti_twist_fin, duracross, rigid_support_drag
         techs: ['hagane_body', 'hagane_gear', 'micromodule_ii', 'infinity_loop', 'infinity_drive', 'anti_twist_fin', 'duracross', 'rigid_support_drag'],
-        description: { tr: 'Japon mühendisliğinin zirvesi. Sonsuzluk hissi veren pürüzsüzlük.', en: 'The pinnacle of Japanese engineering. Smoothness that feels infinite.', jp: '日本工学の頂点。無限を感じさせる滑らかさ。', it: 'L\'apice dell\'ingegneria giapponese.', fr: 'Le summum de l\'ingénierie japonaise.', cn: '日本工程的巅峰。' },
+        description: { tr: 'Japon mühendisliğinin zirvesi ve sonsuz pürüzsüzlük.', en: 'The pinnacle of Japanese engineering.', jp: '日本工学の頂点。', it: 'L\'apice dell\'ingegneria giapponese.', fr: 'Le summum de l\'ingénierie japonaise.', cn: '日本工程的巅峰。' },
         link: 'https://amzn.to/3XXX'
     },
     {
-        id: 'vanford_a', // Updated to new A model logic potentially, but sticking to known Vanford listing
+        id: 'vanquish_fc',
+        name: 'Shimano Vanquish FC',
+        brand: 'Shimano',
+        types: ['lrf', 'spin'],
+        weight: 170, // Ultra light
+        priceRange: 'premium',
+        price: '22.000 - 28.000 ₺',
+        techs: ['hagane_body', 'micromodule_ii', 'infinity_drive', 'x_protect', 'anti_twist_fin'],
+        description: { tr: 'Hafifliğin ötesi. Hızlı tepki veren MGL rotor.', en: 'Beyond lightness. Quick response MGL rotor.', jp: '軽さのその先へ。', it: 'Oltre la leggerezza.', fr: 'Au-delà de la légèreté.', cn: '超越轻盈。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'twinpower_fe',
+        name: 'Shimano TwinPower FE',
+        brand: 'Shimano',
+        types: ['spin'],
+        weight: 215,
+        priceRange: 'premium',
+        price: '18.000 - 24.000 ₺',
+        techs: ['hagane_body', 'hagane_gear', 'infinity_loop', 'infinity_drive', 'duracross'],
+        description: { tr: 'Sarsılmaz sağlamlık. Stella teknolojilerine sahip güç makinesi.', en: 'Unshakable solidity. Power reel with Stella techs.', jp: '揺るぎない堅牢性。', it: 'Solidità incrollabile.', fr: 'Solidité inébranlable.', cn: '不可动摇的坚固。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'stradic_fm',
+        name: 'Shimano Stradic FM',
+        brand: 'Shimano',
+        types: ['spin', 'surf'],
+        weight: 225,
+        priceRange: 'value',
+        price: '7.000 - 9.000 ₺',
+        techs: ['hagane_body', 'hagane_gear', 'micromodule_ii', 'x_protect', 'anti_twist_fin'],
+        description: { tr: 'Spin balıkçılığının standardı. F/P kralı.', en: 'The standard of spin fishing.', jp: 'スピニングの基準。', it: 'Lo standard dello spinning.', fr: 'La référence du spinning.', cn: '纺车轮的标准。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'vanford',
         name: 'Shimano Vanford',
         brand: 'Shimano',
         types: ['lrf', 'spin'],
         weight: 180,
         priceRange: 'value',
         price: '8.000 - 10.000 ₺',
-        image: '/reels/vanford.png',
-        techs: ['hagane_gear', 'micromodule_ii', 'x_protect', 'silent_drive', 'anti_twist_fin'], // Added Anti-Twist Fin (some new models have it)
-        description: { tr: 'Hız ve hassasiyet için tasarlandı. LRF ve Light Spin için mükemmel hafiflik.', en: 'Designed for speed and sensitivity. Perfect lightness for LRF.', jp: 'スピードと感度のために設計されました。LRFに最適な軽さ。', it: 'Progettato per velocità e sensibilità.', fr: 'Conçu pour la vitesse et la sensibilité.', cn: '为速度和灵敏度而设计。' },
+        techs: ['hagane_gear', 'micromodule_ii', 'x_protect', 'silent_drive'],
+        description: { tr: 'Hassasiyet için süper hafif Ci4+ gövde.', en: 'Super light Ci4+ body for sensitivity.', jp: '感度のためのCi4+ボディ。', it: 'Corpo Ci4+ super leggero.', fr: 'Corps Ci4+ super leggero.', cn: '超轻Ci4+机身。' },
         link: 'https://amzn.to/3XXX'
     },
     {
-        id: 'twinpower_xd',
-        name: 'Shimano TwinPower XD',
+        id: 'miravel',
+        name: 'Shimano Miravel',
         brand: 'Shimano',
-        types: ['spin', 'surf'],
+        types: ['lrf', 'spin'],
+        weight: 205,
+        priceRange: 'budget',
+        price: '4.500 - 6.000 ₺',
+        techs: ['hagane_gear', 'silent_drive', 'x_protect'],
+        description: { tr: 'Ci4+ gövdeye sahip en ulaşılabilir hafif makine.', en: 'Most accessible light reel with Ci4+ body.', jp: '最も手頃なCi4+リール。', it: 'Mulinello leggero più accessibile.', fr: 'Moulinet léger le plus accessible.', cn: '最亲民的轻量轮。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'sedona_fj',
+        name: 'Shimano Sedona FJ',
+        brand: 'Shimano',
+        types: ['spin', 'lrf'],
         weight: 245,
+        priceRange: 'budget',
+        price: '2.500 - 3.500 ₺',
+        techs: ['hagane_gear', 'silent_drive'],
+        description: { tr: 'Hagane dişli teknolojisine sahip en uygun fiyatlı model.', en: 'Most affordable model with Hagane Gear.', jp: 'Haganeギア搭載の最安モデル。', it: 'Modello più economico con Hagane Gear.', fr: 'Modèle le plus abordable avec Hagane Gear.', cn: '拥有Hagane齿轮的最实惠型号。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'ultegra_xte',
+        name: 'Shimano Ultegra XTE',
+        brand: 'Shimano',
+        types: ['surf'],
+        weight: 600,
+        priceRange: 'value',
+        price: '6.000 - 8.000 ₺',
+        techs: ['hagane_gear', 'infinity_drive', 'rigid_support_drag', 'silent_drive'],
+        description: { tr: 'Surf casting efsanesi. Uzak atış rekorları için.', en: 'Surf casting legend. For long distance records.', jp: 'サーフキャスティングの伝説。', it: 'Leggenda del surf casting.', fr: 'Légende du surf casting.', cn: '远投传奇。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'fliegen_sd',
+        name: 'Shimano Fliegen SD',
+        brand: 'Shimano',
+        types: ['surf'],
+        weight: 490,
         priceRange: 'premium',
-        price: '18.000 - 22.000 ₺',
-        image: '/reels/twinpower.png',
-        techs: ['hagane_body', 'hagane_gear', 'x_protect', 'duracross', 'rigid_support_drag'],
-        description: { tr: 'Aşırı dayanıklılık için üretildi. Zorlu tuzlu su şartlarının hakimi.', en: 'Built for extreme durability. Master of tough saltwater conditions.', jp: '過酷なソルトウォーターシーンを制する、圧倒的な耐久性。', it: 'Costruito per una durata estrema.', fr: 'Construit pour une durabilité extrême.', cn: '为极致耐用性而打造。' },
+        price: '20.000 - 25.000 ₺',
+        techs: ['hagane_body', 'hagane_gear', 'x_protect', 'rigid_support_drag'],
+        description: { tr: 'Hafif ve güçlü surf makinesi. Japon pazarı (JDM) favorisi.', en: 'Light and strong surf reel. JDM favorite.', jp: '軽くて強いサーフリール。', it: 'Mulinello da surf leggero e forte.', fr: 'Moulinet surf léger et fort.', cn: '轻量强力的远投轮。' },
         link: 'https://amzn.to/3XXX'
     },
 
-    // --- DAIWA REELS ---
+    // --- DAIWA ---
     {
         id: 'exist_lt',
         name: 'Daiwa Exist LT',
@@ -478,7 +923,6 @@ export const reels: ReelModel[] = [
         weight: 160,
         priceRange: 'premium',
         price: '35.000 - 50.000 ₺',
-        image: '/reels/exist.png',
         techs: ['airdrive_design', 'monocoque', 'magsealed', 'atd_type_l', 'twist_buster_iii'],
         description: { tr: 'Geleceğin teknolojisi. Airdrive ile ağırlıksızlık hissi.', en: 'Future technology. Weightlessness with Airdrive.', jp: '未来のテクノロジー。エアドライブによる無重力感。', it: 'Tecnologia del futuro.', fr: 'Technologie du futur.', cn: '未来科技。' },
         link: 'https://amzn.to/3XXX'
@@ -488,53 +932,206 @@ export const reels: ReelModel[] = [
         name: 'Daiwa Airity LT',
         brand: 'Daiwa',
         types: ['lrf', 'spin'],
-        weight: 145, // Super light
+        weight: 145,
         priceRange: 'premium',
         price: '20.000 - 28.000 ₺',
-        image: '/reels/airity.png',
         techs: ['airdrive_design', 'monocoque', 'atd_type_l', 'twist_buster_iii'],
-        description: { tr: 'Hafifliğin yeni tanımı. İnanılmaz derecede hafif ve güçlü.', en: 'The new definition of lightness. Incredibly light and strong.', jp: '軽さの革命。信じられないほど軽く、強い。', it: 'La nuova definizione di leggerezza.', fr: 'La nouvelle définition de la légèreté.', cn: '轻量的新定义。' },
+        description: { tr: 'Hafifliğin yeni tanımı. Magnezyum MQ gövde.', en: 'The new definition of lightness. Magnesium MQ body.', jp: '軽さの革命。', it: 'La nuova definizione di leggerezza.', fr: 'La nouvelle définition de la légèreté.', cn: '轻量的新定义。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'certate_lt',
+        name: 'Daiwa Certate LT',
+        brand: 'Daiwa',
+        types: ['spin'],
+        weight: 205,
+        priceRange: 'premium',
+        price: '16.000 - 20.000 ₺',
+        techs: ['monocoque', 'magsealed', 'atd_type_l'],
+        description: { tr: 'Güç ve dayanıklılık sembolü. Alüminyum yekpare gövde.', en: 'Symbol of strength and durability.', jp: '強さと耐久性の象徴。', it: 'Simbolo di forza e durata.', fr: 'Symbole de force et de durabilité.', cn: '力量与耐用的象征。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'luvias_lt',
+        name: 'Daiwa Luvias LT',
+        brand: 'Daiwa',
+        types: ['lrf', 'spin'],
+        weight: 150,
+        priceRange: 'value',
+        price: '10.000 - 13.000 ₺',
+        techs: ['monocoque', 'magsealed', 'atd'],
+        description: { tr: 'Zaion monokok gövde ile tüy kadar hafif.', en: 'Feather light with Zaion MQ body.', jp: 'ザイオンモノコックボディで羽のように軽い。', it: 'Leggero come una piuma.', fr: 'Léger comme une plume.', cn: '如羽毛般轻盈。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'caldia_mq',
+        name: 'Daiwa Caldia MQ',
+        brand: 'Daiwa',
+        types: ['lrf', 'spin'],
+        weight: 195,
+        priceRange: 'value',
+        price: '6.000 - 8.000 ₺',
+        techs: ['monocoque', 'magsealed', 'zaion'],
+        description: { tr: 'MQ teknolojisinin en ulaşılabilir hali.', en: 'Most accessible MQ tech.', jp: '最も身近なMQ技術。', it: 'Tecnologia MQ più accessibile.', fr: 'Tech MQ la plus accessible.', cn: '最亲民的MQ技术。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'fuego_lt',
+        name: 'Daiwa Fuego LT',
+        brand: 'Daiwa',
+        types: ['spin', 'lrf'],
+        weight: 205,
+        priceRange: 'budget',
+        price: '3.500 - 5.000 ₺',
+        techs: ['magsealed', 'atd', 'zaion'], // Zaion V body
+        description: { tr: 'Magsealed korumasına sahip en popüler bütçe dostu makine.', en: 'Most popular budget reel with Magsealed.', jp: 'マグシールド搭載の人気エントリーモデル。', it: 'Mulinello economico più popolare con Magsealed.', fr: 'Moulinet économique le plus populaire avec Magsealed.', cn: '拥有磁油保护的最受欢迎预算轮。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'legalis_lt',
+        name: 'Daiwa Legalis LT',
+        brand: 'Daiwa',
+        types: ['spin', 'lrf'],
+        weight: 210,
+        priceRange: 'budget',
+        price: '2.500 - 3.500 ₺',
+        techs: ['atd', 'zaion'], // Zaion V
+        description: { tr: 'Fiyatına göre inanılmaz hafiflik ve performans (Zaion V gövde).', en: 'Incredible lightness and performance for the price.', jp: '価格以上の軽さと性能。', it: 'Leggerezza e prestazioni incredibili per il prezzo.', fr: 'Légèreté et performance incroyables pour le prix.', cn: '性价比极高的轻量和性能。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'bg_sw',
+        name: 'Daiwa BG SW',
+        brand: 'Daiwa',
+        types: ['spin', 'surf'],
+        weight: 285, // Heavy
+        priceRange: 'budget',
+        price: '4.000 - 5.500 ₺',
+        techs: ['hardbodyz', 'atd', 'digigear'], // Adding common tech (will fallback to text if not in DB, but better to stick to DB keys if possible. I'll stick to generic descriptions or assume some basic matches)
+        // Actually ID mismatch risk. Let's stick to known IDs or simple ones. "atd" is known.
+        description: { tr: 'Efsanevi "Black Gold". Alüminyum gövde, yok edilemez dayanıklılık.', en: 'Legendary "Black Gold". Indestructible.', jp: '伝説のブラックゴールド。', it: 'Leggendario Black Gold.', fr: 'Légendaire Black Gold.', cn: '传奇的黑金。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'basia_surf',
+        name: 'Daiwa Tournament Basia',
+        brand: 'Daiwa',
+        types: ['surf'],
+        weight: 520,
+        priceRange: 'premium',
+        price: '25.000 - 35.000 ₺',
+        techs: ['magsealed', 'zaion', 'monocoque'], // High end surf
+        description: { tr: 'Surf dünyasının Rolls-Royce\'u. Magnezyum gövde.', en: 'The Rolls-Royce of surf fishing.', jp: 'サーフフィッシングのロールスロイス。', it: 'La Rolls-Royce del surf.', fr: 'La Rolls-Royce du surf.', cn: '远投界的劳斯莱斯。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'crosscast_surf',
+        name: 'Daiwa Crosscast',
+        brand: 'Daiwa',
+        types: ['surf'],
+        weight: 610,
+        priceRange: 'value',
+        price: '5.000 - 7.000 ₺',
+        techs: ['digigear', 'atd'],
+        description: { tr: '35mm veya 45mm kafa yapısıyla uzak atış canavarı.', en: 'Long distance beast with 35/45mm stroke.', jp: '遠投の野獣。', it: 'Bestia da lunga distanza.', fr: 'Bête de longue distance.', cn: '远投猛兽。' },
         link: 'https://amzn.to/3XXX'
     },
 
-    // --- OKUMA REELS ---
-    {
-        id: 'hakai_dt',
-        name: 'Okuma Hakai DT',
-        brand: 'Okuma',
-        types: ['lrf', 'spin'], // Actually a baitcaster usually but assuming spin version for this context or general tech showcase
-        weight: 170,
-        priceRange: 'premium',
-        price: '8.000 - 10.000 ₺',
-        image: '/reels/hakai.png',
-        techs: ['litecast', 'flite_spool', 'flite_shaft'],
-        description: { tr: 'Magnezyum LITECAST gövde ile ultra hafif performans.', en: 'Ultra light performance with Magnesium LITECAST body.', jp: 'マグネシウムLITECASTボディによる超軽量パフォーマンス。', it: 'Prestazioni ultra leggere.', fr: 'Performance ultra légère.', cn: '超轻性能。' },
-        link: 'https://amzn.to/3XXX'
-    },
+    // --- OKUMA ---
     {
         id: 'makaira_spin',
         name: 'Okuma Makaira',
         brand: 'Okuma',
-        types: ['surf', 'spin'], // Heavy spin
-        weight: 600, // Heavy duty
+        types: ['surf', 'spin'], // Heavy
+        weight: 600,
         priceRange: 'premium',
         price: '25.000 - 30.000 ₺',
-        image: '/reels/makaira.png',
-        techs: ['dfd', 'tca'], // Dressed with heavy duty tech
-        description: { tr: 'Dev orkinoslar ve kılıç balıkları için üretilmiş bir tank.', en: 'A tank built for giant tuna and swordfish.', jp: '巨大マグロやカジキのために作られた戦車。', it: 'Un carro armato per tonni giganti.', fr: 'Un char pour les thons géants.', cn: '为巨型金枪鱼制造的坦克。' },
+        techs: ['dfd', 'tca'],
+        description: { tr: 'Dev orkinoslar için üretilmiş bir tank.', en: 'A tank built for giant tuna.', jp: '巨大マグロのための戦車。', it: 'Un carro armato per tonni giganti.', fr: 'Un char pour les thons géants.', cn: '为巨型金枪鱼制造的坦克。' },
         link: 'https://amzn.to/3XXX'
     },
     {
-        id: 'itx',
+        id: 'tesoro',
+        name: 'Okuma Tesoro',
+        brand: 'Okuma',
+        types: ['spin', 'surf'],
+        weight: 400,
+        priceRange: 'value',
+        price: '10.000 - 12.000 ₺',
+        techs: ['dfd', 'tca', 'litecast'],
+        description: { tr: 'Tuzlu suyun yeni hakimi. Tamamen su geçirmez gövde.', en: 'New ruler of saltwater. Waterproof body.', jp: 'ソルトウォーターの支配者。', it: 'Nuovo sovrano dell\'acqua salata.', fr: 'Nouveau souverain de l\'eau salée.', cn: '咸水的新统治者。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'cedros',
+        name: 'Okuma Cedros',
+        brand: 'Okuma',
+        types: ['spin', 'surf'],
+        weight: 400,
+        priceRange: 'value',
+        price: '6.000 - 8.000 ₺',
+        techs: ['dfd', 'litecast'],
+        description: { tr: 'Jigging ve ağır spin için özel tasarım. Mavi renkli güç.', en: 'Designed for jigging and heavy spin.', jp: 'ジギング専用設計。', it: 'Progettato per jigging.', fr: 'Conçu pour le jigging.', cn: '专为铁板钓设计。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'itx_cb',
         name: 'Okuma ITX Carbon',
         brand: 'Okuma',
         types: ['lrf', 'spin'],
         weight: 200,
         priceRange: 'value',
-        price: '4.000 - 5.500 ₺',
-        image: '/reels/itx.png',
+        price: '4.500 - 5.500 ₺',
         techs: ['tca', 'flite_shaft'],
-        description: { tr: 'Karbon ve teknolojinin buluşması.', en: 'Meeting of carbon and technology.', jp: 'カーボンとテクノロジーの融合。', it: 'Incontro di carbonio e tecnologia.', fr: 'Rencontre du carbone et de la technologie.', cn: '碳与科技的结合。' },
+        description: { tr: 'C-40X karbon ile hafiflik ve güç.', en: 'Lightness and power with C-40X.', jp: 'C-40Xによる軽さと強さ。', it: 'Leggerezza e potenza.', fr: 'Légèreté et puissance.', cn: '轻量与强力。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'inspira_isx',
+        name: 'Okuma Inspira ISX',
+        brand: 'Okuma',
+        types: ['lrf', 'spin'],
+        weight: 210,
+        priceRange: 'value',
+        price: '3.500 - 4.500 ₺',
+        techs: ['tca', 'flite_shaft'],
+        description: { tr: 'TCA teknolojisinin öncüsü.', en: 'Pioneer of TCA tech.', jp: 'TCA技術のパイオニア。', it: 'Pioniere della tecnologia TCA.', fr: 'Pionnier de la technologie TCA.', cn: 'TCA技术的先驱。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'ceymar_hd',
+        name: 'Okuma Ceymar HD',
+        brand: 'Okuma',
+        types: ['lrf', 'spin'],
+        weight: 235,
+        priceRange: 'budget',
+        price: '2.500 - 3.500 ₺',
+        techs: ['hd_gear'],
+        description: { tr: 'Yenilenen HD dişli ile pürüzsüz. Türkiye\'nin en çok satanı.', en: 'Smooth with HD gear. Best seller in TR.', jp: 'HDギアで滑らか。', it: 'Fluido con ingranaggio HD.', fr: 'Fluide avec engrenage HD.', cn: 'HD齿轮顺滑。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'aria',
+        name: 'Okuma Aria',
+        brand: 'Okuma',
+        types: ['lrf', 'spin'],
+        weight: 220,
+        priceRange: 'budget',
+        price: '1.000 - 1.500 ₺',
+        techs: ['cfr'],
+        description: { tr: 'Başlangıç için en ideal ve ekonomik seçenek.', en: 'Ideal and economic for beginners.', jp: '初心者に最適。', it: 'Ideale ed economico per principianti.', fr: 'Idéal et économique pour les débutants.', cn: '初学者的理想经济选择。' },
+        link: 'https://amzn.to/3XXX'
+    },
+    {
+        id: 'rockaway',
+        name: 'Okuma Rockaway',
+        brand: 'Okuma',
+        types: ['surf'],
+        weight: 480,
+        priceRange: 'budget',
+        price: '3.000 - 4.500 ₺',
+        techs: ['corrosion_resistant'], // Generic
+        description: { tr: 'Hafif surf balıkçılığı için kompakt gövde.', en: 'Compact body for light surf.', jp: 'ライトサーフ用コンパクトボディ。', it: 'Corpo compatto per surf leggero.', fr: 'Corps compact pour surf léger.', cn: '轻型远投紧凑机身。' },
         link: 'https://amzn.to/3XXX'
     }
 ];
