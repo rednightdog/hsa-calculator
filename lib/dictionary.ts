@@ -1,0 +1,362 @@
+export type LanguageCode = 'tr' | 'en' | 'it' | 'fr' | 'cn';
+
+export const dictionary: Record<LanguageCode, string> = {
+    tr: 'Türkçe',
+    en: 'English',
+    it: 'Italiano',
+    fr: 'Français',
+    cn: '中文'
+};
+
+export const translations: Record<LanguageCode, any> = {
+    tr: {
+        common: {
+            calculate: "HESAPLA",
+            home: "Ana Sayfa",
+            guide: "Rehber & Sözlük",
+            weight: "Ağırlık",
+            target: "Hedef",
+            depth: "Derinlik",
+            optional: "Opsiyonel",
+            recommended: "Önerilen",
+            drag: "Drag (Kalama)",
+            diameter: "Çap",
+            breakStrength: "Kopma Gücü",
+            units: {
+                weight: "gr",
+                largeWeight: "kg",
+                length: "m",
+                force: "kg"
+            }
+        },
+        home: {
+            title: "Balıkçılık Asistanı",
+            subtitle: "Av disiplininizi seçin, takımınızı bilimsel verilerle optimize edin.",
+            hsa_desc: "Hafif Sahte Avcılığı. 0.5g - 10g arası hassas takımlar için.",
+            spin_desc: "Levrek ve Lüfer avı. 10g - 60g arası güçlü takımlar için.",
+            surf_desc: "Uzak atış ve beklemeli av. 100g - 250g arası ağır takımlar için.",
+            db_link: "PE Veri Tabanını İncele",
+            guide_title: "Balıkçı Sözlüğü & Rehberi",
+            guide_desc: "Drag nedir? PE ne anlama gelir? Mera nasıl okunur? Amatörler için hazırladığımız kapsamlı bilgi bankasına göz atın.",
+            guide_btn: "REHBERİ İNCELE"
+        },
+        hsa: {
+            title: "HSA (Hafif Sahte) Hesaplayıcı",
+            subtitle: "Lrf ve Light Spin İçin",
+            lure_weight: "Sahte Ağırlığı",
+            target_fish: "Hedef Balık",
+            fish_horse_mackerel: "İstavrit (Çok Hassas)",
+            fish_general: "Genel (Mırmır/Eşkina)",
+            warning_trophy: "Trofe balık hedefi için takım güçlendirildi.",
+            ideal_pe: "İdeal PE Değeri",
+            explanation_line: "Misina Türü Seçimi",
+            explanation_line_desc: "Sürtünme direnci için 4 Kat (x4) ipler veya çok ince takımlar için Ester tercih edilir.",
+            explanation_leader: "Lider Kullanımı",
+            explanation_leader_desc: "Avcı balıklardan korunmak ve görünmezlik için Florokarbon lider şarttır."
+        },
+        spin: {
+            title: "Spin (At-Çek) Hesaplayıcı",
+            subtitle: "Levrek, Lüfer ve Turna Avı İçin",
+            lure_weight: "Sahte Ağırlığı",
+            target_fish: "Hedef Balık",
+            fish_seabass: "Levrek (Hassas)",
+            fish_bluefish: "Lüfer (Dişli)",
+            explanation_braid: "Örgü Misina (8x vs 4x)",
+            explanation_braid_desc: "Erim için 8x ipler idealdir. Kayalık meralarda 4x daha dayanıklıdır.",
+            explanation_rod: "Kamış Uzunluğu",
+            explanation_rod_desc: "Genel kullanım için 2.40m - 2.70m idealdir.",
+            explanation_tooth: "Dişli Balık Uyarısı",
+            explanation_tooth_desc: "Keskin dişli balıklarda çelik tel veya kalın florokarbon kullanın."
+        },
+        surf: {
+            title: "Surf (Beklemeli) Hesaplayıcı",
+            subtitle: "Uzak Atış, Çipura ve Kıyı Avı İçin",
+            lead_weight: "Kurşun Ağırlığı",
+            target_fish: "Hedef",
+            fish_bluefish: "Dişli / Lüfer",
+            fish_bream: "Çipura / Mırmır",
+            shock_leader: "Şok Lider (Zorunlu)",
+            explanation_thin: "İnce İp Avantajı",
+            explanation_thin_desc: "İnce ip rüzgarı deler ve daha uzağa gider. Yükü şok lider taşır.",
+            explanation_shock: "Şok Lider Hesabı",
+            explanation_shock_desc: "Atış anındaki patlamayı absorbe etmek için kullanılır."
+        }
+    },
+    en: {
+        common: {
+            calculate: "CALCULATE",
+            home: "Home",
+            guide: "Guide & Glossary",
+            weight: "Weight",
+            target: "Target",
+            depth: "Depth",
+            optional: "Optional",
+            recommended: "Recommended",
+            drag: "Drag Setting",
+            diameter: "Diameter",
+            breakStrength: "Break Strength",
+            units: {
+                weight: "oz",
+                largeWeight: "lb",
+                length: "ft",
+                force: "lb"
+            }
+        },
+        home: {
+            title: "Fishing Assistant",
+            subtitle: "Choose your discipline, optimize your gear with scientific data.",
+            hsa_desc: "Light Rock Fishing. For sensitive gear between 0.5g - 10g (1/64oz - 3/8oz).",
+            spin_desc: "Seabass and Bluefish. For power gear between 10g - 60g (3/8oz - 2oz).",
+            surf_desc: "Long casting surf fishing. For heavy loads 100g - 250g (3oz - 9oz).",
+            db_link: "Browse PE Database",
+            guide_title: "Fisherman's Guide & Glossary",
+            guide_desc: "What is Drag? What does PE mean? Reading the water? Check out our comprehensive knowledge base.",
+            guide_btn: "VIEW GUIDE"
+        },
+        hsa: {
+            title: "HSA (LRF) Calculator",
+            subtitle: "For Light Game Fishing",
+            lure_weight: "Lure Weight",
+            target_fish: "Target Fish",
+            fish_horse_mackerel: "Horse Mackerel (Ultra Light)",
+            fish_general: "General (Light Game)",
+            warning_trophy: "Gear reinforced for trophy fish.",
+            ideal_pe: "Ideal PE Value",
+            explanation_line: "Line Selection",
+            explanation_line_desc: "Use 4-strand braids for abrasion resistance or Ester/PC for ultra finesse.",
+            explanation_leader: "Leader Usage",
+            explanation_leader_desc: "Fluorocarbon leader is essential for invisibility and abrasion resistance."
+        },
+        spin: {
+            title: "Spin Fishing Calculator",
+            subtitle: "For Seabass, Bluefish & Pike",
+            lure_weight: "Lure Weight",
+            target_fish: "Target Fish",
+            fish_seabass: "Seabass (Finesse)",
+            fish_bluefish: "Bluefish (Toothy)",
+            explanation_braid: "Braid Selection (8x vs 4x)",
+            explanation_braid_desc: "8x is better for casting distance. 4x is better for abrasion in rocky areas.",
+            explanation_rod: "Rod Length",
+            explanation_rod_desc: "7ft - 9ft is ideal for general use.",
+            explanation_tooth: "Toothy Fish Warning",
+            explanation_tooth_desc: "Use wire trace or thick fluorocarbon for sharp-toothed predators."
+        },
+        surf: {
+            title: "Surf Casting Calculator",
+            subtitle: "For Long Distance & Beach Casting",
+            lead_weight: "Sinker Weight",
+            target_fish: "Target",
+            fish_bluefish: "Bluefish / Predator",
+            fish_bream: "Bream / Bottom Fish",
+            shock_leader: "Shock Leader (Required)",
+            explanation_thin: "Thin Line Advantage",
+            explanation_thin_desc: "Thinner main line cuts through wind/current better. Shock leader takes the load.",
+            explanation_shock: "Shock Leader Calculation",
+            explanation_shock_desc: "Required to absorb the explosive force of the cast."
+        }
+    },
+    it: {
+        common: {
+            calculate: "CALCOLA",
+            home: "Home",
+            guide: "Guida & Glossario",
+            weight: "Peso",
+            target: "Obiettivo",
+            depth: "Profondità",
+            optional: "Opzionale",
+            recommended: "Consigliato",
+            drag: "Frizione (Drag)",
+            diameter: "Diametro",
+            breakStrength: "Carico Rottura",
+            units: { weight: "gr", largeWeight: "kg", length: "m", force: "kg" }
+        },
+        home: {
+            title: "Assistente Pesca",
+            subtitle: "Scegli la tua disciplina, ottimizza la tua attrezzatura.",
+            hsa_desc: "Light Rock Fishing. Per attrezzature sensibili 0.5g - 10g.",
+            spin_desc: "Spinning. Per predatori come Spigola e Serra (10g - 60g).",
+            surf_desc: "Surf Casting. Per lunga distanza e piombi pesanti (100g - 250g).",
+            db_link: "Database PE",
+            guide_title: "Guida & Glossario",
+            guide_desc: "Cos'è il Drag? Cosa significa PE? Leggere il mare? Consulta la nostra guida.",
+            guide_btn: "VEDI GUIDA"
+        },
+        hsa: {
+            title: "Calcolatrice LRF (HSA)",
+            subtitle: "Per Light Rock Fishing",
+            lure_weight: "Peso Esca",
+            target_fish: "Pesce Obiettivo",
+            fish_horse_mackerel: "Sugarello (Ultra Light)",
+            fish_general: "Generale (Sarago/Occhiata)",
+            warning_trophy: "Attrezzatura rinforzata per pesci trofeo.",
+            ideal_pe: "Valore PE Ideale",
+            explanation_line: "Scelta del Filo",
+            explanation_line_desc: "Usa trecciati 4x per resistenza o Ester per ultra-light.",
+            explanation_leader: "Uso del Leader",
+            explanation_leader_desc: "Il leader in Fluorocarbon è essenziale per l'invisibilità."
+        },
+        spin: {
+            title: "Calcolatrice Spinning",
+            subtitle: "Per Spigola, Serra e Luccio",
+            lure_weight: "Peso Esca",
+            target_fish: "Pesce Obiettivo",
+            fish_seabass: "Spigola (Finesse)",
+            fish_bluefish: "Serra (Dentato)",
+            explanation_braid: "Trecciato (8x vs 4x)",
+            explanation_braid_desc: "8x è migliore per la distanza. 4x è meglio per le rocce.",
+            explanation_rod: "Lunghezza Canna",
+            explanation_rod_desc: "2.40m - 2.70m è ideale per uso generale.",
+            explanation_tooth: "Attenzione Ai Denti",
+            explanation_tooth_desc: "Usa cavetto d'acciaio o FC spesso per pesci dentati."
+        },
+        surf: {
+            title: "Calcolatrice Surf Casting",
+            subtitle: "Per Lunga Distanza",
+            lead_weight: "Peso Piombo",
+            target_fish: "Obiettivo",
+            fish_bluefish: "Serra / Predatori",
+            fish_bream: "Orata / Pesci di Fondo",
+            shock_leader: "Shock Leader (Obbligatorio)",
+            explanation_thin: "Vantaggio Filo Sottile",
+            explanation_thin_desc: "Il filo sottile taglia meglio il vento. Lo shock leader regge il carico.",
+            explanation_shock: "Calcolo Shock Leader",
+            explanation_shock_desc: "Necessario per assorbire la forza del lancio."
+        }
+    },
+    fr: {
+        common: {
+            calculate: "CALCULER",
+            home: "Accueil",
+            guide: "Guide & Lexique",
+            weight: "Poids",
+            target: "Cible",
+            depth: "Profondeur",
+            optional: "Optionnel",
+            recommended: "Recommandé",
+            drag: "Frein (Drag)",
+            diameter: "Diamètre",
+            breakStrength: "Résistance",
+            units: { weight: "gr", largeWeight: "kg", length: "m", force: "kg" }
+        },
+        home: {
+            title: "Assistant Pêche",
+            subtitle: "Choisissez votre discipline, optimisez votre matériel.",
+            hsa_desc: "Rockfishing (LRF). Pour matériel sensible 0.5g - 10g.",
+            spin_desc: "Spinning. Pour Bar et Tassergal (10g - 60g).",
+            surf_desc: "Surf Casting. Pour longue distance (100g - 250g).",
+            db_link: "Base de données PE",
+            guide_title: "Guide du Pêcheur",
+            guide_desc: "Qu'est-ce que le Drag ? Que signifie PE ? Lire la mer ? Consultez notre guide.",
+            guide_btn: "VOIR LE GUIDE"
+        },
+        hsa: {
+            title: "Calculateur Rockfishing",
+            subtitle: "Pour Pêche Légère",
+            lure_weight: "Poids Leurre",
+            target_fish: "Poisson Cible",
+            fish_horse_mackerel: "Chinchard (Ultra Light)",
+            fish_general: "Général (Sar/Oblade)",
+            warning_trophy: "Matériel renforcé pour gros poissons.",
+            ideal_pe: "Valeur PE Idéale",
+            explanation_line: "Choix de la Ligne",
+            explanation_line_desc: "Utilisez tresse 4 brins pour l'abrasion ou Ester.",
+            explanation_leader: "Usage du Leader",
+            explanation_leader_desc: "Le Fluorocarbone est essentiel pour la discrétion."
+        },
+        spin: {
+            title: "Calculateur Spinning",
+            subtitle: "Pour Bar, Tassergal",
+            lure_weight: "Poids Leurre",
+            target_fish: "Poisson Cible",
+            fish_seabass: "Bar (Finesse)",
+            fish_bluefish: "Tassergal (Dents)",
+            explanation_braid: "Tresse (8x vs 4x)",
+            explanation_braid_desc: "8x est mieux pour la distance. 4x résiste mieux aux rochers.",
+            explanation_rod: "Longueur Canne",
+            explanation_rod_desc: "2.40m - 2.70m est idéal.",
+            explanation_tooth: "Attention Dents",
+            explanation_tooth_desc: "Utilisez du câble acier ou gros fluoro pour les dents coupantes."
+        },
+        surf: {
+            title: "Calculateur Surf Casting",
+            subtitle: "Pour Longue Distance",
+            lead_weight: "Poids Plomb",
+            target_fish: "Cible",
+            fish_bluefish: "Tassergal / Prédateurs",
+            fish_bream: "Dorade / Fond",
+            shock_leader: "Arraché (Shock Leader)",
+            explanation_thin: "Fil Fin Avantage",
+            explanation_thin_desc: "Le fil fin coupe mieux le vent/courant. L'arraché supporte le choc.",
+            explanation_shock: "Calcul Arraché",
+            explanation_shock_desc: "Nécessaire pour absorber la violence du lancer."
+        }
+    },
+    cn: {
+        common: {
+            calculate: "计算",
+            home: "首页",
+            guide: "指南与术语",
+            weight: "重量",
+            target: "目标鱼",
+            depth: "深度",
+            optional: "可选",
+            recommended: "推荐",
+            drag: "卸力 (Drag)",
+            diameter: "直径",
+            breakStrength: "拉力值",
+            units: { weight: "克", largeWeight: "千克", length: "米", force: "千克" }
+        },
+        home: {
+            title: "钓鱼助手",
+            subtitle: "选择您的钓法，科学优化您的装备。",
+            hsa_desc: "微物路亚 (LRF/HSA)。适用于 0.5g - 10g 精细作钓。",
+            spin_desc: "泛用路亚 (Spinning)。适用于海鲈、蓝鱼等 (10g - 60g)。",
+            surf_desc: "远投沉底 (Surf Casting)。适用于重铅远投 (100g - 250g)。",
+            db_link: "PE 线数据库",
+            guide_title: "钓鱼指南",
+            guide_desc: "什么是卸力？PE 是什么意思？如何读懂标点？查看我们的知识库。",
+            guide_btn: "查看指南"
+        },
+        hsa: {
+            title: "微物路亚计算器",
+            subtitle: "更轻，更灵敏",
+            lure_weight: "路亚饵重",
+            target_fish: "目标鱼种",
+            fish_horse_mackerel: "竹荚鱼 (超轻)",
+            fish_general: "综合 (鲷类/根鱼)",
+            warning_trophy: "针对大鱼已增强线组。",
+            ideal_pe: "理想 PE 号数",
+            explanation_line: "鱼线选择",
+            explanation_line_desc: "抗磨损选 4 编 PE，极致力求选 酯线 (Ester)。",
+            explanation_leader: "前导线",
+            explanation_leader_desc: "必须使用碳素前导线以隐形并防磨损。"
+        },
+        spin: {
+            title: "泛用路亚计算器",
+            subtitle: "海鲈 / 蓝鱼 / 狗鱼",
+            lure_weight: "路亚饵重",
+            target_fish: "目标鱼种",
+            fish_seabass: "海鲈 (精细)",
+            fish_bluefish: "蓝鱼 (利齿)",
+            explanation_braid: "PE 线 (8编 vs 4编)",
+            explanation_braid_desc: "8编抛投更远，4编更耐磨（适合礁石区）。",
+            explanation_rod: "鱼竿长度",
+            explanation_rod_desc: "2.40m - 2.70m 是最通用的长度。",
+            explanation_tooth: "利齿警告",
+            explanation_tooth_desc: "针对利齿鱼类，请加装钢丝前导或粗碳线。"
+        },
+        surf: {
+            title: "远投计算器",
+            subtitle: "沙滩远投 / 沉底",
+            lead_weight: "铅坠重量",
+            target_fish: "目标",
+            fish_bluefish: "蓝鱼 / 掠食鱼",
+            fish_bream: "鲷鱼 / 底栖鱼",
+            shock_leader: "前导线 (Shock Leader)",
+            explanation_thin: "细线优势",
+            explanation_thin_desc: "细主线风阻水阻更小，抛投更远。利用粗前导承受抛投力量。",
+            explanation_shock: "前导线计算",
+            explanation_shock_desc: "必须使用，以吸收抛投瞬间的爆发力。"
+        }
+    }
+};

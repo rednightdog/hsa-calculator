@@ -1,0 +1,82 @@
+[
+    {
+        "brand": "Tsurinoya",
+        "model": "H4x4 PE",
+        "pe": 0.2,
+        "mm": 0.074,
+        "kgMin": 1.7,
+        "kgMax": 1.7,
+        "spoolLength": 150,
+        "sourceUrl": "https://tsurinoya.com",
+        "independentTest": {
+            "kg": 1.45,
+            "sourceUrl": "https://independent-test-lab.com/tsurinoya-h4",
+            "retrievedAt": "2025-12-01"
+        }
+    },
+    {
+        "brand": "Tsurinoya",
+        "model": "H4x4 PE",
+        "pe": 0.4,
+        "mm": 0.104,
+        "kgMin": 3.3,
+        "kgMax": 3.3,
+        "spoolLength": 150,
+        "sourceUrl": "https://tsurinoya.com"
+    },
+    {
+        "brand": "Unitika",
+        "model": "Silver Thread Trout",
+        "pe": 0.3,
+        "mm": 0.090,
+        "kgMin": 2.2,
+        "kgMax": 2.5,
+        "spoolLength": 150,
+        "sourceUrl": "https://unitika.com",
+        "independentTest": {
+            "kg": 2.1,
+            "sourceUrl": "https://line-tests.jp/unitika",
+            "retrievedAt": "2025-11-15"
+        }
+    },
+    {
+        "brand": "Momoi",
+        "model": "Diamond Braid",
+        "pe": 0.3,
+        "mm": 0.090,
+        "kgMin": 2.8,
+        "kgMax": 3.0,
+        "spoolLength": 150,
+        "sourceUrl": "https://momoifishing.jp",
+        "independentTest": {
+            "kg": 2.9,
+            "sourceUrl": "https://usa-fishing-lab.com/momoi",
+            "retrievedAt": "2026-01-10"
+        }
+    },
+    {
+        "brand": "Shimano",
+        "model": "Kairiki 8",
+        "pe": 0.6,
+        "mm": 0.13,
+        "kgMin": 5.8,
+        "kgMax": 5.8,
+        "spoolLength": 300,
+        "sourceUrl": "https://shimano.com",
+        "independentTest": {
+            "kg": 4.9,
+            "sourceUrl": "https://paulus-line-db.com",
+            "retrievedAt": "2025-10-20"
+        }
+    },
+    {
+        "brand": "Daiwa",
+        "model": "J-Braid Grand x8",
+        "pe": 0.6,
+        "mm": 0.06,
+        "kgMin": 4.0,
+        "kgMax": 4.0,
+        "spoolLength": 150,
+        "sourceUrl": "https://daiwa.com"
+    }
+]

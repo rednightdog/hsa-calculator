@@ -1,112 +1,121 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Link from 'next/link';
+import { ArrowRight, Database, Fish, Anchor, Book } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
+import LanguageSelector from '@/components/ui/LanguageSelector';
+
+export default function Dashboard() {
+  const { t } = useLanguage();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="min-h-screen bg-[#0f172a] text-slate-300 font-sans selection:bg-blue-500/30 flex items-center justify-center relative overflow-hidden">
+
+      {/* Background Ambience */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 to-[#0f172a]" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
+
+      <LanguageSelector />
+
+      <div className="container mx-auto px-4 relative z-10 py-20">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+            {t('home.title')}
+          </h1>
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+            {t('home.subtitle')}
+          </p>
         </div>
-      </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {/* HSA Card */}
+          <Link href="/hsa" className="group relative bg-slate-900/50 border border-slate-800 rounded-3xl p-8 hover:border-cyan-500/50 transition-all hover:bg-slate-900/80">
+            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+              <Anchor className="w-32 h-32 text-cyan-500 rotate-12" />
+            </div>
+            <div className="relative z-10">
+              <div className="w-12 h-12 bg-cyan-900/30 rounded-2xl flex items-center justify-center mb-6 text-cyan-400 group-hover:scale-110 transition-transform">
+                <Fish className="w-6 h-6" />
+              </div>
+              <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">HSA (LRF)</h2>
+              <p className="text-slate-400 mb-6">{t('home.hsa_desc')}</p>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+              <div className="flex items-center text-sm font-semibold text-cyan-500">
+                {t('common.calculate')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </Link>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          {/* Spin Card */}
+          <Link href="/spin" className="group relative bg-slate-900/50 border border-slate-800 rounded-3xl p-8 hover:border-purple-500/50 transition-all hover:bg-slate-900/80">
+            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+              <Fish className="w-32 h-32 text-purple-500 -rotate-12" />
+            </div>
+            <div className="relative z-10">
+              <div className="w-12 h-12 bg-purple-900/30 rounded-2xl flex items-center justify-center mb-6 text-purple-400 group-hover:scale-110 transition-transform">
+                <Anchor className="w-6 h-6" />
+              </div>
+              <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Spin</h2>
+              <p className="text-slate-400 mb-6">{t('home.spin_desc')}</p>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+              <div className="flex items-center text-sm font-semibold text-purple-500">
+                {t('common.calculate')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </Link>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          {/* Surf Card */}
+          <Link href="/surf" className="group relative bg-slate-900/50 border border-slate-800 rounded-3xl p-8 hover:border-orange-500/50 transition-all hover:bg-slate-900/80">
+            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+              <Anchor className="w-32 h-32 text-orange-500 rotate-12" />
+            </div>
+            <div className="relative z-10">
+              <div className="w-12 h-12 bg-orange-900/30 rounded-2xl flex items-center justify-center mb-6 text-orange-400 group-hover:scale-110 transition-transform">
+                <Fish className="w-6 h-6" />
+              </div>
+              <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">Surf Casting</h2>
+              <p className="text-slate-400 mb-6">{t('home.surf_desc')}</p>
+
+              <div className="flex items-center text-sm font-semibold text-orange-500">
+                {t('common.calculate')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* Database Link */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/database"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 border border-slate-800 hover:border-slate-600 text-slate-400 hover:text-white transition-all"
+          >
+            <Database className="w-4 h-4" />
+            <span className="font-medium">{t('home.db_link')}</span>
+          </Link>
+        </div>
+
+        {/* Knowledge Base Link */}
+        <div className="max-w-6xl mx-auto mt-12 px-4 md:px-0">
+          <Link href="/guide" className="block w-full bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700 p-8 rounded-3xl hover:border-emerald-500/50 transition-all group relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+              <Book className="w-64 h-64 text-emerald-500 -rotate-12 translate-x-20 -translate-y-20" />
+            </div>
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="text-center md:text-left">
+                <h2 className="text-2xl font-bold text-white mb-2 flex items-center justify-center md:justify-start gap-3">
+                  <Book className="w-6 h-6 text-emerald-500" /> {t('home.guide_title')}
+                </h2>
+                <p className="text-slate-400 max-w-xl">
+                  {t('home.guide_desc')}
+                </p>
+              </div>
+              <div className="flex items-center px-6 py-3 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-bold border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-white transition-all whitespace-nowrap">
+                {t('home.guide_btn')} <ArrowRight className="w-4 h-4 ml-2" />
+              </div>
+            </div>
+          </Link>
+        </div>
+
       </div>
     </main>
   );
