@@ -1256,5 +1256,113 @@ export const reels: ReelModel[] = [
         techs: ['corrosion_resistant'], // Generic
         description: { tr: 'Hafif surf balıkçılığı için kompakt gövde.', en: 'Compact body for light surf.', jp: 'ライトサーフ用コンパクトボディ。', it: 'Corpo compatto per surf leggero.', fr: 'Corps compact pour surf léger.', cn: '轻型远投紧凑机身。' },
         link: 'https://www.amazon.com.tr/s?k=Okuma+Rockaway'
+    },
+    // --- PENN ---
+    {
+        id: 'penn_spinfisher',
+        name: 'Penn Spinfisher VII',
+        brand: 'Penn',
+        types: ['surf', 'spin'],
+        weight: 450,
+        priceRange: 'value',
+        techs: ['ht_100', 'ipx6'], // Assuming techs added or generic
+        description: { tr: 'Tuzlu suyun tankı. Tamamen su geçirmez IPX6 gövde.', en: 'Tank of the saltwater. Fully sealed IPX6 body.', jp: '海水の戦車。', it: 'Carro armato dell\'acqua salata.', fr: 'Char de l\'eau salée.', cn: '盐水坦克。' },
+        link: 'https://www.amazon.com.tr/s?k=Penn+Spinfisher+VII'
+    },
+    // --- ABU GARCIA ---
+    {
+        id: 'abu_revo_rocket',
+        name: 'Abu Garcia Revo Rocket',
+        brand: 'Abu Garcia',
+        types: ['spin'],
+        weight: 215,
+        priceRange: 'premium',
+        techs: ['rocket_line_management'],
+        description: { tr: 'Dünyanın en hızlı spin makinesi. İnanılmaz devir hızı.', en: 'Fastest spin reel in the world.', jp: '世界最速のスピニングリール。', it: 'Il mulinello più veloce al mondo.', fr: 'Moulinet le plus rapide du monde.', cn: '世界上最快的纺车轮。' },
+        link: 'https://www.amazon.com.tr/s?k=Abu+Garcia+Revo+Rocket'
+    },
+    // --- RYOBI ---
+    {
+        id: 'ryobi_tt_power',
+        name: 'Ryobi TT Power',
+        brand: 'Ryobi',
+        types: ['surf', 'spin'],
+        weight: 350,
+        priceRange: 'budget',
+        techs: ['ncrt'],
+        description: { tr: 'Fiyat/Performans efsanesi. Türkiye\'de çok sevilen güç makinesi.', en: 'Price/Performance legend.', jp: 'コストパフォーマンスの伝説。', it: 'Leggenda del rapporto qualità-prezzo.', fr: 'Légende du rapport qualité-prix.', cn: '性价比传奇。' },
+        link: 'https://www.amazon.com.tr/s?k=Ryobi+TT+Power'
+    },
+    // --- SAVAGE GEAR ---
+    {
+        id: 'savage_sg8',
+        name: 'Savage Gear SG8',
+        brand: 'Savage Gear',
+        types: ['lrf', 'spin'],
+        weight: 195,
+        priceRange: 'value',
+        techs: ['friction_control'],
+        description: { tr: 'İskandinav tasarımı. Sürtünme kontrollü özel karbon kalama.', en: 'Scandinavian design. Friction control drag.', jp: '北欧デザイン。', it: 'Design scandinavo.', fr: 'Design scandinave.', cn: '斯堪的纳维亚设计。' },
+        link: 'https://www.amazon.com.tr/s?k=Savage+Gear+SG8'
+    },
+    // --- DAM ---
+    {
+        id: 'dam_quick',
+        name: 'DAM Quick 7',
+        brand: 'DAM',
+        types: ['spin'],
+        weight: 250,
+        priceRange: 'value',
+        techs: [],
+        description: { tr: 'Alman mühendisliği klasiği. Yüksek tork.', en: 'German engineering classic.', jp: 'ドイツ工学の古典。', it: 'Classico dell\'ingegneria tedesca.', fr: 'Classique de l\'ingénierie allemande.', cn: '德国工程经典。' },
+        link: 'https://www.amazon.com.tr/s?k=DAM+Quick+7'
+    },
+    // --- MITCHELL ---
+    {
+        id: 'mitchell_mx9',
+        name: 'Mitchell MX9',
+        brand: 'Mitchell',
+        types: ['lrf', 'spin'],
+        weight: 180,
+        priceRange: 'premium',
+        techs: [],
+        description: { tr: 'Magnezyum gövde ile tüy kadar hafif Fransız efsanesi.', en: 'Feather light French legend with magnesium body.', jp: 'フランスの伝説。', it: 'Leggenda francese.', fr: 'Légende française.', cn: '法国传奇。' },
+        link: 'https://www.amazon.com.tr/s?k=Mitchell+MX9'
+    },
+    // --- KASTKING ---
+    {
+        id: 'kastking_sharky',
+        name: 'KastKing Sharky III',
+        brand: 'KastKing',
+        types: ['spin', 'lrf'],
+        weight: 260,
+        priceRange: 'budget',
+        techs: [],
+        description: { tr: 'Amazon\'un en çok satan F/P ürünü.', en: 'Amazon best seller budget reel.', jp: 'Amazonのベストセラー。', it: 'Best seller Amazon.', fr: 'Best-seller Amazon.', cn: '亚马逊畅销预算轮。' },
+        link: 'https://www.amazon.com.tr/s?k=KastKing+Sharky+III'
+    },
+    // --- TSURINOYA ---
+    {
+        id: 'tsurinoya_jaguar',
+        name: 'Tsurinoya Jaguar',
+        brand: 'Tsurinoya',
+        types: ['lrf'],
+        weight: 185,
+        priceRange: 'value',
+        techs: [],
+        description: { tr: 'LRF ustalarının gizli silahı. Çift kafa ile gelir.', en: 'Secret weapon of LRF masters. Comes with dual spools.', jp: 'LRFマスターの秘密兵器。', it: 'Arma segreta dei maestri LRF.', fr: 'Arme secrète des maîtres LRF.', cn: 'LRF大师的秘密武器。' },
+        link: 'https://www.amazon.com.tr/s?k=Tsurinoya+Jaguar'
+    },
+    // --- SEAKNIGHT ---
+    {
+        id: 'seaknight_rapid',
+        name: 'Seaknight Rapid',
+        brand: 'Seaknight',
+        types: ['lrf', 'spin'],
+        weight: 240,
+        priceRange: 'budget',
+        techs: [],
+        description: { tr: 'Korozyon önleyici rulmanları ile ideal başlangıç makinesi.', en: 'Ideal starter reel with anti-corrosion bearings.', jp: '理想的なエントリーリール。', it: 'Mulinello ideale per principianti.', fr: 'Moulinet idéal pour débutants.', cn: '理想的入门轮。' },
+        link: 'https://www.amazon.com.tr/s?k=Seaknight+Rapid'
     }
 ];

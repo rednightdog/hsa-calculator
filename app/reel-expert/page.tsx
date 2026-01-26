@@ -237,7 +237,7 @@ export default function ReelExpertPage() {
                             <h3 className="text-white font-semibold mb-3 flex items-center gap-2 text-sm uppercase tracking-wider">
                                 {t.brand}
                             </h3>
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 overflow-x-auto pb-2 snap-x hide-scrollbar">
                                 {(['All', 'Shimano', 'Daiwa', 'Okuma'] as const).map(brand => (
                                     <button
                                         key={brand}
