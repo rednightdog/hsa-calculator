@@ -4,30 +4,36 @@ import Link from 'next/link';
 import { ArrowRight, Database, Fish, Anchor, Book } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import LanguageSelector from '@/components/ui/LanguageSelector';
+import InstallPrompt from '@/components/ui/InstallPrompt';
 
 export default function Dashboard() {
   const { t } = useLanguage();
 
   return (
-    <main className="min-h-screen bg-[#0f172a] text-slate-300 font-sans selection:bg-blue-500/30 flex items-center justify-center relative overflow-hidden">
+    <main className="min-h-screen bg-[#0f172a] text-slate-300 font-sans selection:bg-blue-500/30 flex flex-col relative overflow-hidden">
 
       {/* Background Ambience */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 to-[#0f172a]" />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
 
+      <InstallPrompt />
       <LanguageSelector />
 
-      <div className="container mx-auto px-4 relative z-10 py-20">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+      <div className="container mx-auto px-4 relative z-10 py-12 md:py-20 flex-grow flex flex-col justify-center">
+
+        <div className="text-center mb-12 md:mb-16 mt-12 md:mt-0">
+          <div className="inline-block p-4 rounded-full bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 mb-6 shadow-2xl shadow-cyan-900/20 animate-in fade-in zoom-in duration-700">
+            <Fish className="w-12 h-12 text-cyan-400" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight drop-shadow-lg">
             {t('home.title')}
           </h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
             {t('home.subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto w-full">
           {/* HSA Card */}
           <Link href="/hsa" className="group relative bg-slate-900/50 border border-slate-800 rounded-3xl p-8 hover:border-cyan-500/50 transition-all hover:bg-slate-900/80">
             <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -95,7 +101,7 @@ export default function Dashboard() {
         </div>
 
         {/* Knowledge Base Link */}
-        <div className="max-w-6xl mx-auto mt-12 px-4 md:px-0">
+        <div className="max-w-6xl mx-auto mt-12 w-full">
           <Link href="/guide" className="block w-full bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700 p-8 rounded-3xl hover:border-emerald-500/50 transition-all group relative overflow-hidden">
             <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
               <Book className="w-64 h-64 text-emerald-500 -rotate-12 translate-x-20 -translate-y-20" />
