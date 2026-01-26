@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Download, X, Share } from 'lucide-react';
+import { Download, X, Share, SquareArrowUp } from 'lucide-react';
 
 export default function InstallPrompt() {
     const [isIOS, setIsIOS] = useState(false);
@@ -32,13 +32,13 @@ export default function InstallPrompt() {
                     <Download className="w-6 h-6 text-cyan-400" />
                 </div>
                 <div>
-                    <h4 className="font-bold text-white text-sm mb-1">Uygulamayı Yükle</h4>
-                    <p className="text-xs text-slate-400 mb-2">Daha hızlı erişim için ana ekrana ekleyin.</p>
+                    <h4 className="font-bold text-white text-sm mb-1">Uygulamayı Yükle (iOS)</h4>
+                    <p className="text-xs text-slate-400 mb-2">En iyi deneyim için <strong>Safari</strong> kullanın.</p>
                     <div className="flex items-center gap-2 text-xs text-cyan-400 font-medium">
-                        1. <Share className="w-3 h-3" /> &quot;Paylaş&quot; butonuna bas
+                        1. <SquareArrowUp className="w-3 h-3" /> &quot;Paylaş&quot; butonuna basın
                     </div>
                     <div className="flex items-center gap-2 text-xs text-cyan-400 font-medium mt-1">
-                        2. &quot;Ana Ekrana Ekle&quot; seç
+                        2. Menüden &quot;Ana Ekrana Ekle&quot; seçin
                     </div>
                 </div>
             </div>
