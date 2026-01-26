@@ -1,11 +1,12 @@
-export type LanguageCode = 'tr' | 'en' | 'it' | 'fr' | 'cn';
+export type LanguageCode = 'tr' | 'en' | 'it' | 'fr' | 'cn' | 'jp';
 
 export const dictionary: Record<LanguageCode, string> = {
     tr: 'Türkçe',
     en: 'English',
     it: 'Italiano',
     fr: 'Français',
-    cn: '中文'
+    cn: '中文',
+    jp: '日本語'
 };
 
 export const translations: Record<LanguageCode, any> = {
@@ -357,6 +358,74 @@ export const translations: Record<LanguageCode, any> = {
             explanation_thin_desc: "细主线风阻水阻更小，抛投更远。利用粗前导承受抛投力量。",
             explanation_shock: "前导线计算",
             explanation_shock_desc: "必须使用，以吸收抛投瞬间的爆发力。"
+        }
+    },
+    jp: {
+        common: {
+            calculate: "計算する",
+            home: "ホーム",
+            guide: "ガイド & 用語集",
+            weight: "重量",
+            target: "ターゲット",
+            depth: "水深",
+            optional: "オプション",
+            recommended: "推奨",
+            drag: "ドラグ設定",
+            diameter: "直径",
+            breakStrength: "破断強度",
+            units: { weight: "g", largeWeight: "kg", length: "m", force: "kg" }
+        },
+        home: {
+            title: "Fishing Gear Guru",
+            subtitle: "釣り方を選んで、科学的データに基づきタックルを最適化。",
+            hsa_desc: "ライトゲーム (LRF)。0.5g - 10g の繊細なタックル向け。",
+            spin_desc: "シーバス & 青物。10g - 60g のパワータックル向け。",
+            surf_desc: "サーフキャスティング。100g - 250g の遠投タックル向け。",
+            db_link: "PEライン データベース",
+            guide_title: "釣り人向けガイド & 用語集",
+            guide_desc: "ドラグとは？PEの意味は？潮の読み方は？包括的な知識ベースをチェック。",
+            guide_btn: "ガイドを見る"
+        },
+        hsa: {
+            title: "ライトゲーム計算機 (LRF)",
+            subtitle: "アジング・メバリング用",
+            lure_weight: "ルアー重量",
+            target_fish: "ターゲット魚種",
+            fish_horse_mackerel: "アジ (ウルトラライト)",
+            fish_general: "メバル/カサゴ (ライト)",
+            warning_trophy: "大型魚狙いのためタックルを強化。",
+            ideal_pe: "理想的なPE号数",
+            explanation_line: "ライン選択",
+            explanation_line_desc: "耐摩耗性なら4本編み、超感度ならエステルライン。",
+            explanation_leader: "リーダーの使用",
+            explanation_leader_desc: "魚に見切られないため、フロロカーボンリーダーが必須です。"
+        },
+        spin: {
+            title: "スピニング計算機",
+            subtitle: "シーバス・青物・フラットフィッシュ",
+            lure_weight: "ルアー重量",
+            target_fish: "ターゲット魚種",
+            fish_seabass: "シーバス (フィネス)",
+            fish_bluefish: "青物 (牙物)",
+            explanation_braid: "PEライン (8本編み vs 4本編み)",
+            explanation_braid_desc: "飛距離なら8本編み。磯場での耐摩耗性なら4本編み。",
+            explanation_rod: "ロッド長",
+            explanation_rod_desc: "8.6ft - 9.6ft が汎用性が高いです。",
+            explanation_tooth: "鋭い歯に注意",
+            explanation_tooth_desc: "牙のある魚にはワイヤーリーダーか太いフロロを使用。"
+        },
+        surf: {
+            title: "サーフキャスティング計算機",
+            subtitle: "遠投 & 投げ釣り",
+            lead_weight: "オモリ重量",
+            target_fish: "ターゲット",
+            fish_bluefish: "青物 / 回遊魚",
+            fish_bream: "クロダイ / 底物",
+            shock_leader: "力糸 (ショックリーダー)",
+            explanation_thin: "細糸のメリット",
+            explanation_thin_desc: "細いラインは風や潮の影響を受けにくく、飛距離が出ます。負荷は力糸で受け止めます。",
+            explanation_shock: "力糸の計算",
+            explanation_shock_desc: "キャスト時の衝撃を吸収するために必須です。"
         }
     }
 };

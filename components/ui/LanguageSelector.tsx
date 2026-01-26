@@ -12,6 +12,7 @@ export default function LanguageSelector() {
         { code: 'fr', label: 'FR', flag: '🇫🇷' },
         { code: 'it', label: 'IT', flag: '🇮🇹' },
         { code: 'cn', label: 'CN', flag: '🇨🇳' },
+        { code: 'jp', label: 'JP', flag: '🇯🇵' },
     ];
 
     return (
