@@ -238,11 +238,11 @@ export default function ReelExpertPage() {
                                 {t.brand}
                             </h3>
                             <div className="flex gap-2 overflow-x-auto pb-2 snap-x hide-scrollbar">
-                                {(['All', 'Shimano', 'Daiwa', 'Okuma'] as const).map(brand => (
+                                {(['All', ...Object.keys(manufacturers)] as const).map(brand => (
                                     <button
                                         key={brand}
-                                        onClick={() => setSelectedBrand(brand)}
-                                        className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${selectedBrand === brand
+                                        onClick={() => setSelectedBrand(brand as Brand | 'All')}
+                                        className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all whitespace-nowrap snap-center ${selectedBrand === brand
                                             ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-500/20'
                                             : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
                                             }`}
