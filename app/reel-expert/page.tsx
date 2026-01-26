@@ -408,11 +408,18 @@ export default function ReelExpertPage() {
                                             <span className="flex items-center gap-1 font-medium text-white">
                                                 <Scale className="w-4 h-4 text-cyan-500" /> {reel.weight}g
                                             </span>
-                                            <span className={`font-bold tracking-wide px-2 py-0.5 rounded ${reel.priceRange === 'premium' ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20' :
+                                            <span className={`font-bold tracking-wide px-2 py-0.5 rounded flex gap-0.5 ${reel.priceRange === 'premium' ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20' :
                                                 reel.priceRange === 'value' ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' :
                                                     'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
                                                 }`}>
-                                                {reel.price}
+                                                {[...Array(3)].map((_, i) => {
+                                                    const level = reel.priceRange === 'budget' ? 1
+                                                        : reel.priceRange === 'value' ? 2
+                                                            : 3;
+                                                    return (
+                                                        <span key={i} className={i < level ? 'opacity-100' : 'opacity-30'}>$</span>
+                                                    );
+                                                })}
                                             </span>
                                         </div>
 

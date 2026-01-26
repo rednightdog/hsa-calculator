@@ -168,7 +168,7 @@ export interface ReelModel {
     types: ReelType[];
     weight: number; // grams
     priceRange: 'budget' | 'value' | 'premium';
-    price: string;
+    // price property removed
     // image property removed
     techs: string[];
     description: Record<LanguageCode, string>;
@@ -961,7 +961,7 @@ export const reels: ReelModel[] = [
         types: ['lrf', 'spin'],
         weight: 210,
         priceRange: 'premium',
-        price: '25.000 - 35.000 ₺',
+
         techs: ['hagane_body', 'hagane_gear', 'micromodule_ii', 'infinity_loop', 'infinity_drive', 'anti_twist_fin', 'duracross', 'rigid_support_drag'],
         description: { tr: 'Japon mühendisliğinin zirvesi ve sonsuz pürüzsüzlük.', en: 'The pinnacle of Japanese engineering.', jp: '日本工学の頂点。', it: 'L\'apice dell\'ingegneria giapponese.', fr: 'Le summum de l\'ingénierie japonaise.', cn: '日本工程的巅峰。' },
         link: 'https://www.amazon.com.tr/s?k=Shimano+Stella+FK'
@@ -973,7 +973,6 @@ export const reels: ReelModel[] = [
         types: ['lrf', 'spin'],
         weight: 170, // Ultra light
         priceRange: 'premium',
-        price: '22.000 - 28.000 ₺',
         techs: ['hagane_body', 'micromodule_ii', 'infinity_drive', 'x_protect', 'anti_twist_fin'],
         description: { tr: 'Hafifliğin ötesi. Hızlı tepki veren MGL rotor.', en: 'Beyond lightness. Quick response MGL rotor.', jp: '軽さのその先へ。', it: 'Oltre la leggerezza.', fr: 'Au-delà de la légèreté.', cn: '超越轻盈。' },
         link: 'https://www.amazon.com.tr/s?k=Shimano+Vanquish+FC'
@@ -985,7 +984,6 @@ export const reels: ReelModel[] = [
         types: ['spin'],
         weight: 215,
         priceRange: 'premium',
-        price: '18.000 - 24.000 ₺',
         techs: ['hagane_body', 'hagane_gear', 'infinity_loop', 'infinity_drive', 'duracross'],
         description: { tr: 'Sarsılmaz sağlamlık. Stella teknolojilerine sahip güç makinesi.', en: 'Unshakable solidity. Power reel with Stella techs.', jp: '揺るぎない堅牢性。', it: 'Solidità incrollabile.', fr: 'Solidité inébranlable.', cn: '不可动摇的坚固。' },
         link: 'https://www.amazon.com.tr/s?k=Shimano+TwinPower+FE'
@@ -997,7 +995,6 @@ export const reels: ReelModel[] = [
         types: ['spin', 'surf'],
         weight: 225,
         priceRange: 'value',
-        price: '7.000 - 9.000 ₺',
         techs: ['hagane_body', 'hagane_gear', 'micromodule_ii', 'x_protect', 'anti_twist_fin'],
         description: { tr: 'Spin balıkçılığının standardı. F/P kralı.', en: 'The standard of spin fishing.', jp: 'スピニングの基準。', it: 'Lo standard dello spinning.', fr: 'La référence du spinning.', cn: '纺车轮的标准。' },
         link: 'https://www.amazon.com.tr/s?k=Shimano+Stradic+FM'
@@ -1009,7 +1006,6 @@ export const reels: ReelModel[] = [
         types: ['lrf', 'spin'],
         weight: 180,
         priceRange: 'value',
-        price: '8.000 - 10.000 ₺',
         techs: ['hagane_gear', 'micromodule_ii', 'x_protect', 'silent_drive'],
         description: { tr: 'Hassasiyet için süper hafif Ci4+ gövde.', en: 'Super light Ci4+ body for sensitivity.', jp: '感度のためのCi4+ボディ。', it: 'Corpo Ci4+ super leggero.', fr: 'Corps Ci4+ super leggero.', cn: '超轻Ci4+机身。' },
         link: 'https://www.amazon.com.tr/s?k=Shimano+Vanford'
@@ -1021,7 +1017,6 @@ export const reels: ReelModel[] = [
         types: ['lrf', 'spin'],
         weight: 205,
         priceRange: 'budget',
-        price: '4.500 - 6.000 ₺',
         techs: ['hagane_gear', 'silent_drive', 'x_protect'],
         description: { tr: 'Ci4+ gövdeye sahip en ulaşılabilir hafif makine.', en: 'Most accessible light reel with Ci4+ body.', jp: '最も手頃なCi4+リール。', it: 'Mulinello leggero più accessibile.', fr: 'Moulinet léger le plus accessible.', cn: '最亲民的轻量轮。' },
         link: 'https://www.amazon.com.tr/s?k=Shimano+Miravel'
@@ -1033,7 +1028,6 @@ export const reels: ReelModel[] = [
         types: ['spin', 'lrf'],
         weight: 245,
         priceRange: 'budget',
-        price: '2.500 - 3.500 ₺',
         techs: ['hagane_gear', 'silent_drive'],
         description: { tr: 'Hagane dişli teknolojisine sahip en uygun fiyatlı model.', en: 'Most affordable model with Hagane Gear.', jp: 'Haganeギア搭載の最安モデル。', it: 'Modello più economico con Hagane Gear.', fr: 'Modèle le plus abordable avec Hagane Gear.', cn: '拥有Hagane齿轮的最实惠型号。' },
         link: 'https://www.amazon.com.tr/s?k=Shimano+Sedona+FJ'
@@ -1045,7 +1039,6 @@ export const reels: ReelModel[] = [
         types: ['surf'],
         weight: 600,
         priceRange: 'value',
-        price: '6.000 - 8.000 ₺',
         techs: ['hagane_gear', 'infinity_drive', 'rigid_support_drag', 'silent_drive'],
         description: { tr: 'Surf casting efsanesi. Uzak atış rekorları için.', en: 'Surf casting legend. For long distance records.', jp: 'サーフキャスティングの伝説。', it: 'Leggenda del surf casting.', fr: 'Légende du surf casting.', cn: '远投传奇。' },
         link: 'https://www.amazon.com.tr/s?k=Shimano+Ultegra+XTE'
@@ -1057,7 +1050,6 @@ export const reels: ReelModel[] = [
         types: ['surf'],
         weight: 490,
         priceRange: 'premium',
-        price: '20.000 - 25.000 ₺',
         techs: ['hagane_body', 'hagane_gear', 'x_protect', 'rigid_support_drag'],
         description: { tr: 'Hafif ve güçlü surf makinesi. Japon pazarı (JDM) favorisi.', en: 'Light and strong surf reel. JDM favorite.', jp: '軽くて強いサーフリール。', it: 'Mulinello da surf leggero e forte.', fr: 'Moulinet surf léger et fort.', cn: '轻量強力的远投轮。' },
         link: 'https://www.amazon.com.tr/s?k=Shimano+Fliegen+SD'
@@ -1071,7 +1063,6 @@ export const reels: ReelModel[] = [
         types: ['lrf', 'spin'],
         weight: 160,
         priceRange: 'premium',
-        price: '35.000 - 50.000 ₺',
         techs: ['airdrive_design', 'monocoque', 'magsealed', 'atd_type_l', 'twist_buster_iii'],
         description: { tr: 'Geleceğin teknolojisi. Airdrive ile ağırlıksızlık hissi.', en: 'Future technology. Weightlessness with Airdrive.', jp: '未来のテクノロジー。エアドライブによる無重力感。', it: 'Tecnologia del futuro.', fr: 'Technologie du futur.', cn: '未来科技。' },
         link: 'https://www.amazon.com.tr/s?k=Daiwa+Exist+LT'
@@ -1083,7 +1074,6 @@ export const reels: ReelModel[] = [
         types: ['lrf', 'spin'],
         weight: 145,
         priceRange: 'premium',
-        price: '20.000 - 28.000 ₺',
         techs: ['airdrive_design', 'monocoque', 'atd_type_l', 'twist_buster_iii'],
         description: { tr: 'Hafifliğin yeni tanımı. Magnezyum MQ gövde.', en: 'The new definition of lightness. Magnesium MQ body.', jp: '軽さの革命。', it: 'La nuova definizione di leggerezza.', fr: 'La nouvelle définition de la légèreté.', cn: '轻量的新定义。' },
         link: 'https://www.amazon.com.tr/s?k=Daiwa+Airity+LT'
@@ -1095,7 +1085,6 @@ export const reels: ReelModel[] = [
         types: ['spin'],
         weight: 205,
         priceRange: 'premium',
-        price: '16.000 - 20.000 ₺',
         techs: ['monocoque', 'magsealed', 'atd_type_l'],
         description: { tr: 'Güç ve dayanıklılık sembolü. Alüminyum yekpare gövde.', en: 'Symbol of strength and durability.', jp: '強さと耐久性の象徴。', it: 'Simbolo di forza e durata.', fr: 'Symbole de force et de durabilité.', cn: '力量与耐用的象征。' },
         link: 'https://www.amazon.com.tr/s?k=Daiwa+Certate+LT'
@@ -1107,7 +1096,6 @@ export const reels: ReelModel[] = [
         types: ['lrf', 'spin'],
         weight: 150,
         priceRange: 'value',
-        price: '10.000 - 13.000 ₺',
         techs: ['monocoque', 'magsealed', 'atd'],
         description: { tr: 'Zaion monokok gövde ile tüy kadar hafif.', en: 'Feather light with Zaion MQ body.', jp: 'ザイオンモノコックボディで羽のように軽い。', it: 'Leggero come una piuma.', fr: 'Léger comme une plume.', cn: '如羽毛般轻盈。' },
         link: 'https://www.amazon.com.tr/s?k=Daiwa+Luvias+LT'
@@ -1119,7 +1107,6 @@ export const reels: ReelModel[] = [
         types: ['lrf', 'spin'],
         weight: 195,
         priceRange: 'value',
-        price: '6.000 - 8.000 ₺',
         techs: ['monocoque', 'magsealed', 'zaion'],
         description: { tr: 'MQ teknolojisinin en ulaşılabilir hali.', en: 'Most accessible MQ tech.', jp: '最も身近なMQ技術。', it: 'Tecnologia MQ più accessibile.', fr: 'Tech MQ la plus accessible.', cn: '最亲民的MQ技术。' },
         link: 'https://www.amazon.com.tr/s?k=Daiwa+Caldia+MQ'
@@ -1131,7 +1118,6 @@ export const reels: ReelModel[] = [
         types: ['spin', 'lrf'],
         weight: 205,
         priceRange: 'budget',
-        price: '3.500 - 5.000 ₺',
         techs: ['magsealed', 'atd', 'zaion'], // Zaion V body
         description: { tr: 'Magsealed korumasına sahip en popüler bütçe dostu makine.', en: 'Most popular budget reel with Magsealed.', jp: 'マグシールド搭載の人気エントリーモデル。', it: 'Mulinello economico più popolare con Magsealed.', fr: 'Moulinet économique le plus populaire avec Magsealed.', cn: '拥有磁油保护的最受欢迎预算轮。' },
         link: 'https://www.amazon.com.tr/s?k=Daiwa+Fuego+LT'
@@ -1143,7 +1129,6 @@ export const reels: ReelModel[] = [
         types: ['spin', 'lrf'],
         weight: 210,
         priceRange: 'budget',
-        price: '2.500 - 3.500 ₺',
         techs: ['atd', 'zaion'], // Zaion V
         description: { tr: 'Fiyatına göre inanılmaz hafiflik ve performans (Zaion V gövde).', en: 'Incredible lightness and performance for the price.', jp: '価格以上の軽さと性能。', it: 'Leggerezza e prestazioni incredibili per il prezzo.', fr: 'Légèreté et performance incroyables pour le prix.', cn: '性价比极高的轻量和性能。' },
         link: 'https://www.amazon.com.tr/s?k=Daiwa+Legalis+LT'
@@ -1155,7 +1140,6 @@ export const reels: ReelModel[] = [
         types: ['spin', 'surf'],
         weight: 285, // Heavy
         priceRange: 'budget',
-        price: '4.000 - 5.500 ₺',
         techs: ['hardbodyz', 'atd', 'digigear'], // Adding common tech (will fallback to text if not in DB, but better to stick to DB keys if possible. I'll stick to generic descriptions or assume some basic matches)
         // Actually ID mismatch risk. Let's stick to known IDs or simple ones. "atd" is known.
         description: { tr: 'Efsanevi "Black Gold". Alüminyum gövde, yok edilemez dayanıklılık.', en: 'Legendary "Black Gold". Indestructible.', jp: '伝説のブラックゴールド。', it: 'Leggendario Black Gold.', fr: 'Légendaire Black Gold.', cn: '传奇的黑金。' },
@@ -1168,7 +1152,6 @@ export const reels: ReelModel[] = [
         types: ['surf'],
         weight: 520,
         priceRange: 'premium',
-        price: '25.000 - 35.000 ₺',
         techs: ['magsealed', 'zaion', 'monocoque'], // High end surf
         description: { tr: 'Surf dünyasının Rolls-Royce\'u. Magnezyum gövde.', en: 'The Rolls-Royce of surf fishing.', jp: 'サーフフィッシングのロールスロイス。', it: 'La Rolls-Royce del surf.', fr: 'La Rolls-Royce du surf.', cn: '远投界的劳斯莱斯。' },
         link: 'https://www.amazon.com.tr/s?k=Daiwa+Tournament+Basia'
@@ -1180,7 +1163,6 @@ export const reels: ReelModel[] = [
         types: ['surf'],
         weight: 610,
         priceRange: 'value',
-        price: '5.000 - 7.000 ₺',
         techs: ['digigear', 'atd'],
         description: { tr: '35mm veya 45mm kafa yapısıyla uzak atış canavarı.', en: 'Long distance beast with 35/45mm stroke.', jp: '遠投の野獣。', it: 'Bestia da lunga distanza.', fr: 'Bête de longue distance.', cn: '远投猛兽。' },
         link: 'https://www.amazon.com.tr/s?k=Daiwa+Crosscast'
@@ -1194,7 +1176,6 @@ export const reels: ReelModel[] = [
         types: ['surf', 'spin'], // Heavy
         weight: 600,
         priceRange: 'premium',
-        price: '25.000 - 30.000 ₺',
         techs: ['dfd', 'tca'],
         description: { tr: 'Dev orkinoslar için üretilmiş bir tank.', en: 'A tank built for giant tuna.', jp: '巨大マグロのための戦車。', it: 'Un carro armato per tonni giganti.', fr: 'Un char pour les thons géants.', cn: '为巨型金枪鱼制造的坦克。' },
         link: 'https://www.amazon.com.tr/s?k=Okuma+Makaira'
@@ -1206,7 +1187,6 @@ export const reels: ReelModel[] = [
         types: ['spin', 'surf'],
         weight: 400,
         priceRange: 'value',
-        price: '10.000 - 12.000 ₺',
         techs: ['dfd', 'tca', 'litecast'],
         description: { tr: 'Tuzlu suyun yeni hakimi. Tamamen su geçirmez gövde.', en: 'New ruler of saltwater. Waterproof body.', jp: 'ソルトウォーターの支配者。', it: 'Nuovo sovrano dell\'acqua salata.', fr: 'Nouveau souverain de l\'eau salée.', cn: '咸水的新统治者。' },
         link: 'https://www.amazon.com.tr/s?k=Okuma+Tesoro'
@@ -1218,7 +1198,6 @@ export const reels: ReelModel[] = [
         types: ['spin', 'surf'],
         weight: 400,
         priceRange: 'value',
-        price: '6.000 - 8.000 ₺',
         techs: ['dfd', 'litecast'],
         description: { tr: 'Jigging ve ağır spin için özel tasarım. Mavi renkli güç.', en: 'Designed for jigging and heavy spin.', jp: 'ジギング専用設計。', it: 'Progettato per jigging.', fr: 'Conçu pour le jigging.', cn: '专为铁板钓设计。' },
         link: 'https://www.amazon.com.tr/s?k=Okuma+Cedros'
@@ -1230,7 +1209,6 @@ export const reels: ReelModel[] = [
         types: ['lrf', 'spin'],
         weight: 200,
         priceRange: 'value',
-        price: '4.500 - 5.500 ₺',
         techs: ['tca', 'flite_shaft'],
         description: { tr: 'C-40X karbon ile hafiflik ve güç.', en: 'Lightness and power with C-40X.', jp: 'C-40Xによる軽さと強さ。', it: 'Leggerezza e potenza.', fr: 'Légèreté et puissance.', cn: '轻量与强力。' },
         link: 'https://www.amazon.com.tr/s?k=Okuma+ITX+Carbon'
@@ -1242,7 +1220,6 @@ export const reels: ReelModel[] = [
         types: ['lrf', 'spin'],
         weight: 210,
         priceRange: 'value',
-        price: '3.500 - 4.500 ₺',
         techs: ['tca', 'flite_shaft'],
         description: { tr: 'TCA teknolojisinin öncüsü.', en: 'Pioneer of TCA tech.', jp: 'TCA技術のパイオニア。', it: 'Pioniere della tecnologia TCA.', fr: 'Pionnier de la technologie TCA.', cn: 'TCA技术的先驱。' },
         link: 'https://www.amazon.com.tr/s?k=Okuma+Inspira+ISX'
@@ -1254,7 +1231,6 @@ export const reels: ReelModel[] = [
         types: ['lrf', 'spin'],
         weight: 235,
         priceRange: 'budget',
-        price: '2.500 - 3.500 ₺',
         techs: ['hd_gear'],
         description: { tr: 'Yenilenen HD dişli ile pürüzsüz. Türkiye\'nin en çok satanı.', en: 'Smooth with HD gear. Best seller in TR.', jp: 'HDギアで滑らか。', it: 'Fluido con ingranaggio HD.', fr: 'Fluide avec engrenage HD.', cn: 'HD齿轮顺滑。' },
         link: 'https://www.amazon.com.tr/s?k=Okuma+Ceymar+HD'
@@ -1266,7 +1242,6 @@ export const reels: ReelModel[] = [
         types: ['lrf', 'spin'],
         weight: 220,
         priceRange: 'budget',
-        price: '1.000 - 1.500 ₺',
         techs: ['cfr'],
         description: { tr: 'Başlangıç için en ideal ve ekonomik seçenek.', en: 'Ideal and economic for beginners.', jp: '初心者に最適。', it: 'Ideale ed economico per principianti.', fr: 'Idéal et économique pour les débutants.', cn: '初学者的理想经济选择。' },
         link: 'https://www.amazon.com.tr/s?k=Okuma+Aria'
@@ -1278,7 +1253,6 @@ export const reels: ReelModel[] = [
         types: ['surf'],
         weight: 480,
         priceRange: 'budget',
-        price: '3.000 - 4.500 ₺',
         techs: ['corrosion_resistant'], // Generic
         description: { tr: 'Hafif surf balıkçılığı için kompakt gövde.', en: 'Compact body for light surf.', jp: 'ライトサーフ用コンパクトボディ。', it: 'Corpo compatto per surf leggero.', fr: 'Corps compact pour surf léger.', cn: '轻型远投紧凑机身。' },
         link: 'https://www.amazon.com.tr/s?k=Okuma+Rockaway'
