@@ -33,7 +33,7 @@ export const AFFILIATE_LINKS = {
     hsa: {
         braid: {
             budget: {
-                tr: { name: "Kendo 4x LRF (0.06mm)", url: "https://www.hepsiburada.com/ara?q=Kendo+4x+LRF+Braid", price: 250 },
+                tr: { name: "Kendo 4x LRF (0.06mm)", url: getAmzTrUrl("Kendo+4x+LRF+Braid"), price: 250 },
                 global: { name: "SeaKnight Monster 8x", url: "https://www.aliexpress.com/w/wholesale-SeaKnight-Monster-8x.html", price: 10 }
             },
             value: {
@@ -47,7 +47,7 @@ export const AFFILIATE_LINKS = {
         },
         rod: {
             budget: {
-                tr: { name: "Okuma Dead Ringer (1-8g)", url: "https://www.hepsiburada.com/ara?q=Okuma+Dead+Ringer+LRF", price: 1100 },
+                tr: { name: "Okuma Dead Ringer (1-8g)", url: getAmzTrUrl("Okuma+Dead+Ringer+LRF"), price: 1100 },
                 global: { name: "Ugly Stik Elite Spinning", url: "https://www.amazon.com/s?k=Ugly+Stik+Elite+Spinning", price: 60 }
             },
             value: {
@@ -55,13 +55,13 @@ export const AFFILIATE_LINKS = {
                 global: { name: "St. Croix Triumph", url: "https://www.amazon.com/s?k=St.+Croix+Triumph+Spinning", price: 110 }
             },
             premium: {
-                tr: { name: "Major Craft Crostage Aji", url: "https://www.hepsiburada.com/ara?q=Major+Craft+Crostage+Aji", price: 5500 },
+                tr: { name: "Major Craft Crostage Aji", url: getAmzTrUrl("Major+Craft+Crostage+Aji"), price: 5500 },
                 global: { name: "G.Loomis NRX+", url: "https://www.amazon.com/s?k=G.Loomis+NRX", price: 450 }
             }
         },
         reel: {
             budget: {
-                tr: { name: "Okuma Ceymar CXT 10", url: "https://www.hepsiburada.com/ara?q=Okuma+Ceymar+CXT+10", price: 1400 },
+                tr: { name: "Okuma Ceymar CXT 10", url: getAmzTrUrl("Okuma+Ceymar+CXT+10"), price: 1400 },
                 global: { name: "Shimano Sienna 1000", url: "https://www.amazon.com/s?k=Shimano+Sienna+1000", price: 35 }
             },
             value: {
@@ -75,7 +75,7 @@ export const AFFILIATE_LINKS = {
         },
         hook: {
             budget: {
-                tr: { name: "VMC 7239 Jighead", url: "https://www.hepsiburada.com/ara?q=VMC+Jighead", price: 100 },
+                tr: { name: "VMC 7239 Jighead", url: getAmzTrUrl("VMC+Jighead"), price: 100 },
                 global: { name: "Eagle Claw Jighead", url: "https://www.amazon.com/s?k=Eagle+Claw+Jighead", price: 5 }
             },
             value: {
@@ -91,7 +91,7 @@ export const AFFILIATE_LINKS = {
     spin: {
         braid: {
             budget: {
-                tr: { name: "Kendo 4x Spin", url: "https://www.hepsiburada.com/ara?q=Kendo+4x", price: 250 },
+                tr: { name: "Kendo 4x Spin", url: getAmzTrUrl("Kendo+4x+Spin"), price: 250 },
                 global: { name: "PowerPro Braid", url: "https://www.amazon.com/s?k=PowerPro+Braid", price: 15 }
             },
             value: {
@@ -99,13 +99,13 @@ export const AFFILIATE_LINKS = {
                 global: { name: "Daiwa J-Braid x8 Grand", url: "https://www.amazon.com/s?k=Daiwa+J-Braid+x8+Grand", price: 25 }
             },
             premium: {
-                tr: { name: "Shimano Kairiki 8", url: "https://www.hepsiburada.com/ara?q=Shimano+Kairiki+8", price: 850 },
+                tr: { name: "Shimano Kairiki 8", url: getAmzTrUrl("Shimano+Kairiki+8"), price: 850 },
                 global: { name: "Shimano Kairiki 8", url: "https://www.amazon.com/s?k=Shimano+Kairiki+8", price: 30 }
             }
         },
         rod: {
             budget: {
-                tr: { name: "Daiwa Legalis Spin", url: "https://www.hepsiburada.com/ara?q=Daiwa+Legalis+Spin+Rod", price: 1900 },
+                tr: { name: "Daiwa Legalis Spin", url: getAmzTrUrl("Daiwa+Legalis+Spin+Rod"), price: 1900 },
                 global: { name: "Ugly Stik GX2", url: "https://www.amazon.com/s?k=Ugly+Stik+GX2+Spinning", price: 50 }
             },
             value: {
@@ -119,7 +119,7 @@ export const AFFILIATE_LINKS = {
         },
         reel: {
             budget: {
-                tr: { name: "Daiwa Ninja LT 3000", url: "https://www.hepsiburada.com/ara?q=Daiwa+Ninja+LT", price: 2200 },
+                tr: { name: "Daiwa Ninja LT 3000", url: getAmzTrUrl("Daiwa+Ninja+LT"), price: 2200 },
                 global: { name: "Penn Pursuit IV", url: "https://www.amazon.com/s?k=Penn+Pursuit+IV", price: 55 }
             },
             value: {
@@ -149,7 +149,7 @@ export const AFFILIATE_LINKS = {
     surf: {
         braid: {
             budget: {
-                tr: { name: "Kendo Surf Braid", url: "https://www.hepsiburada.com/ara?q=Kendo+Surf+Braid", price: 300 },
+                tr: { name: "Kendo Surf Braid", url: getAmzTrUrl("Kendo+Surf+Braid"), price: 300 },
                 global: { name: "Berkley FireLine", url: "https://www.amazon.com/s?k=Berkley+FireLine", price: 20 }
             },
             value: {
@@ -157,13 +157,13 @@ export const AFFILIATE_LINKS = {
                 global: { name: "Sufix Tritanium", url: "https://www.amazon.com/s?k=Sufix+Tritanium", price: 35 }
             },
             premium: {
-                tr: { name: "Shimano Kairiki 8", url: "https://www.hepsiburada.com/ara?q=Shimano+Kairiki+8", price: 900 },
+                tr: { name: "Shimano Kairiki 8", url: getAmzTrUrl("Shimano+Kairiki+8"), price: 900 },
                 global: { name: "Daiwa Saltiga 12", url: "https://www.amazon.com/s?k=Daiwa+Saltiga+12+Braid", price: 80 }
             }
         },
         rod: {
             budget: {
-                tr: { name: "Lineaeffe Oyster", url: "https://www.hepsiburada.com/ara?q=Lineaeffe+Oyster+Surf", price: 2500 },
+                tr: { name: "Lineaeffe Oyster", url: getAmzTrUrl("Lineaeffe+Oyster+Surf"), price: 2500 },
                 global: { name: "Fiblink Surf Rod", url: "https://www.amazon.com/s?k=Fiblink+Surf+Rod", price: 80 }
             },
             value: {
@@ -177,7 +177,7 @@ export const AFFILIATE_LINKS = {
         },
         reel: {
             budget: {
-                tr: { name: "Okuma Custom Surf", url: "https://www.hepsiburada.com/ara?q=Okuma+Custom+Surf", price: 2800 },
+                tr: { name: "Okuma Custom Surf", url: getAmzTrUrl("Okuma+Custom+Surf"), price: 2800 },
                 global: { name: "Penn Fierce III", url: "https://www.amazon.com/s?k=Penn+Fierce+III", price: 90 }
             },
             value: {
@@ -191,7 +191,7 @@ export const AFFILIATE_LINKS = {
         },
         hook: {
             budget: {
-                tr: { name: "Mustad 496", url: "https://www.hepsiburada.com/ara?q=Mustad+496", price: 150 },
+                tr: { name: "Mustad 496", url: getAmzTrUrl("Mustad+496"), price: 150 },
                 global: { name: "Gamakatsu Octopus", url: "https://www.amazon.com/s?k=Gamakatsu+Octopus", price: 10 }
             },
             value: {
