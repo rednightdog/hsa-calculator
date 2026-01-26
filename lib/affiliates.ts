@@ -9,6 +9,15 @@
  * Price: Approximate price in local currency (TL for TR, USD for Global) for budget calculations.
  */
 
+// User's Amazon Associate Tag
+const AMZ_TR_TAG = "arasdemiray-21";
+
+// Helper to construct tagged Amazon TR URL
+const getAmzTrUrl = (query: string) => {
+    // query format expected: "Daiwa+J-Braid" (already URL encoded or with pluses)
+    return `https://www.amazon.com.tr/s?k=${query}&tag=${AMZ_TR_TAG}`;
+};
+
 interface ProductLink {
     name: string;
     url: string;
@@ -28,11 +37,11 @@ export const AFFILIATE_LINKS = {
                 global: { name: "SeaKnight Monster 8x", url: "https://www.aliexpress.com/w/wholesale-SeaKnight-Monster-8x.html", price: 10 }
             },
             value: {
-                tr: { name: "Daiwa J-Braid x8 (Chartreuse)", url: "https://www.amazon.com.tr/s?k=Daiwa+J-Braid+Grand+x8+Chartreuse", price: 650 },
+                tr: { name: "Daiwa J-Braid x8 (Chartreuse)", url: getAmzTrUrl("Daiwa+J-Braid+Grand+x8+Chartreuse"), price: 650 },
                 global: { name: "Daiwa J-Braid x8 Grand", url: "https://www.amazon.com/s?k=Daiwa+J-Braid+x8+Grand", price: 25 }
             },
             premium: {
-                tr: { name: "Varivas Avani Light Game", url: "https://www.amazon.com.tr/s?k=Varivas+Avani+Light+Game", price: 1200 },
+                tr: { name: "Varivas Avani Light Game", url: getAmzTrUrl("Varivas+Avani+Light+Game"), price: 1200 },
                 global: { name: "Varivas Avani Light Game", url: "https://www.amazon.co.jp/s?k=Varivas+Avani+Light+Game", price: 50 }
             }
         },
@@ -42,7 +51,7 @@ export const AFFILIATE_LINKS = {
                 global: { name: "Ugly Stik Elite Spinning", url: "https://www.amazon.com/s?k=Ugly+Stik+Elite+Spinning", price: 60 }
             },
             value: {
-                tr: { name: "Savage Gear SG2 LRF", url: "https://www.amazon.com.tr/s?k=Savage+Gear+LRF+Rod", price: 2800 },
+                tr: { name: "Savage Gear SG2 LRF", url: getAmzTrUrl("Savage+Gear+LRF+Rod"), price: 2800 },
                 global: { name: "St. Croix Triumph", url: "https://www.amazon.com/s?k=St.+Croix+Triumph+Spinning", price: 110 }
             },
             premium: {
@@ -56,11 +65,11 @@ export const AFFILIATE_LINKS = {
                 global: { name: "Shimano Sienna 1000", url: "https://www.amazon.com/s?k=Shimano+Sienna+1000", price: 35 }
             },
             value: {
-                tr: { name: "Daiwa Legalis LT 1000", url: "https://www.amazon.com.tr/s?k=Daiwa+Legalis+LT+1000", price: 2500 },
+                tr: { name: "Daiwa Legalis LT 1000", url: getAmzTrUrl("Daiwa+Legalis+LT+1000"), price: 2500 },
                 global: { name: "Daiwa Legalis LT 1000", url: "https://www.amazon.com/s?k=Daiwa+Legalis+LT+1000", price: 75 }
             },
             premium: {
-                tr: { name: "Shimano Soare XR", url: "https://www.amazon.com.tr/s?k=Shimano+Soare+XR", price: 9000 },
+                tr: { name: "Shimano Soare XR", url: getAmzTrUrl("Shimano+Soare+XR"), price: 9000 },
                 global: { name: "Shimano Vanford 1000", url: "https://www.amazon.com/s?k=Shimano+Vanford+1000", price: 230 }
             }
         },
@@ -70,11 +79,11 @@ export const AFFILIATE_LINKS = {
                 global: { name: "Eagle Claw Jighead", url: "https://www.amazon.com/s?k=Eagle+Claw+Jighead", price: 5 }
             },
             value: {
-                tr: { name: "Decoy Rocket Plus", url: "https://www.amazon.com.tr/s?k=Decoy+Rocket+Plus+Jighead", price: 250 },
+                tr: { name: "Decoy Rocket Plus", url: getAmzTrUrl("Decoy+Rocket+Plus+Jighead"), price: 250 },
                 global: { name: "Decoy Rocket Plus", url: "https://www.amazon.com/s?k=Decoy+Rocket+Plus", price: 8 }
             },
             premium: {
-                tr: { name: "Cultiva/Owner Jighead", url: "https://www.amazon.com.tr/s?k=Cultiva+Owner+Jighead", price: 400 },
+                tr: { name: "Cultiva/Owner Jighead", url: getAmzTrUrl("Cultiva+Owner+Jighead"), price: 400 },
                 global: { name: "Owner Ultrahead", url: "https://www.amazon.com/s?k=Owner+Ultrahead", price: 12 }
             }
         }
@@ -86,7 +95,7 @@ export const AFFILIATE_LINKS = {
                 global: { name: "PowerPro Braid", url: "https://www.amazon.com/s?k=PowerPro+Braid", price: 15 }
             },
             value: {
-                tr: { name: "Daiwa J-Braid Grand x8", url: "https://www.amazon.com.tr/s?k=Daiwa+J-Braid+Grand+x8", price: 650 },
+                tr: { name: "Daiwa J-Braid Grand x8", url: getAmzTrUrl("Daiwa+J-Braid+Grand+x8"), price: 650 },
                 global: { name: "Daiwa J-Braid x8 Grand", url: "https://www.amazon.com/s?k=Daiwa+J-Braid+x8+Grand", price: 25 }
             },
             premium: {
@@ -100,11 +109,11 @@ export const AFFILIATE_LINKS = {
                 global: { name: "Ugly Stik GX2", url: "https://www.amazon.com/s?k=Ugly+Stik+GX2+Spinning", price: 50 }
             },
             value: {
-                tr: { name: "Shimano Bassterra", url: "https://www.amazon.com.tr/s?k=Shimano+Bassterra+Spin", price: 4200 },
+                tr: { name: "Shimano Bassterra", url: getAmzTrUrl("Shimano+Bassterra+Spin"), price: 4200 },
                 global: { name: "Fenwick HMG", url: "https://www.amazon.com/s?k=Fenwick+HMG+Spinning", price: 120 }
             },
             premium: {
-                tr: { name: "Daiwa Ballistic X", url: "https://www.amazon.com.tr/s?k=Daiwa+Ballistic+X+Spin", price: 7500 },
+                tr: { name: "Daiwa Ballistic X", url: getAmzTrUrl("Daiwa+Ballistic+X+Spin"), price: 7500 },
                 global: { name: "St. Croix Avid", url: "https://www.amazon.com/s?k=St.+Croix+Avid+Spinning", price: 250 }
             }
         },
@@ -114,25 +123,25 @@ export const AFFILIATE_LINKS = {
                 global: { name: "Penn Pursuit IV", url: "https://www.amazon.com/s?k=Penn+Pursuit+IV", price: 55 }
             },
             value: {
-                tr: { name: "Shimano Nasci", url: "https://www.amazon.com.tr/s?k=Shimano+Nasci", price: 3800 },
+                tr: { name: "Shimano Nasci", url: getAmzTrUrl("Shimano+Nasci"), price: 3800 },
                 global: { name: "Shimano Nasci FC", url: "https://www.amazon.com/s?k=Shimano+Nasci+FC", price: 100 }
             },
             premium: {
-                tr: { name: "Shimano Stradic FM", url: "https://www.amazon.com.tr/s?k=Shimano+Stradic+FM", price: 7800 },
+                tr: { name: "Shimano Stradic FM", url: getAmzTrUrl("Shimano+Stradic+FM"), price: 7800 },
                 global: { name: "Shimano Stradic FM", url: "https://www.amazon.com/s?k=Shimano+Stradic+FM", price: 220 }
             }
         },
         hook: {
             budget: {
-                tr: { name: "Mustad Kaiju", url: "https://www.amazon.com.tr/s?k=Mustad+Kaiju", price: 150 },
+                tr: { name: "Mustad Kaiju", url: getAmzTrUrl("Mustad+Kaiju"), price: 150 },
                 global: { name: "Mustad UltraPoint", url: "https://www.amazon.com/s?k=Mustad+UltraPoint", price: 8 }
             },
             value: {
-                tr: { name: "BKK Fangs", url: "https://www.amazon.com.tr/s?k=BKK+Fangs+Treble", price: 350 },
+                tr: { name: "BKK Fangs", url: getAmzTrUrl("BKK+Fangs+Treble"), price: 350 },
                 global: { name: "VMC 9626", url: "https://www.amazon.com/s?k=VMC+9626", price: 15 }
             },
             premium: {
-                tr: { name: "Owner ST-66", url: "https://www.amazon.com.tr/s?k=Owner+ST-66", price: 550 },
+                tr: { name: "Owner ST-66", url: getAmzTrUrl("Owner+ST-66"), price: 550 },
                 global: { name: "Owner ST-66", url: "https://www.amazon.com/s?k=Owner+ST-66", price: 25 }
             }
         }
@@ -144,7 +153,7 @@ export const AFFILIATE_LINKS = {
                 global: { name: "Berkley FireLine", url: "https://www.amazon.com/s?k=Berkley+FireLine", price: 20 }
             },
             value: {
-                tr: { name: "Trabucco S-Force", url: "https://www.amazon.com.tr/s?k=Trabucco+S-Force+Surf", price: 500 },
+                tr: { name: "Trabucco S-Force", url: getAmzTrUrl("Trabucco+S-Force+Surf"), price: 500 },
                 global: { name: "Sufix Tritanium", url: "https://www.amazon.com/s?k=Sufix+Tritanium", price: 35 }
             },
             premium: {
@@ -158,11 +167,11 @@ export const AFFILIATE_LINKS = {
                 global: { name: "Fiblink Surf Rod", url: "https://www.amazon.com/s?k=Fiblink+Surf+Rod", price: 80 }
             },
             value: {
-                tr: { name: "Okuma Rockaway", url: "https://www.amazon.com.tr/s?k=Okuma+Rockaway+Surf", price: 4500 },
+                tr: { name: "Okuma Rockaway", url: getAmzTrUrl("Okuma+Rockaway+Surf"), price: 4500 },
                 global: { name: "Penn Battalion", url: "https://www.amazon.com/s?k=Penn+Battalion+Surf", price: 130 }
             },
             premium: {
-                tr: { name: "Shimano Ultegra", url: "https://www.amazon.com.tr/s?k=Shimano+Ultegra+Surf+Rod", price: 9500 },
+                tr: { name: "Shimano Ultegra", url: getAmzTrUrl("Shimano+Ultegra+Surf+Rod"), price: 9500 },
                 global: { name: "St. Croix Seage", url: "https://www.amazon.com/s?k=St.+Croix+Seage", price: 300 }
             }
         },
@@ -172,11 +181,11 @@ export const AFFILIATE_LINKS = {
                 global: { name: "Penn Fierce III", url: "https://www.amazon.com/s?k=Penn+Fierce+III", price: 90 }
             },
             value: {
-                tr: { name: "Shimano Speedmaster", url: "https://www.amazon.com.tr/s?k=Shimano+Speedmaster+14000", price: 6500 },
+                tr: { name: "Shimano Speedmaster", url: getAmzTrUrl("Shimano+Speedmaster+14000"), price: 6500 },
                 global: { name: "Shimano Speedmaster 14000", url: "https://www.amazon.com/s?k=Shimano+Speedmaster+14000", price: 180 }
             },
             premium: {
-                tr: { name: "Shimano Ultegra XTE", url: "https://www.amazon.com.tr/s?k=Shimano+Ultegra+14000+XTE", price: 8500 },
+                tr: { name: "Shimano Ultegra XTE", url: getAmzTrUrl("Shimano+Ultegra+14000+XTE"), price: 8500 },
                 global: { name: "Daiwa Saltist MQ", url: "https://www.amazon.com/s?k=Daiwa+Saltist+MQ", price: 350 }
             }
         },
@@ -186,11 +195,11 @@ export const AFFILIATE_LINKS = {
                 global: { name: "Gamakatsu Octopus", url: "https://www.amazon.com/s?k=Gamakatsu+Octopus", price: 10 }
             },
             value: {
-                tr: { name: "Sasame Wormer", url: "https://www.amazon.com.tr/s?k=Sasame+Wormer", price: 250 },
+                tr: { name: "Sasame Wormer", url: getAmzTrUrl("Sasame+Wormer"), price: 250 },
                 global: { name: "Owner Mutu Light", url: "https://www.amazon.com/s?k=Owner+Mutu+Light", price: 15 }
             },
             premium: {
-                tr: { name: "Gamakatsu LS-3310", url: "https://www.amazon.com.tr/s?k=Gamakatsu+LS-3310", price: 400 },
+                tr: { name: "Gamakatsu LS-3310", url: getAmzTrUrl("Gamakatsu+LS-3310"), price: 400 },
                 global: { name: "Trokar Lancet", url: "https://www.amazon.com/s?k=Trokar+Lancet+Circle", price: 25 }
             }
         }
