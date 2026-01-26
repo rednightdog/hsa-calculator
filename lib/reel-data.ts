@@ -1,7 +1,156 @@
 import { LanguageCode } from './dictionary';
 
-export type Brand = 'Shimano' | 'Daiwa' | 'Okuma';
+// Brand Type Expansion
+export type Brand = 'Shimano' | 'Daiwa' | 'Okuma' | 'Penn' | 'Abu Garcia' | 'Ryobi' | 'Savage Gear' | 'DAM' | 'Mitchell' | 'Van Staal' | 'KastKing' | 'Tsurinoya' | 'Seaknight' | 'Megabass' | 'Evergreen';
 export type ReelType = 'lrf' | 'spin' | 'surf';
+
+export interface BrandInfo {
+    name: Brand;
+    origin: string;
+    category: string;
+    lrfScore: number; // 1-10
+    keyTechs: string[];
+    developerNote: string;
+    color: string; // Hex or Tailwind class for UI
+}
+
+export const manufacturers: Record<Brand, BrandInfo> = {
+    Shimano: {
+        name: 'Shimano',
+        origin: 'Japonya',
+        category: 'High-End / Mühendislik',
+        lrfScore: 10,
+        keyTechs: ['Hagane Body', 'Micromodule Gear', 'X-Ship', 'Silent Drive'],
+        developerNote: 'Veriler (Ağırlık/Drag) %99 tutarlıdır. Referans marka.',
+        color: 'from-blue-600 to-indigo-900'
+    },
+    Daiwa: {
+        name: 'Daiwa',
+        origin: 'Japonya',
+        category: 'High-End / İnovasyon',
+        lrfScore: 10,
+        keyTechs: ['MagSealed', 'LT (Light & Tough)', 'Monocoque Body', 'Digigear'],
+        developerNote: '"LT" konsepti LRF için kritik bir filtreleme verisidir.',
+        color: 'from-orange-500 to-red-900'
+    },
+    Okuma: {
+        name: 'Okuma',
+        origin: 'Tayvan',
+        category: 'Fiyat/Performans (Pro)',
+        lrfScore: 9,
+        keyTechs: ['TCA', 'C-40X Carbon', 'Cyclonic Flow', 'Dual Force Drag'],
+        developerNote: 'Türkiye pazarında çok yaygın. Yedek parça verisi boldur.',
+        color: 'from-emerald-500 to-teal-900'
+    },
+    Penn: {
+        name: 'Penn',
+        origin: 'ABD',
+        category: 'Heavy Duty / Tork',
+        lrfScore: 5,
+        keyTechs: ['HT-100 Drag', 'CNC Gear', 'IPX6 Sealing'],
+        developerNote: 'LRF için ağır kalır, "Surf Casting" modülü için elzemdir.',
+        color: 'from-yellow-600 to-amber-900'
+    },
+    'Abu Garcia': {
+        name: 'Abu Garcia',
+        origin: 'İsveç/ABD',
+        category: 'Hız / Turnuva',
+        lrfScore: 8,
+        keyTechs: ['Revo Series', 'Rocket Line Management', 'Carbon Matrix'],
+        developerNote: 'Özellikle "Baitcasting" (Çıkrık) modülü eklenirse 10 puandır.',
+        color: 'from-red-600 to-rose-900'
+    },
+    Ryobi: {
+        name: 'Ryobi',
+        origin: 'Japon/Çin',
+        category: 'Dayanıklılık / F/P',
+        lrfScore: 7,
+        keyTechs: ['NCRT (Hafif Kompozit)', 'RFO'],
+        developerNote: 'Efsanevi modelleri (Ecusima/Virtual) Türkiye\'de çoktur.',
+        color: 'from-lime-600 to-green-900'
+    },
+    'Savage Gear': {
+        name: 'Savage Gear',
+        origin: 'Danimarka',
+        category: 'Predatör / Agresif',
+        lrfScore: 8,
+        keyTechs: ['SGS (Saltwater)', 'Friction Control Drag'],
+        developerNote: 'Son yıllarda LRF makineleri (SG2, SG4) çok popülerleşti.',
+        color: 'from-gray-600 to-slate-900'
+    },
+    DAM: {
+        name: 'DAM',
+        origin: 'Almanya',
+        category: 'Geleneksel',
+        lrfScore: 6,
+        keyTechs: ['Quick Series', 'Anti-Vibro'],
+        developerNote: 'Eski toprakçılar kullanır, verileri standarttır.',
+        color: 'from-stone-600 to-stone-900'
+    },
+    Mitchell: {
+        name: 'Mitchell',
+        origin: 'Fransa',
+        category: 'Klasik Spin',
+        lrfScore: 6,
+        keyTechs: ['Halo Rotor', 'Carbon Hybrid Drag'],
+        developerNote: 'Dünyanın ilk spin makinesi üreticisi, orta segment.',
+        color: 'from-yellow-500 to-orange-800'
+    },
+    'Van Staal': {
+        name: 'Van Staal',
+        origin: 'ABD',
+        category: 'Extreme / Surf',
+        lrfScore: 2,
+        keyTechs: ['Fully Sealed', 'Titanium Shaft'],
+        developerNote: 'LRF için uygun değil, sadece "Hardcore Surf" için.',
+        color: 'from-zinc-500 to-zinc-900'
+    },
+    KastKing: {
+        name: 'KastKing',
+        origin: 'Çin/ABD',
+        category: 'E-Ticaret / Bütçe',
+        lrfScore: 7,
+        keyTechs: ['Shark Fin Spool', 'Intruder Rotor'],
+        developerNote: 'Veri tutarlılığı Japonlar kadar net olmayabilir (Tolerans payı bırakılmalı).',
+        color: 'from-cyan-600 to-blue-900'
+    },
+    Tsurinoya: {
+        name: 'Tsurinoya',
+        origin: 'Çin',
+        category: 'LRF / BFS (Niş)',
+        lrfScore: 9,
+        keyTechs: ['Carbon Washer', 'Ultra Light Spool'],
+        developerNote: 'LRF ve BFS (Bait Finesse) için özel üretim. Veriler şaşırtıcı derecede iyidir.',
+        color: 'from-pink-600 to-rose-900'
+    },
+    Seaknight: {
+        name: 'Seaknight',
+        origin: 'Çin',
+        category: 'Bütçe Dostu',
+        lrfScore: 7,
+        keyTechs: ['Power Drag', 'Anti-Corrosion Bearings'],
+        developerNote: 'Başlangıç seviyesi kullanıcılar için veri tabanında olmalı.',
+        color: 'from-indigo-500 to-indigo-900'
+    },
+    Megabass: {
+        name: 'Megabass',
+        origin: 'Japonya',
+        category: 'Boutique / Sanat',
+        lrfScore: 9,
+        keyTechs: ['Özel Modifiye Daiwa Sistemleri'],
+        developerNote: 'Çok pahalı ve niş. "Luxury" segmenti.',
+        color: 'from-purple-600 to-fuchsia-900'
+    },
+    Evergreen: {
+        name: 'Evergreen',
+        origin: 'Japonya',
+        category: 'Pro / Turnuva',
+        lrfScore: 8,
+        keyTechs: ['Opus Series'],
+        developerNote: 'Genelde kamış üreticisi olsa da üst düzey makineleri vardır.',
+        color: 'from-green-600 to-emerald-900'
+    }
+};
 
 export interface Technology {
     id: string;

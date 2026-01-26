@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { tools, reels, Technology, ReelModel, Brand, ReelType } from '@/lib/reel-data';
+import { tools, reels, Technology, ReelModel, Brand, ReelType, manufacturers } from '@/lib/reel-data';
 import { Info, Check, Filter, ShoppingBag, ArrowRight, X, ChevronLeft, Scale } from 'lucide-react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
@@ -243,8 +243,8 @@ export default function ReelExpertPage() {
                                         key={brand}
                                         onClick={() => setSelectedBrand(brand)}
                                         className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${selectedBrand === brand
-                                                ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-500/20'
-                                                : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                                            ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-500/20'
+                                            : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
                                             }`}
                                     >
                                         {brand === 'All' ? t.all : brand}
@@ -264,8 +264,8 @@ export default function ReelExpertPage() {
                                         key={type}
                                         onClick={() => setSelectedType(type as FilterType)}
                                         className={`flex-1 py-2 rounded-lg text-xs font-bold uppercase transition-all ${selectedType === type
-                                                ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/20'
-                                                : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                                            ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/20'
+                                            : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
                                             }`}
                                     >
                                         {type === 'All' ? t.all : type}
@@ -305,7 +305,7 @@ export default function ReelExpertPage() {
                                         <div className="flex justify-between items-start">
                                             <div>
                                                 <span className={`text-[10px] font-bold uppercase tracking-wider mb-1 block ${tech.brand === 'Shimano' ? 'text-blue-400' :
-                                                        tech.brand === 'Daiwa' ? 'text-orange-400' : 'text-emerald-400'
+                                                    tech.brand === 'Daiwa' ? 'text-orange-400' : 'text-emerald-400'
                                                     }`}>
                                                     {tech.brand}
                                                 </span>
@@ -365,33 +365,53 @@ export default function ReelExpertPage() {
                                             'bg-gradient-to-br from-emerald-900/20 to-slate-900 border-emerald-900/50'}
                   `}>
 
-                                    {/* Header: Brand & Badges */}
-                                    <div className="p-6 pb-2 flex justify-between items-start">
-                                        <span className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded bg-black/40 ${reel.brand === 'Shimano' ? 'text-blue-400' :
-                                                reel.brand === 'Daiwa' ? 'text-orange-400' :
-                                                    'text-emerald-400'
-                                            }`}>
-                                            {reel.brand}
-                                        </span>
+                                    {/* Header: Brand Intelligence (Replaces Photo) */}
+                                    <div className={`p-6 pb-4 relative overflow-hidden bg-gradient-to-br ${manufacturers[reel.brand]?.color || 'from-slate-800 to-slate-900'}`}>
 
-                                        <div className="flex flex-col items-end gap-2">
-                                            <span className={`text-[10px] font-bold px-2 py-1 rounded-full text-white ${reel.priceRange === 'premium' ? 'bg-amber-500' :
-                                                    reel.priceRange === 'value' ? 'bg-purple-600' : 'bg-slate-600'
-                                                }`}>
-                                                {reel.priceRange === 'premium' ? t.premium : reel.priceRange === 'value' ? t.performance : t.budget}
-                                            </span>
+                                        {/* Decorative Background Texture */}
+                                        <div className="absolute top-0 right-0 p-4 opacity-10 font-black text-6xl text-white select-none pointer-events-none">
+                                            {manufacturers[reel.brand]?.origin === 'Japonya' ? 'JP' :
+                                                manufacturers[reel.brand]?.origin === 'Almanya' ? 'DE' :
+                                                    manufacturers[reel.brand]?.origin === 'ABD' ? 'USA' : 'INT'}
+                                        </div>
+
+                                        <div className="relative z-10 flex justify-between items-start">
+                                            <div>
+                                                <span className="inline-block px-2 py-1 bg-black/40 backdrop-blur-md rounded text-[10px] uppercase font-bold text-white/90 mb-2 border border-white/10">
+                                                    {manufacturers[reel.brand]?.origin}
+                                                </span>
+                                                <h3 className="text-2xl font-black text-white mb-1 drop-shadow-md">
+                                                    {reel.brand}
+                                                </h3>
+                                                <p className="text-xs text-white/80 font-medium bg-black/20 px-2 py-1 rounded inline-block">
+                                                    {manufacturers[reel.brand]?.category}
+                                                </p>
+                                            </div>
+
+                                            <div className="flex flex-col items-end gap-2">
+                                                <div className="flex flex-col items-end">
+                                                    <span className="text-[10px] text-white/60 font-bold uppercase tracking-wider">LRF Score</span>
+                                                    <div className="flex items-center gap-1">
+                                                        <span className="text-xl font-black text-white">{manufacturers[reel.brand]?.lrfScore}</span>
+                                                        <span className="text-xs text-white/50">/10</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div className="px-6">
-                                        <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">
+                                    <div className="px-6 pt-4">
+                                        <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">
                                             {reel.name}
                                         </h3>
-                                        <div className="flex items-center gap-4 text-sm text-slate-400 mb-4">
+                                        <div className="flex items-center gap-4 text-sm text-slate-400 mb-4 border-b border-slate-800 pb-4">
                                             <span className="flex items-center gap-1 font-medium text-white">
-                                                <Scale className="w-4 h-4 text-slate-500" /> {reel.weight}g
+                                                <Scale className="w-4 h-4 text-cyan-500" /> {reel.weight}g
                                             </span>
-                                            <span className="text-emerald-400 font-bold tracking-wide">
+                                            <span className={`font-bold tracking-wide px-2 py-0.5 rounded ${reel.priceRange === 'premium' ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20' :
+                                                reel.priceRange === 'value' ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' :
+                                                    'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                                                }`}>
                                                 {reel.price}
                                             </span>
                                         </div>
@@ -401,9 +421,8 @@ export default function ReelExpertPage() {
                                         </p>
                                     </div>
 
-                                    {/* Tech Chips Area - Filling the void of image */}
+                                    {/* Tech Chips Area */}
                                     <div className="px-6 pb-6 mt-auto">
-                                        <div className="w-full h-px bg-slate-800 mb-4"></div>
                                         <p className="text-[10px] text-slate-500 uppercase font-bold mb-2 tracking-wider">
                                             {t.technologies}
                                         </p>
@@ -427,9 +446,9 @@ export default function ReelExpertPage() {
                                             href={reel.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center justify-center gap-2 w-full py-3 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-xl text-white font-bold transition-all group-hover:bg-cyan-900/30 group-hover:border-cyan-500/50 group-hover:text-cyan-400"
+                                            className="flex items-center justify-center gap-2 w-full py-4 bg-orange-600 hover:bg-orange-500 text-white font-black uppercase tracking-wider rounded-xl shadow-lg shadow-orange-900/20 hover:shadow-orange-700/40 hover:-translate-y-0.5 transition-all"
                                         >
-                                            <ShoppingBag className="w-4 h-4" /> {t.amazon} <ArrowRight className="w-4 h-4 opacity-50 group-hover:translate-x-1 transition-transform" />
+                                            <ShoppingBag className="w-5 h-5" /> {t.amazon}
                                         </a>
                                     </div>
                                 </div>
@@ -450,7 +469,7 @@ export default function ReelExpertPage() {
 
                         <div className="mb-6">
                             <span className={`text-xs font-bold uppercase tracking-wider mb-2 block ${activeTech.brand === 'Shimano' ? 'text-blue-400' :
-                                    activeTech.brand === 'Daiwa' ? 'text-orange-400' : 'text-emerald-400'
+                                activeTech.brand === 'Daiwa' ? 'text-orange-400' : 'text-emerald-400'
                                 }`}>
                                 {activeTech.brand} Technology
                             </span>
@@ -485,8 +504,8 @@ export default function ReelExpertPage() {
                                     setActiveTech(null);
                                 }}
                                 className={`w-full py-3 rounded-xl font-bold transition-all ${selectedTechs.includes(activeTech.id)
-                                        ? 'bg-red-500/10 text-red-500 hover:bg-red-500/20'
-                                        : 'bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20'
+                                    ? 'bg-red-500/10 text-red-500 hover:bg-red-500/20'
+                                    : 'bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20'
                                     }`}
                             >
                                 {selectedTechs.includes(activeTech.id)
