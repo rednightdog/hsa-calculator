@@ -1103,6 +1103,24 @@ export const translations: Record<LanguageCode, any> = {
                 loss: "ロス",
                 right: "右",
                 left: "左"
+            },
+            ai_categories: {
+                target: "🎯 目標",
+                tech: "🏆 技術",
+                line: "🎣 ライン",
+                equip: "⚙️ 機材",
+                weight: "⚖️ 重量",
+                knot: "🪢 ノット",
+                sinker: "🎯 シンカー",
+                leader: "🧵 リーダー",
+                angle: "📐 角度",
+                edu: "🎓 教育",
+                weather: "🌤️ 天気",
+                wind: "🌬️ 風",
+                wind_warn: "⚠️ 強風",
+                wind_tail: "💨 追い風",
+                wind_head: "🌊 向かい風",
+                wind_side: "🌬️ 横風"
             }
         }
     };
