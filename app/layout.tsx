@@ -70,6 +70,7 @@ export const viewport: Viewport = {
 };
 
 import { LanguageProvider } from '@/context/LanguageContext';
+import LanguageSelector from '@/components/ui/LanguageSelector';
 import { Heart, Instagram } from "lucide-react";
 
 export default function RootLayout({
@@ -81,6 +82,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-slate-950 text-white min-h-screen flex flex-col`}>
         <LanguageProvider>
+          <LanguageSelector />
           <main className="flex-grow">
             {children}
           </main>

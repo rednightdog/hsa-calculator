@@ -6,6 +6,7 @@ import { Info, Check, Filter, ShoppingBag, ArrowRight, X, ChevronLeft, Scale } f
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { LanguageCode } from '@/lib/dictionary';
+import { calculateEffectiveDrag, isShallowSpool, getGearApplication } from '@/lib/angler-logic';
 
 // ... (Keep existing Type and Dictionary)
 type FilterType = ReelType | 'All';
@@ -32,6 +33,7 @@ const uiTexts: Record<LanguageCode, {
     performance: string;
     budget: string;
     weight: string;
+    moreInfo: string;
 }> = {
     en: {
         backToHome: "Back to Home",
@@ -53,7 +55,8 @@ const uiTexts: Record<LanguageCode, {
         premium: "Premium",
         performance: "Performance",
         budget: "Budget",
-        weight: "Weight"
+        weight: "Weight",
+        moreInfo: "More Info"
     },
     tr: {
         backToHome: "Ana Sayfaya Dön",
@@ -75,7 +78,8 @@ const uiTexts: Record<LanguageCode, {
         premium: "Premium",
         performance: "F/P Kralı",
         budget: "Bütçe Dostu",
-        weight: "Ağırlık"
+        weight: "Ağırlık",
+        moreInfo: "Daha Fazla Bilgi"
     },
     jp: {
         backToHome: "ホームに戻る",
@@ -97,7 +101,8 @@ const uiTexts: Record<LanguageCode, {
         premium: "プレミアム",
         performance: "パフォーマンス",
         budget: "バジェット",
-        weight: "重量"
+        weight: "重量",
+        moreInfo: "詳細"
     },
     it: {
         backToHome: "Torna alla Home",
@@ -119,7 +124,8 @@ const uiTexts: Record<LanguageCode, {
         premium: "Premium",
         performance: "Performance",
         budget: "Economico",
-        weight: "Peso"
+        weight: "Peso",
+        moreInfo: "Maggiori Info"
     },
     fr: {
         backToHome: "Retour à l'accueil",
@@ -141,7 +147,8 @@ const uiTexts: Record<LanguageCode, {
         premium: "Premium",
         performance: "Performance",
         budget: "Budget",
-        weight: "Poids"
+        weight: "Poids",
+        moreInfo: "Plus d'infos"
     },
     cn: {
         backToHome: "返回首页",
@@ -163,7 +170,8 @@ const uiTexts: Record<LanguageCode, {
         premium: "高端",
         performance: "高性能",
         budget: "预算",
-        weight: "重量"
+        weight: "重量",
+        moreInfo: "更多信息"
     }
 };
 
@@ -324,9 +332,10 @@ export default function ReelExpertPage() {
                                                         e.stopPropagation();
                                                         setActiveTech(tech);
                                                     }}
-                                                    className="w-6 h-6 rounded-full bg-slate-700 hover:bg-slate-600 flex items-center justify-center text-slate-400 transition-colors"
+                                                    className="shrink-0 px-3 py-1.5 rounded-full bg-cyan-950/40 hover:bg-cyan-900/60 flex items-center gap-1.5 text-xs text-cyan-400 transition-colors border border-cyan-800/50 hover:border-cyan-500/50 shadow-sm ml-2 group/btn"
                                                 >
-                                                    <Info className="w-3 h-3" />
+                                                    <Info className="w-3.5 h-3.5 text-cyan-500 group-hover/btn:text-cyan-300 transition-colors" />
+                                                    <span className="font-bold tracking-wide">{t.moreInfo}</span>
                                                 </button>
                                             )}
                                         </div>
@@ -404,23 +413,59 @@ export default function ReelExpertPage() {
                                         <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">
                                             {reel.name}
                                         </h3>
-                                        <div className="flex items-center gap-4 text-sm text-slate-400 mb-4 border-b border-slate-800 pb-4">
-                                            <span className="flex items-center gap-1 font-medium text-white">
-                                                <Scale className="w-4 h-4 text-cyan-500" /> {reel.weight}g
-                                            </span>
-                                            <span className={`font-bold tracking-wide px-2 py-0.5 rounded flex gap-0.5 ${reel.priceRange === 'premium' ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20' :
-                                                reel.priceRange === 'value' ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' :
-                                                    'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
-                                                }`}>
-                                                {[...Array(3)].map((_, i) => {
-                                                    const level = reel.priceRange === 'budget' ? 1
-                                                        : reel.priceRange === 'value' ? 2
-                                                            : 3;
-                                                    return (
-                                                        <span key={i} className={i < level ? 'opacity-100' : 'opacity-30'}>$</span>
-                                                    );
-                                                })}
-                                            </span>
+                                        <div className="mb-4 border-b border-slate-800 pb-4 space-y-3">
+                                            <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400">
+                                                <span className="flex items-center gap-1 font-medium text-white">
+                                                    <Scale className="w-4 h-4 text-cyan-500" /> {reel.weight}g
+                                                </span>
+
+                                                {/* Advanced Drag Analysis */}
+                                                <div className="flex items-center gap-1">
+                                                    <span className="text-slate-500 text-xs font-bold uppercase">Drag:</span>
+                                                    <span className="text-white font-bold">{reel.maxDrag}kg</span>
+                                                    <div className={`flex items-center gap-1 px-1.5 py-0.5 rounded border text-[10px] uppercase font-bold tracking-wider ${calculateEffectiveDrag(reel.brand, reel.maxDrag) < reel.maxDrag
+                                                        ? 'border-rose-500/30 text-rose-400 bg-rose-500/10'
+                                                        : 'border-emerald-500/30 text-emerald-400 bg-emerald-500/10'
+                                                        }`} title="Effective Safe Drag">
+                                                        {calculateEffectiveDrag(reel.brand, reel.maxDrag)}kg Safe
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex items-center justify-between text-xs">
+                                                <div className="flex items-center gap-2">
+                                                    <span className="bg-slate-800 text-slate-400 px-2 py-1 rounded font-mono">
+                                                        {reel.gearRatio}:1
+                                                    </span>
+                                                    <span className="text-cyan-400 font-medium">
+                                                        {getGearApplication(reel.gearRatio)}
+                                                    </span>
+                                                </div>
+
+                                                {/* Shallow Spool Detection */}
+                                                {isShallowSpool(reel.name) && (
+                                                    <span className="text-[10px] uppercase font-bold tracking-wider text-amber-400 border border-amber-500/30 px-2 py-1 rounded bg-amber-500/10">
+                                                        Shallow Spool
+                                                    </span>
+                                                )}
+                                            </div>
+
+                                            {/* Price Badge Moved Here */}
+                                            <div className="flex justify-end">
+                                                <span className={`font-bold tracking-wide px-2 py-0.5 rounded flex gap-0.5 text-xs ${reel.priceRange === 'premium' ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20' :
+                                                    reel.priceRange === 'value' ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' :
+                                                        'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                                                    }`}>
+                                                    {[...Array(3)].map((_, i) => {
+                                                        const level = reel.priceRange === 'budget' ? 1
+                                                            : reel.priceRange === 'value' ? 2
+                                                                : 3;
+                                                        return (
+                                                            <span key={i} className={i < level ? 'opacity-100' : 'opacity-30'}>$</span>
+                                                        );
+                                                    })}
+                                                </span>
+                                            </div>
                                         </div>
 
                                         <p className="text-slate-400 text-sm mb-6 min-h-[40px] leading-relaxed">

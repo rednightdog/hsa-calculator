@@ -1,6 +1,9 @@
 import SurfCalculator from '@/components/SurfCalculator';
-import { Waves, TrendingUp, Anchor, Home } from 'lucide-react';
+import SurfBallistics from '@/components/SurfBallistics';
+import { Waves, TrendingUp, Anchor, Home, Atom } from 'lucide-react';
 import Link from 'next/link';
+
+// ... (Metadata stays same)
 
 import type { Metadata } from 'next';
 
@@ -15,11 +18,12 @@ export default function SurfPage() {
 
             {/* Hero Section */}
             <section className="relative pt-20 pb-32 overflow-hidden">
+                {/* ... (Hero structure stays same) */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-orange-900/40 to-transparent pointer-events-none" />
                 <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
 
                 <div className="container mx-auto px-4 relative z-10">
-                    {/* Breadcrumb */}
+                    {/* ... (Breadcrumb stays same) */}
                     <div className="flex items-center gap-2 text-sm text-slate-500 mb-8 justify-center">
                         <Link href="/" className="hover:text-orange-400 flex items-center gap-1 transition-colors">
                             <Home className="w-3 h-3" /> Ana Sayfa
@@ -39,7 +43,20 @@ export default function SurfPage() {
 
                     <SurfCalculator />
 
-                    <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
+                    {/* BALLISTICS LAB INTEGRATION */}
+                    <div className="mt-32">
+                        <div className="text-center mb-12">
+                            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-900/30 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4">
+                                <Atom className="w-4 h-4" /> Pro Tools
+                            </span>
+                            <h2 className="text-3xl font-bold text-white">Ballistics Lab</h2>
+                            <p className="text-slate-500 mt-2">Gelişmiş fizik motoru ile atış menzilinizi simüle edin.</p>
+                        </div>
+                        <SurfBallistics />
+                    </div>
+
+                    {/* Guide Cards (Shifted down) */}
+                    <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
                         <div className="p-4 rounded-2xl bg-slate-900/50 border border-slate-800">
                             <div className="w-10 h-10 bg-orange-900/30 rounded-lg flex items-center justify-center mx-auto mb-4 text-orange-400">
                                 <Waves className="w-5 h-5" />

@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { ArrowRight, Database, Fish, Anchor, Book } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
-import LanguageSelector from '@/components/ui/LanguageSelector';
 import InstallPrompt from '@/components/ui/InstallPrompt';
 
 export default function Dashboard() {
@@ -17,7 +16,7 @@ export default function Dashboard() {
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
 
       <InstallPrompt />
-      <LanguageSelector />
+      {/* LanguageSelector moved to layout */}
 
       <div className="container mx-auto px-4 relative z-10 py-12 md:py-20 flex-grow flex flex-col justify-center">
 

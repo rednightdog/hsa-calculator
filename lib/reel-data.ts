@@ -9,6 +9,7 @@ export interface BrandInfo {
     origin: string;
     category: string;
     lrfScore: number; // 1-10
+    dragTolerance: number; // 0.85 to 1.0 (Safety Margin)
     keyTechs: string[];
     developerNote: string;
     color: string; // Hex or Tailwind class for UI
@@ -20,6 +21,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'Japonya',
         category: 'High-End / Mühendislik',
         lrfScore: 10,
+        dragTolerance: 1.0,
         keyTechs: ['Hagane Body', 'Micromodule Gear', 'X-Ship', 'Silent Drive'],
         developerNote: 'Veriler (Ağırlık/Drag) %99 tutarlıdır. Referans marka.',
         color: 'from-blue-600 to-indigo-900'
@@ -29,6 +31,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'Japonya',
         category: 'High-End / İnovasyon',
         lrfScore: 10,
+        dragTolerance: 1.0,
         keyTechs: ['MagSealed', 'LT (Light & Tough)', 'Monocoque Body', 'Digigear'],
         developerNote: '"LT" konsepti LRF için kritik bir filtreleme verisidir.',
         color: 'from-orange-500 to-red-900'
@@ -38,6 +41,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'Tayvan',
         category: 'Fiyat/Performans (Pro)',
         lrfScore: 9,
+        dragTolerance: 0.95,
         keyTechs: ['TCA', 'C-40X Carbon', 'Cyclonic Flow', 'Dual Force Drag'],
         developerNote: 'Türkiye pazarında çok yaygın. Yedek parça verisi boldur.',
         color: 'from-emerald-500 to-teal-900'
@@ -47,6 +51,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'ABD',
         category: 'Heavy Duty / Tork',
         lrfScore: 5,
+        dragTolerance: 0.95, // US ratings are usually conservative/accurate
         keyTechs: ['HT-100 Drag', 'CNC Gear', 'IPX6 Sealing'],
         developerNote: 'LRF için ağır kalır, "Surf Casting" modülü için elzemdir.',
         color: 'from-yellow-600 to-amber-900'
@@ -56,6 +61,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'İsveç/ABD',
         category: 'Hız / Turnuva',
         lrfScore: 8,
+        dragTolerance: 0.95,
         keyTechs: ['Revo Series', 'Rocket Line Management', 'Carbon Matrix'],
         developerNote: 'Özellikle "Baitcasting" (Çıkrık) modülü eklenirse 10 puandır.',
         color: 'from-red-600 to-rose-900'
@@ -65,6 +71,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'Japon/Çin',
         category: 'Dayanıklılık / F/P',
         lrfScore: 7,
+        dragTolerance: 0.90,
         keyTechs: ['NCRT (Hafif Kompozit)', 'RFO'],
         developerNote: 'Efsanevi modelleri (Ecusima/Virtual) Türkiye\'de çoktur.',
         color: 'from-lime-600 to-green-900'
@@ -74,6 +81,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'Danimarka',
         category: 'Predatör / Agresif',
         lrfScore: 8,
+        dragTolerance: 0.90,
         keyTechs: ['SGS (Saltwater)', 'Friction Control Drag'],
         developerNote: 'Son yıllarda LRF makineleri (SG2, SG4) çok popülerleşti.',
         color: 'from-gray-600 to-slate-900'
@@ -83,6 +91,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'Almanya',
         category: 'Geleneksel',
         lrfScore: 6,
+        dragTolerance: 0.90,
         keyTechs: ['Quick Series', 'Anti-Vibro'],
         developerNote: 'Eski toprakçılar kullanır, verileri standarttır.',
         color: 'from-stone-600 to-stone-900'
@@ -92,6 +101,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'Fransa',
         category: 'Klasik Spin',
         lrfScore: 6,
+        dragTolerance: 0.90,
         keyTechs: ['Halo Rotor', 'Carbon Hybrid Drag'],
         developerNote: 'Dünyanın ilk spin makinesi üreticisi, orta segment.',
         color: 'from-yellow-500 to-orange-800'
@@ -101,6 +111,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'ABD',
         category: 'Extreme / Surf',
         lrfScore: 2,
+        dragTolerance: 1.0, // Indestructible
         keyTechs: ['Fully Sealed', 'Titanium Shaft'],
         developerNote: 'LRF için uygun değil, sadece "Hardcore Surf" için.',
         color: 'from-zinc-500 to-zinc-900'
@@ -110,6 +121,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'Çin/ABD',
         category: 'E-Ticaret / Bütçe',
         lrfScore: 7,
+        dragTolerance: 0.85, // User explicit request
         keyTechs: ['Shark Fin Spool', 'Intruder Rotor'],
         developerNote: 'Veri tutarlılığı Japonlar kadar net olmayabilir (Tolerans payı bırakılmalı).',
         color: 'from-cyan-600 to-blue-900'
@@ -119,6 +131,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'Çin',
         category: 'LRF / BFS (Niş)',
         lrfScore: 9,
+        dragTolerance: 0.90, // Higher quality Chinese
         keyTechs: ['Carbon Washer', 'Ultra Light Spool'],
         developerNote: 'LRF ve BFS (Bait Finesse) için özel üretim. Veriler şaşırtıcı derecede iyidir.',
         color: 'from-pink-600 to-rose-900'
@@ -128,6 +141,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'Çin',
         category: 'Bütçe Dostu',
         lrfScore: 7,
+        dragTolerance: 0.85,
         keyTechs: ['Power Drag', 'Anti-Corrosion Bearings'],
         developerNote: 'Başlangıç seviyesi kullanıcılar için veri tabanında olmalı.',
         color: 'from-indigo-500 to-indigo-900'
@@ -137,6 +151,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'Japonya',
         category: 'Boutique / Sanat',
         lrfScore: 9,
+        dragTolerance: 1.0,
         keyTechs: ['Özel Modifiye Daiwa Sistemleri'],
         developerNote: 'Çok pahalı ve niş. "Luxury" segmenti.',
         color: 'from-purple-600 to-fuchsia-900'
@@ -146,6 +161,7 @@ export const manufacturers: Record<Brand, BrandInfo> = {
         origin: 'Japonya',
         category: 'Pro / Turnuva',
         lrfScore: 8,
+        dragTolerance: 1.0,
         keyTechs: ['Opus Series'],
         developerNote: 'Genelde kamış üreticisi olsa da üst düzey makineleri vardır.',
         color: 'from-green-600 to-emerald-900'
@@ -167,6 +183,8 @@ export interface ReelModel {
     brand: Brand;
     types: ReelType[];
     weight: number; // grams
+    maxDrag: number; // kg - NEW
+    gearRatio: number; // e.g. 5.2 - NEW
     priceRange: 'budget' | 'value' | 'premium';
     // price property removed
     // image property removed
@@ -176,6 +194,51 @@ export interface ReelModel {
 }
 
 export const tools: Technology[] = [
+    // --- PENN TECHNOLOGIES ---
+    {
+        id: 'ht_100',
+        name: 'HT-100™ Drag',
+        brand: 'Penn',
+        summary: { tr: 'Karbon Fiber Kalama', en: 'Carbon Fiber Drag', jp: 'HT-100ドラグ', it: 'Frizione HT-100', fr: 'Frein HT-100', cn: 'HT-100刹车' },
+        description: { tr: 'Isı dağılımı mükemmel olan patentli karbon fiber drag sistemi. 100 mil boyunca yük altında test edilmiştir.', en: 'Patented carbon fiber drag system efficient at heat dissipation.', jp: '熱放散に優れた特許取得済みのカーボンファイバードラグ。', it: 'Sistema di frizione in fibra di carbonio brevettato.', fr: 'Système de frein en fibre de carbone breveté.', cn: '专利碳纤维刹车系统。' },
+        benefit: { tr: 'Uzun süreli mücadelelerde (orkinos vb.) fren gücü asla azalmaz.', en: 'Drag power never fades during long fights.', jp: '長時間のファイトでもドラグ力が低下しません。', it: 'La potenza della frizione non svanisce mai.', fr: 'La puissance du frein ne faiblit jamais.', cn: '长时间搏鱼刹车力不衰减。' }
+    },
+    {
+        id: 'ipx6',
+        name: 'IPX6 Sealing',
+        brand: 'Penn',
+        summary: { tr: 'Tam Su Geçirmezlik', en: 'IPX6 Waterproof', jp: 'IPX6防水', it: 'Impermeabilità IPX6', fr: 'Étanchéité IPX6', cn: 'IPX6防水' },
+        description: { tr: 'Makinenin şanzımanına ve fren sistemine basınçlı suyun bile girmesini engelleyen yalıtım standardı.', en: 'Sealing standard protecting gearbox and drag from powerful water jets.', jp: '強力な噴用水流からもギアボックスとドラグを守る。', it: 'Protegge dagli getti d\'acqua potenti.', fr: 'Protège contre les jets d\'eau puissants.', cn: '防止强力喷水进入。' },
+        benefit: { tr: 'Makine suya düşse bile içi kuru kalır. (Daldırmaya uygun değildir ama sıçramaya tam dirençlidir).', en: 'Keeps internals dry even if reel is splashed heavily.', jp: '波を被っても内部はドライ。', it: 'Mantiene l\'interno asciutto.', fr: 'Garde l\'intérieur sec.', cn: '即使受到猛烈泼溅也能保持内部干燥。' }
+    },
+    // --- ABU GARCIA ---
+    {
+        id: 'rocket_line_management',
+        name: 'Rocket Line Management™',
+        brand: 'Abu Garcia',
+        summary: { tr: 'Roket Misina Yönetimi', en: 'Rocket Line Management', jp: 'ロケットライン管理', it: 'Gestione Filo Rocket', fr: 'Gestion de Ligne Rocket', cn: '火箭线管理' },
+        description: { tr: 'Makara yapısı, osilasyon ve atım açısının mükemmel kombinasyonu.', en: 'Combination of spool design, oscillation system and bail angle.', jp: 'スプール設計、オシレーション、ベールの完璧な組み合わせ。', it: 'Combinazione perfetta per la gestione del filo.', fr: 'Combinaison parfaite pour la gestion de la ligne.', cn: '完美的线管理组合。' },
+        benefit: { tr: 'Hafif sahtelerde bile rüzgarlı havada kuş gözü yapmadan uzun atış sağlar.', en: 'Long casts with light lures without wind knots.', jp: '軽量ルアーでもトラブルレスな遠投。', it: 'Lanci lunghi senza nodi.', fr: 'Lancers longs sans nœuds.', cn: '轻饵也能远投且不炸线。' }
+    },
+    // --- RYOBI ---
+    {
+        id: 'ncrt',
+        name: 'NCRT Body',
+        brand: 'Ryobi',
+        summary: { tr: 'NCRT Titanyum Kompozit', en: 'NCRT Titanium Composite', jp: 'NCRTボディ', it: 'Corpo NCRT', fr: 'Corps NCRT', cn: 'NCRT机身' },
+        description: { tr: 'Karbon ve titanyum polimer karışımı gövde. Standart grafitten %20 hafif, %40 daha güçlüdür.', en: 'Carbon/Titanium polymer mix. 20% lighter, 40% stronger than graphite.', jp: 'カーボンとチタンの複合素材。', it: 'Mix polimero carbonio/titanio.', fr: 'Mélange polymère carbone/titane.', cn: '碳/钛聚合物混合物。' },
+        benefit: { tr: 'Hafiflik ve sağlamlığın mükemmel dengesi. Fiyat/Performans kralı.', en: 'Perfect balance of lightness and strength.', jp: '軽さと強さの完璧なバランス。', it: 'Equilibrio perfetto.', fr: 'Équilibre parfait.', cn: '轻量与强度的完美平衡。' }
+    },
+    // --- SAVAGE GEAR ---
+    {
+        id: 'friction_control',
+        name: 'Friction Control System',
+        brand: 'Savage Gear',
+        summary: { tr: 'Sürtünme Kontrol Freni', en: 'Friction Control Drag', jp: 'フリクションコントロール', it: 'Controllo Frizione', fr: 'Contrôle de Friction', cn: '摩擦控制' },
+        description: { tr: 'Karbon fiber disklerin (3 katmanlı) özel yağlarla emprenye edilmesi.', en: 'Multi-layer carbon washers impregnated with special oil.', jp: '特殊オイルを含浸させたカーボンワッシャー。', it: 'Rondelle in carbonio multistrato.', fr: 'Rondelles en carbone multicouches.', cn: '浸渍特殊油的多层碳垫圈。' },
+        benefit: { tr: 'Ultra pürüzsüz kalama çıkışı, özellikle ani kafa darbelerinde balığı yormak için.', en: 'Ultra smooth drag release to tire fish.', jp: '魚を疲れさせる超滑らかなドラグ。', it: 'Rilascio frizione ultra fluido.', fr: 'Libération de frein ultra fluide.', cn: '超顺滑刹车以消耗鱼力。' }
+    },
+
     // --- SHIMANO TECHNOLOGIES ---
     {
         id: 'anti_twist_fin',
@@ -960,6 +1023,8 @@ export const reels: ReelModel[] = [
         brand: 'Shimano',
         types: ['lrf', 'spin'],
         weight: 210,
+        maxDrag: 11,
+        gearRatio: 6.2,
         priceRange: 'premium',
 
         techs: ['hagane_body', 'hagane_gear', 'micromodule_ii', 'infinity_loop', 'infinity_drive', 'anti_twist_fin', 'duracross', 'rigid_support_drag'],
@@ -972,6 +1037,8 @@ export const reels: ReelModel[] = [
         brand: 'Shimano',
         types: ['lrf', 'spin'],
         weight: 170, // Ultra light
+        maxDrag: 9,
+        gearRatio: 5.8,
         priceRange: 'premium',
         techs: ['hagane_body', 'micromodule_ii', 'infinity_drive', 'x_protect', 'anti_twist_fin'],
         description: { tr: 'Hafifliğin ötesi. Hızlı tepki veren MGL rotor.', en: 'Beyond lightness. Quick response MGL rotor.', jp: '軽さのその先へ。', it: 'Oltre la leggerezza.', fr: 'Au-delà de la légèreté.', cn: '超越轻盈。' },
@@ -983,6 +1050,8 @@ export const reels: ReelModel[] = [
         brand: 'Shimano',
         types: ['spin'],
         weight: 215,
+        maxDrag: 11,
+        gearRatio: 6.2,
         priceRange: 'premium',
         techs: ['hagane_body', 'hagane_gear', 'infinity_loop', 'infinity_drive', 'duracross'],
         description: { tr: 'Sarsılmaz sağlamlık. Stella teknolojilerine sahip güç makinesi.', en: 'Unshakable solidity. Power reel with Stella techs.', jp: '揺るぎない堅牢性。', it: 'Solidità incrollabile.', fr: 'Solidité inébranlable.', cn: '不可动摇的坚固。' },
@@ -994,6 +1063,8 @@ export const reels: ReelModel[] = [
         brand: 'Shimano',
         types: ['spin', 'surf'],
         weight: 225,
+        maxDrag: 9,
+        gearRatio: 6.2,
         priceRange: 'value',
         techs: ['hagane_body', 'hagane_gear', 'micromodule_ii', 'x_protect', 'anti_twist_fin'],
         description: { tr: 'Spin balıkçılığının standardı. F/P kralı.', en: 'The standard of spin fishing.', jp: 'スピニングの基準。', it: 'Lo standard dello spinning.', fr: 'La référence du spinning.', cn: '纺车轮的标准。' },
@@ -1005,6 +1076,8 @@ export const reels: ReelModel[] = [
         brand: 'Shimano',
         types: ['lrf', 'spin'],
         weight: 180,
+        maxDrag: 9,
+        gearRatio: 6.0,
         priceRange: 'value',
         techs: ['hagane_gear', 'micromodule_ii', 'x_protect', 'silent_drive'],
         description: { tr: 'Hassasiyet için süper hafif Ci4+ gövde.', en: 'Super light Ci4+ body for sensitivity.', jp: '感度のためのCi4+ボディ。', it: 'Corpo Ci4+ super leggero.', fr: 'Corps Ci4+ super leggero.', cn: '超轻Ci4+机身。' },
@@ -1016,6 +1089,8 @@ export const reels: ReelModel[] = [
         brand: 'Shimano',
         types: ['lrf', 'spin'],
         weight: 205,
+        maxDrag: 9,
+        gearRatio: 6.2,
         priceRange: 'budget',
         techs: ['hagane_gear', 'silent_drive', 'x_protect'],
         description: { tr: 'Ci4+ gövdeye sahip en ulaşılabilir hafif makine.', en: 'Most accessible light reel with Ci4+ body.', jp: '最も手頃なCi4+リール。', it: 'Mulinello leggero più accessibile.', fr: 'Moulinet léger le plus accessible.', cn: '最亲民的轻量轮。' },
@@ -1027,6 +1102,8 @@ export const reels: ReelModel[] = [
         brand: 'Shimano',
         types: ['spin', 'lrf'],
         weight: 245,
+        maxDrag: 9,
+        gearRatio: 6.2,
         priceRange: 'budget',
         techs: ['hagane_gear', 'silent_drive'],
         description: { tr: 'Hagane dişli teknolojisine sahip en uygun fiyatlı model.', en: 'Most affordable model with Hagane Gear.', jp: 'Haganeギア搭載の最安モデル。', it: 'Modello più economico con Hagane Gear.', fr: 'Modèle le plus abordable avec Hagane Gear.', cn: '拥有Hagane齿轮的最实惠型号。' },
@@ -1038,6 +1115,8 @@ export const reels: ReelModel[] = [
         brand: 'Shimano',
         types: ['surf'],
         weight: 600,
+        maxDrag: 20,
+        gearRatio: 4.3,
         priceRange: 'value',
         techs: ['hagane_gear', 'infinity_drive', 'rigid_support_drag', 'silent_drive'],
         description: { tr: 'Surf casting efsanesi. Uzak atış rekorları için.', en: 'Surf casting legend. For long distance records.', jp: 'サーフキャスティングの伝説。', it: 'Leggenda del surf casting.', fr: 'Légende du surf casting.', cn: '远投传奇。' },
@@ -1049,6 +1128,8 @@ export const reels: ReelModel[] = [
         brand: 'Shimano',
         types: ['surf'],
         weight: 490,
+        maxDrag: 20,
+        gearRatio: 3.5,
         priceRange: 'premium',
         techs: ['hagane_body', 'hagane_gear', 'x_protect', 'rigid_support_drag'],
         description: { tr: 'Hafif ve güçlü surf makinesi. Japon pazarı (JDM) favorisi.', en: 'Light and strong surf reel. JDM favorite.', jp: '軽くて強いサーフリール。', it: 'Mulinello da surf leggero e forte.', fr: 'Moulinet surf léger et fort.', cn: '轻量強力的远投轮。' },
@@ -1062,6 +1143,8 @@ export const reels: ReelModel[] = [
         brand: 'Daiwa',
         types: ['lrf', 'spin'],
         weight: 160,
+        maxDrag: 10,
+        gearRatio: 6.2,
         priceRange: 'premium',
         techs: ['airdrive_design', 'monocoque', 'magsealed', 'atd_type_l', 'twist_buster_iii'],
         description: { tr: 'Geleceğin teknolojisi. Airdrive ile ağırlıksızlık hissi.', en: 'Future technology. Weightlessness with Airdrive.', jp: '未来のテクノロジー。エアドライブによる無重力感。', it: 'Tecnologia del futuro.', fr: 'Technologie du futur.', cn: '未来科技。' },
@@ -1073,6 +1156,8 @@ export const reels: ReelModel[] = [
         brand: 'Daiwa',
         types: ['lrf', 'spin'],
         weight: 145,
+        maxDrag: 5,
+        gearRatio: 5.1,
         priceRange: 'premium',
         techs: ['airdrive_design', 'monocoque', 'atd_type_l', 'twist_buster_iii'],
         description: { tr: 'Hafifliğin yeni tanımı. Magnezyum MQ gövde.', en: 'The new definition of lightness. Magnesium MQ body.', jp: '軽さの革命。', it: 'La nuova definizione di leggerezza.', fr: 'La nouvelle définition de la légèreté.', cn: '轻量的新定义。' },
@@ -1084,6 +1169,8 @@ export const reels: ReelModel[] = [
         brand: 'Daiwa',
         types: ['spin'],
         weight: 205,
+        maxDrag: 10,
+        gearRatio: 6.2,
         priceRange: 'premium',
         techs: ['monocoque', 'magsealed', 'atd_type_l'],
         description: { tr: 'Güç ve dayanıklılık sembolü. Alüminyum yekpare gövde.', en: 'Symbol of strength and durability.', jp: '強さと耐久性の象徴。', it: 'Simbolo di forza e durata.', fr: 'Symbole de force et de durabilité.', cn: '力量与耐用的象征。' },
@@ -1095,6 +1182,8 @@ export const reels: ReelModel[] = [
         brand: 'Daiwa',
         types: ['lrf', 'spin'],
         weight: 150,
+        maxDrag: 5,
+        gearRatio: 5.1,
         priceRange: 'value',
         techs: ['monocoque', 'magsealed', 'atd'],
         description: { tr: 'Zaion monokok gövde ile tüy kadar hafif.', en: 'Feather light with Zaion MQ body.', jp: 'ザイオンモノコックボディで羽のように軽い。', it: 'Leggero come una piuma.', fr: 'Léger comme une plume.', cn: '如羽毛般轻盈。' },
@@ -1106,6 +1195,8 @@ export const reels: ReelModel[] = [
         brand: 'Daiwa',
         types: ['lrf', 'spin'],
         weight: 195,
+        maxDrag: 10,
+        gearRatio: 6.2,
         priceRange: 'value',
         techs: ['monocoque', 'magsealed', 'zaion'],
         description: { tr: 'MQ teknolojisinin en ulaşılabilir hali.', en: 'Most accessible MQ tech.', jp: '最も身近なMQ技術。', it: 'Tecnologia MQ più accessibile.', fr: 'Tech MQ la plus accessible.', cn: '最亲民的MQ技术。' },
@@ -1117,6 +1208,8 @@ export const reels: ReelModel[] = [
         brand: 'Daiwa',
         types: ['spin', 'lrf'],
         weight: 205,
+        maxDrag: 10,
+        gearRatio: 5.3,
         priceRange: 'budget',
         techs: ['magsealed', 'atd', 'zaion'], // Zaion V body
         description: { tr: 'Magsealed korumasına sahip en popüler bütçe dostu makine.', en: 'Most popular budget reel with Magsealed.', jp: 'マグシールド搭載の人気エントリーモデル。', it: 'Mulinello economico più popolare con Magsealed.', fr: 'Moulinet économique le plus populaire avec Magsealed.', cn: '拥有磁油保护的最受欢迎预算轮。' },
@@ -1128,6 +1221,8 @@ export const reels: ReelModel[] = [
         brand: 'Daiwa',
         types: ['spin', 'lrf'],
         weight: 210,
+        maxDrag: 10,
+        gearRatio: 5.3,
         priceRange: 'budget',
         techs: ['atd', 'zaion'], // Zaion V
         description: { tr: 'Fiyatına göre inanılmaz hafiflik ve performans (Zaion V gövde).', en: 'Incredible lightness and performance for the price.', jp: '価格以上の軽さと性能。', it: 'Leggerezza e prestazioni incredibili per il prezzo.', fr: 'Légèreté et performance incroyables pour le prix.', cn: '性价比极高的轻量和性能。' },
@@ -1139,6 +1234,8 @@ export const reels: ReelModel[] = [
         brand: 'Daiwa',
         types: ['spin', 'surf'],
         weight: 285, // Heavy
+        maxDrag: 12,
+        gearRatio: 5.7,
         priceRange: 'budget',
         techs: ['hardbodyz', 'atd', 'digigear'], // Adding common tech (will fallback to text if not in DB, but better to stick to DB keys if possible. I'll stick to generic descriptions or assume some basic matches)
         // Actually ID mismatch risk. Let's stick to known IDs or simple ones. "atd" is known.
@@ -1151,6 +1248,8 @@ export const reels: ReelModel[] = [
         brand: 'Daiwa',
         types: ['surf'],
         weight: 520,
+        maxDrag: 15,
+        gearRatio: 4.1,
         priceRange: 'premium',
         techs: ['magsealed', 'zaion', 'monocoque'], // High end surf
         description: { tr: 'Surf dünyasının Rolls-Royce\'u. Magnezyum gövde.', en: 'The Rolls-Royce of surf fishing.', jp: 'サーフフィッシングのロールスロイス。', it: 'La Rolls-Royce del surf.', fr: 'La Rolls-Royce du surf.', cn: '远投界的劳斯莱斯。' },
@@ -1162,6 +1261,8 @@ export const reels: ReelModel[] = [
         brand: 'Daiwa',
         types: ['surf'],
         weight: 610,
+        maxDrag: 15,
+        gearRatio: 4.1,
         priceRange: 'value',
         techs: ['digigear', 'atd'],
         description: { tr: '35mm veya 45mm kafa yapısıyla uzak atış canavarı.', en: 'Long distance beast with 35/45mm stroke.', jp: '遠投の野獣。', it: 'Bestia da lunga distanza.', fr: 'Bête de longue distance.', cn: '远投猛兽。' },
@@ -1175,6 +1276,8 @@ export const reels: ReelModel[] = [
         brand: 'Okuma',
         types: ['surf', 'spin'], // Heavy
         weight: 600,
+        maxDrag: 30, // Big Game
+        gearRatio: 5.8,
         priceRange: 'premium',
         techs: ['dfd', 'tca'],
         description: { tr: 'Dev orkinoslar için üretilmiş bir tank.', en: 'A tank built for giant tuna.', jp: '巨大マグロのための戦車。', it: 'Un carro armato per tonni giganti.', fr: 'Un char pour les thons géants.', cn: '为巨型金枪鱼制造的坦克。' },
@@ -1186,6 +1289,8 @@ export const reels: ReelModel[] = [
         brand: 'Okuma',
         types: ['spin', 'surf'],
         weight: 400,
+        maxDrag: 20,
+        gearRatio: 5.8,
         priceRange: 'value',
         techs: ['dfd', 'tca', 'litecast'],
         description: { tr: 'Tuzlu suyun yeni hakimi. Tamamen su geçirmez gövde.', en: 'New ruler of saltwater. Waterproof body.', jp: 'ソルトウォーターの支配者。', it: 'Nuovo sovrano dell\'acqua salata.', fr: 'Nouveau souverain de l\'eau salée.', cn: '咸水的新统治者。' },
@@ -1197,6 +1302,8 @@ export const reels: ReelModel[] = [
         brand: 'Okuma',
         types: ['spin', 'surf'],
         weight: 400,
+        maxDrag: 20,
+        gearRatio: 5.8,
         priceRange: 'value',
         techs: ['dfd', 'litecast'],
         description: { tr: 'Jigging ve ağır spin için özel tasarım. Mavi renkli güç.', en: 'Designed for jigging and heavy spin.', jp: 'ジギング専用設計。', it: 'Progettato per jigging.', fr: 'Conçu pour le jigging.', cn: '专为铁板钓设计。' },
@@ -1208,6 +1315,8 @@ export const reels: ReelModel[] = [
         brand: 'Okuma',
         types: ['lrf', 'spin'],
         weight: 200,
+        maxDrag: 8,
+        gearRatio: 6.0,
         priceRange: 'value',
         techs: ['tca', 'flite_shaft'],
         description: { tr: 'C-40X karbon ile hafiflik ve güç.', en: 'Lightness and power with C-40X.', jp: 'C-40Xによる軽さと強さ。', it: 'Leggerezza e potenza.', fr: 'Légèreté et puissance.', cn: '轻量与强力。' },
@@ -1219,6 +1328,8 @@ export const reels: ReelModel[] = [
         brand: 'Okuma',
         types: ['lrf', 'spin'],
         weight: 210,
+        maxDrag: 7,
+        gearRatio: 6.0,
         priceRange: 'value',
         techs: ['tca', 'flite_shaft'],
         description: { tr: 'TCA teknolojisinin öncüsü.', en: 'Pioneer of TCA tech.', jp: 'TCA技術のパイオニア。', it: 'Pioniere della tecnologia TCA.', fr: 'Pionnier de la technologie TCA.', cn: 'TCA技术的先驱。' },
@@ -1230,6 +1341,8 @@ export const reels: ReelModel[] = [
         brand: 'Okuma',
         types: ['lrf', 'spin'],
         weight: 235,
+        maxDrag: 7,
+        gearRatio: 6.2,
         priceRange: 'budget',
         techs: ['hd_gear'],
         description: { tr: 'Yenilenen HD dişli ile pürüzsüz. Türkiye\'nin en çok satanı.', en: 'Smooth with HD gear. Best seller in TR.', jp: 'HDギアで滑らか。', it: 'Fluido con ingranaggio HD.', fr: 'Fluide avec engrenage HD.', cn: 'HD齿轮顺滑。' },
@@ -1241,6 +1354,8 @@ export const reels: ReelModel[] = [
         brand: 'Okuma',
         types: ['lrf', 'spin'],
         weight: 220,
+        maxDrag: 6,
+        gearRatio: 5.0,
         priceRange: 'budget',
         techs: ['cfr'],
         description: { tr: 'Başlangıç için en ideal ve ekonomik seçenek.', en: 'Ideal and economic for beginners.', jp: '初心者に最適。', it: 'Ideale ed economico per principianti.', fr: 'Idéal et économique pour les débutants.', cn: '初学者的理想经济选择。' },
@@ -1252,6 +1367,8 @@ export const reels: ReelModel[] = [
         brand: 'Okuma',
         types: ['surf'],
         weight: 480,
+        maxDrag: 12,
+        gearRatio: 5.3,
         priceRange: 'budget',
         techs: ['corrosion_resistant'], // Generic
         description: { tr: 'Hafif surf balıkçılığı için kompakt gövde.', en: 'Compact body for light surf.', jp: 'ライトサーフ用コンパクトボディ。', it: 'Corpo compatto per surf leggero.', fr: 'Corps compact pour surf léger.', cn: '轻型远投紧凑机身。' },
@@ -1264,6 +1381,8 @@ export const reels: ReelModel[] = [
         brand: 'Penn',
         types: ['surf', 'spin'],
         weight: 450,
+        maxDrag: 12,
+        gearRatio: 6.2,
         priceRange: 'value',
         techs: ['ht_100', 'ipx6'], // Assuming techs added or generic
         description: { tr: 'Tuzlu suyun tankı. Tamamen su geçirmez IPX6 gövde.', en: 'Tank of the saltwater. Fully sealed IPX6 body.', jp: '海水の戦車。', it: 'Carro armato dell\'acqua salata.', fr: 'Char de l\'eau salée.', cn: '盐水坦克。' },
@@ -1276,6 +1395,8 @@ export const reels: ReelModel[] = [
         brand: 'Abu Garcia',
         types: ['spin'],
         weight: 215,
+        maxDrag: 11,
+        gearRatio: 6.2,
         priceRange: 'premium',
         techs: ['rocket_line_management'],
         description: { tr: 'Dünyanın en hızlı spin makinesi. İnanılmaz devir hızı.', en: 'Fastest spin reel in the world.', jp: '世界最速のスピニングリール。', it: 'Il mulinello più veloce al mondo.', fr: 'Moulinet le plus rapide du monde.', cn: '世界上最快的纺车轮。' },
@@ -1288,6 +1409,8 @@ export const reels: ReelModel[] = [
         brand: 'Ryobi',
         types: ['surf', 'spin'],
         weight: 350,
+        maxDrag: 10,
+        gearRatio: 5.0,
         priceRange: 'budget',
         techs: ['ncrt'],
         description: { tr: 'Fiyat/Performans efsanesi. Türkiye\'de çok sevilen güç makinesi.', en: 'Price/Performance legend.', jp: 'コストパフォーマンスの伝説。', it: 'Leggenda del rapporto qualità-prezzo.', fr: 'Légende du rapport qualité-prix.', cn: '性价比传奇。' },
@@ -1300,6 +1423,8 @@ export const reels: ReelModel[] = [
         brand: 'Savage Gear',
         types: ['lrf', 'spin'],
         weight: 195,
+        maxDrag: 10,
+        gearRatio: 6.2,
         priceRange: 'value',
         techs: ['friction_control'],
         description: { tr: 'İskandinav tasarımı. Sürtünme kontrollü özel karbon kalama.', en: 'Scandinavian design. Friction control drag.', jp: '北欧デザイン。', it: 'Design scandinavo.', fr: 'Design scandinave.', cn: '斯堪的纳维亚设计。' },
@@ -1312,6 +1437,8 @@ export const reels: ReelModel[] = [
         brand: 'DAM',
         types: ['spin'],
         weight: 250,
+        maxDrag: 10,
+        gearRatio: 6.2,
         priceRange: 'value',
         techs: [],
         description: { tr: 'Alman mühendisliği klasiği. Yüksek tork.', en: 'German engineering classic.', jp: 'ドイツ工学の古典。', it: 'Classico dell\'ingegneria tedesca.', fr: 'Classique de l\'ingénierie allemande.', cn: '德国工程经典。' },
@@ -1324,6 +1451,8 @@ export const reels: ReelModel[] = [
         brand: 'Mitchell',
         types: ['lrf', 'spin'],
         weight: 180,
+        maxDrag: 7,
+        gearRatio: 5.2,
         priceRange: 'premium',
         techs: [],
         description: { tr: 'Magnezyum gövde ile tüy kadar hafif Fransız efsanesi.', en: 'Feather light French legend with magnesium body.', jp: 'フランスの伝説。', it: 'Leggenda francese.', fr: 'Légende française.', cn: '法国传奇。' },
@@ -1336,6 +1465,8 @@ export const reels: ReelModel[] = [
         brand: 'KastKing',
         types: ['spin', 'lrf'],
         weight: 260,
+        maxDrag: 15,
+        gearRatio: 5.2,
         priceRange: 'budget',
         techs: [],
         description: { tr: 'Amazon\'un en çok satan F/P ürünü.', en: 'Amazon best seller budget reel.', jp: 'Amazonのベストセラー。', it: 'Best seller Amazon.', fr: 'Best-seller Amazon.', cn: '亚马逊畅销预算轮。' },
@@ -1348,6 +1479,8 @@ export const reels: ReelModel[] = [
         brand: 'Tsurinoya',
         types: ['lrf'],
         weight: 185,
+        maxDrag: 6,
+        gearRatio: 5.2,
         priceRange: 'value',
         techs: [],
         description: { tr: 'LRF ustalarının gizli silahı. Çift kafa ile gelir.', en: 'Secret weapon of LRF masters. Comes with dual spools.', jp: 'LRFマスターの秘密兵器。', it: 'Arma segreta dei maestri LRF.', fr: 'Arme secrète des maîtres LRF.', cn: 'LRF大师的秘密武器。' },
@@ -1360,6 +1493,8 @@ export const reels: ReelModel[] = [
         brand: 'Seaknight',
         types: ['lrf', 'spin'],
         weight: 240,
+        maxDrag: 9,
+        gearRatio: 6.2,
         priceRange: 'budget',
         techs: [],
         description: { tr: 'Korozyon önleyici rulmanları ile ideal başlangıç makinesi.', en: 'Ideal starter reel with anti-corrosion bearings.', jp: '理想的なエントリーリール。', it: 'Mulinello ideale per principianti.', fr: 'Moulinet idéal pour débutants.', cn: '理想的入门轮。' },
