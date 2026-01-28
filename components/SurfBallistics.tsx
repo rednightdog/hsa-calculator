@@ -456,7 +456,13 @@ export default function SurfBallistics() {
                         </div>
                         <div className="p-3 text-center">
                             <span className="block text-[10px] text-slate-500 uppercase tracking-widest mb-1">{t('ballistics.knot_eff')}</span>
-                            <span className="text-xs text-green-400">{result?.equipment_insights?.knot_efficiency.split('-')[1]}</span>
+                            <span className="text-xs text-green-400">
+                                {result?.equipment_insights?.knot_efficiency ?
+                                    (result.equipment_insights.knot_efficiency.includes('|') ?
+                                        `%${result.equipment_insights.knot_efficiency.split('|')[1]}` :
+                                        result.equipment_insights.knot_efficiency)
+                                    : ''}
+                            </span>
                         </div>
                     </div>
 
@@ -475,7 +481,7 @@ export default function SurfBallistics() {
                                                 'bg-blue-950/30 border-blue-800/30'
                                             }`}
                                     >
-                                        <div className="text-[10px] font-bold text-slate-400 mb-1">{rec.category}</div>
+                                        <div className="text-[10px] font-bold text-slate-400 mb-1">{t(rec.category)}</div>
                                         <div className="text-xs text-white">
                                             {t(rec.message)} <span className="text-slate-400">{rec.value}</span>
                                         </div>

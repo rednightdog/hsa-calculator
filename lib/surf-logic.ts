@@ -243,8 +243,8 @@ export class SurfPhysicsV2 {
             },
             equipment_insights: {
                 modulus_gain_m: parseFloat(material_gain_m.toFixed(1)),
-                reel_optimization: `${reel.tech_name} - Sürtünme x${reel.friction_reduction}`,
-                knot_efficiency: `${knot.type} - Verim %${(knot.efficiency * 100).toFixed(0)}`
+                reel_optimization: `${reel.tech_name} - Friction x${reel.friction_reduction}`,
+                knot_efficiency: `${knot.type}|${(knot.efficiency * 100).toFixed(0)}`
             },
             visual_output: { // Legacy Mapping for UI Safety
                 distance_meters: parseFloat(finalDistance.toFixed(2)),
