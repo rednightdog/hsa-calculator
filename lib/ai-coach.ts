@@ -6,6 +6,7 @@ export interface AIRecommendation {
     priority: 'high' | 'medium' | 'low';
     message: string;
     action?: string;
+    value?: string;
 }
 
 export class SurfAICoach {
@@ -24,7 +25,8 @@ export class SurfAICoach {
             recommendations.push({
                 category: '🎯 Hedef',
                 priority: 'high',
-                message: `Tebrikler! Hedefinize ulaştınız (${currentDistance.toFixed(0)}m)`,
+                message: 'ai_coach.target_reached', // KEY
+                value: `(${currentDistance.toFixed(0)}m)` // Dynamic value to append
             });
             return recommendations;
         }
@@ -38,15 +40,17 @@ export class SurfAICoach {
                 recommendations.push({
                     category: '🏆 Teknik',
                     priority: 'high',
-                    message: `Pendulum Cast tekniğine geçin (+${pendulumGain.toFixed(0)}m)`,
-                    action: 'Atış tekniğini "Pendulum Cast" olarak değiştirin'
+                    message: 'ai_coach.tech_pendulum',
+                    value: `(+${pendulumGain.toFixed(0)}m)`,
+                    action: 'ai_coach.action_pendulum'
                 });
             } else if (gap <= tournamentGain) {
                 recommendations.push({
                     category: '🏆 Teknik',
                     priority: 'high',
-                    message: `Tournament Cast tekniğine geçin (+${tournamentGain.toFixed(0)}m)`,
-                    action: 'Atış tekniğini "Tournament Cast" olarak değiştirin'
+                    message: 'ai_coach.tech_tournament',
+                    value: `(+${tournamentGain.toFixed(0)}m)`,
+                    action: 'ai_coach.action_tournament'
                 });
             }
         }
@@ -57,8 +61,9 @@ export class SurfAICoach {
             recommendations.push({
                 category: '🎣 Misina',
                 priority: 'medium',
-                message: `Daha ince misina kullanın (0.12-0.14mm) → +${lineSavings.toFixed(0)}m`,
-                action: 'Misina kalınlığını azaltın'
+                message: 'ai_coach.line_thinner',
+                value: `(0.12-0.14mm) → +${lineSavings.toFixed(0)}m`,
+                action: 'ai_coach.action_line'
             });
         }
 
@@ -67,8 +72,9 @@ export class SurfAICoach {
             recommendations.push({
                 category: '⚙️ Ekipman',
                 priority: 'medium',
-                message: 'Fuji Torzite halkalar en düşük sürtünmeyi sağlar (+5-8m)',
-                action: 'Halka materyalini "Fuji Torzite" olarak değiştirin'
+                message: 'ai_coach.guide_fuji',
+                value: '(+5-8m)',
+                action: 'ai_coach.action_guide'
             });
         }
 
@@ -77,8 +83,8 @@ export class SurfAICoach {
             recommendations.push({
                 category: '⚖️ Ağırlık',
                 priority: 'high',
-                message: 'Optimal ağırlık 150-175g arasındadır',
-                action: 'Kurşun ağırlığını 150-175g aralığına getirin'
+                message: 'ai_coach.weight_opt',
+                action: 'ai_coach.action_weight'
             });
         }
 
@@ -95,8 +101,9 @@ export class SurfAICoach {
             recommendations.push({
                 category: '🪢 Düğüm',
                 priority: 'high',
-                message: `FG Knot kullanın (şu an ${knotLoss.toFixed(1)}m kayıp)`,
-                action: 'Düğüm tipini "FG Knot" olarak değiştirin'
+                message: 'ai_coach.knot_fg',
+                value: `(${knotLoss.toFixed(1)}m loss)`, // We'll handle 'loss' translation in UI if needed, or keep valid metric
+                action: 'ai_coach.action_knot'
             });
         }
 
@@ -105,8 +112,8 @@ export class SurfAICoach {
             recommendations.push({
                 category: '🎯 Kurşun',
                 priority: 'medium',
-                message: 'Longtail/Bullet kurşun en aerodinamik seçimdir',
-                action: 'Kurşun şeklini "Longtail/Bullet" olarak değiştirin'
+                message: 'ai_coach.sinker_aero',
+                action: 'ai_coach.action_sinker'
             });
         }
 
@@ -116,8 +123,9 @@ export class SurfAICoach {
             recommendations.push({
                 category: '🧵 Şok Lider',
                 priority: 'low',
-                message: `Şok lider kalınlığını azaltın (şu an ${leaderLoss.toFixed(1)}m kayıp)`,
-                action: 'Şok lider kalınlığını 0.35-0.40mm aralığına getirin'
+                message: 'ai_coach.leader_thinner',
+                value: `(${leaderLoss.toFixed(1)}m loss)`,
+                action: 'ai_coach.action_leader'
             });
         }
 
@@ -137,8 +145,8 @@ export class SurfAICoach {
             recommendations.push({
                 category: '📐 Açı',
                 priority: 'high',
-                message: 'Optimal atış açısı 40-42° arasındadır',
-                action: 'Atış açısını 40-42° aralığına getirin'
+                message: 'ai_coach.angle_opt',
+                action: 'ai_coach.action_angle'
             });
         }
 
@@ -148,8 +156,8 @@ export class SurfAICoach {
                 recommendations.push({
                     category: '🎓 Eğitim',
                     priority: 'high',
-                    message: '250m+ için profesyonel atış tekniği gereklidir',
-                    action: 'Pendulum veya Tournament Cast öğrenin'
+                    message: 'ai_coach.tech_advance',
+                    action: 'ai_coach.action_learn'
                 });
             }
         }
@@ -168,8 +176,8 @@ export class SurfAICoach {
             recommendations.push({
                 category: '🌤️ Hava',
                 priority: 'low',
-                message: 'Canlı hava durumu verisi alarak daha iyi öneriler alabilirsiniz',
-                action: 'Konum seçip hava durumu verisi alın'
+                message: 'ai_coach.weather_live',
+                action: 'ai_coach.action_weather'
             });
             return recommendations;
         }
@@ -182,13 +190,14 @@ export class SurfAICoach {
             recommendations.push({
                 category: '🌬️ Rüzgar',
                 priority: 'high',
-                message: 'Sakin hava - ideal atış koşulları!',
+                message: 'ai_coach.weather_calm',
             });
         } else if (windSpeed > 25) {
             recommendations.push({
                 category: '⚠️ Rüzgar',
                 priority: 'high',
-                message: `Çok rüzgarlı (${windSpeed} km/h) - atış zorlaşacak`,
+                message: 'ai_coach.weather_windy',
+                value: `(${windSpeed} km/h)`
             });
         }
 
@@ -197,22 +206,25 @@ export class SurfAICoach {
             recommendations.push({
                 category: '💨 Arka Rüzgar',
                 priority: 'high',
-                message: `Arka rüzgar var! Şimdi atış yapın (+${(windSpeed * 1.5).toFixed(0)}m bonus)`,
+                message: 'ai_coach.wind_tail',
+                value: `(+${(windSpeed * 1.5).toFixed(0)}m bonus)`
             });
         } else if (windDir >= 135 && windDir <= 225) {
             recommendations.push({
                 category: '🌊 Ön Rüzgar',
                 priority: 'medium',
-                message: `Ön rüzgar var (-${(windSpeed * 1.2).toFixed(0)}m kayıp)`,
+                message: 'ai_coach.wind_head',
+                value: `(-${(windSpeed * 1.2).toFixed(0)}m loss)`
             });
         } else {
             // Side wind (45-135 or 225-315)
             // 90 is East, 270 is West
-            const side = (windDir > 0 && windDir < 180) ? 'Sağdan' : 'Soldan';
+            const side = (windDir > 0 && windDir < 180) ? 'Right' : 'Left'; // Will handle translation in UI
             recommendations.push({
                 category: '🌬️ Yan Rüzgar',
                 priority: 'medium',
-                message: `${side} esen rüzgar misinayı savurabilir (${windDir}°). Atış açınızı rüzgarın içine doğru biraz kaydırın.`,
+                message: 'ai_coach.wind_side',
+                value: `(${side} - ${windDir}°)`
             });
         }
 

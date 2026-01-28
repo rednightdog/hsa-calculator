@@ -476,9 +476,11 @@ export default function SurfBallistics() {
                                             }`}
                                     >
                                         <div className="text-[10px] font-bold text-slate-400 mb-1">{rec.category}</div>
-                                        <div className="text-xs text-white">{rec.message}</div>
+                                        <div className="text-xs text-white">
+                                            {t(rec.message)} <span className="text-slate-400">{rec.value}</span>
+                                        </div>
                                         {rec.action && (
-                                            <div className="text-[10px] text-slate-500 mt-1 italic">→ {rec.action}</div>
+                                            <div className="text-[10px] text-slate-500 mt-1 italic">→ {t(rec.action)}</div>
                                         )}
                                     </div>
                                 ))}
