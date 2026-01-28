@@ -240,7 +240,7 @@ export default function SurfBallistics() {
                                     className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white text-xs focus:border-cyan-500 outline-none"
                                 >
                                     {KNOT_DB.map(k => (
-                                        <option key={k.type} value={k.type}>{k.type} (Eff: %{(k.efficiency * 100).toFixed(0)})</option>
+                                        <option key={k.type} value={k.type}>{k.type} ({t('surf_page.eff_short')}: %{(k.efficiency * 100).toFixed(0)})</option>
                                     ))}
                                 </select>
                             </div>
@@ -322,7 +322,7 @@ export default function SurfBallistics() {
                                 <label className="text-[10px] text-slate-400 uppercase">{t('ballistics.search_loc')}</label>
                                 <input
                                     type="text"
-                                    placeholder="Enter city..."
+                                    placeholder={t('surf_page.enter_city')}
                                     value={selectedLocation}
                                     onChange={e => setSelectedLocation(e.target.value)}
                                     className="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-white text-xs outline-none"

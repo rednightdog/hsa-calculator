@@ -138,9 +138,13 @@ export const translations: Record<LanguageCode, any> = {
             card_wave_title: "Dalga Arkası",
             card_wave_desc: "Kıyı şeridindeki dalgaları aşıp balığın olduğu kanala ulaşın.",
             card_taper_title: "Tapered Leader",
-            card_taper_desc: "Konik şok lider kullanarak düğüm sürtünmesini mimimize edin.",
             card_heavy_title: "Ağır Kurşun",
-            card_heavy_desc: "200g+ ağırlıklarda bile güvenli atış için doğru hesaplama."
+            card_heavy_desc: "200g+ ağırlıklarda bile güvenli atış için doğru hesaplama.",
+            enter_city: "Şehir girin...",
+            wind_side: "Yan",
+            wind_head: "Ters",
+            wind_tail: "Arka",
+            eff_short: "Verim"
         },
         ai_coach: {
             target_reached: "Tebrikler! Hedefinize ulaştınız",
@@ -325,7 +329,12 @@ export const translations: Record<LanguageCode, any> = {
             card_taper_title: "Tapered Leader",
             card_taper_desc: "Minimize knot friction by using a tapered shock leader.",
             card_heavy_title: "Heavy Payload",
-            card_heavy_desc: "Accurate calculations for safe casting even with 200g+ loads."
+            card_heavy_desc: "Accurate calculations for safe casting even with 200g+ loads.",
+            enter_city: "Enter city...",
+            wind_side: "Side",
+            wind_head: "Head",
+            wind_tail: "Tail",
+            eff_short: "Eff"
         },
         ai_coach: {
             target_reached: "Congratulations! You reached your target",
@@ -505,7 +514,12 @@ export const translations: Record<LanguageCode, any> = {
             card_taper_title: "Leader Conico",
             card_taper_desc: "Riduci al minimo l'attrito del nodo utilizzando uno shock leader conico.",
             card_heavy_title: "Carico Pesante",
-            card_heavy_desc: "Calcoli accurati per lanci sicuri anche con carichi di 200g+."
+            card_heavy_desc: "Calcoli accurati per lanci sicuri anche con carichi di 200g+.",
+            enter_city: "Inserisci città...",
+            wind_side: "Lato",
+            wind_head: "Contro",
+            wind_tail: "Coda",
+            eff_short: "Eff"
         },
         ai_coach: {
             target_reached: "Congratulazioni! Hai raggiunto il tuo obiettivo",
@@ -685,7 +699,12 @@ export const translations: Record<LanguageCode, any> = {
             card_taper_title: "Arraché Conique",
             card_taper_desc: "Minimisez la friction des nœuds en utilisant un arraché conique.",
             card_heavy_title: "Charge Lourde",
-            card_heavy_desc: "Calculs précis pour un lancer sûr même avec des charges de 200g+."
+            card_heavy_desc: "Calculs précis pour un lancer sûr même avec des charges de 200g+.",
+            enter_city: "Entrez la ville...",
+            wind_side: "Côté",
+            wind_head: "Face",
+            wind_tail: "Dos",
+            eff_short: "Eff"
         },
         ai_coach: {
             target_reached: "Félicitations ! Vous avez atteint votre objectif",
@@ -865,7 +884,12 @@ export const translations: Record<LanguageCode, any> = {
             card_taper_title: "锥形前导",
             card_taper_desc: "使用锥形前导线最小化线结摩擦。",
             card_heavy_title: "重型负载",
-            card_heavy_desc: "即使是 200g+ 负载也能进行安全抛投的精确计算。"
+            card_heavy_desc: "即使是 200g+ 负载也能进行安全抛投的精确计算。",
+            enter_city: "输入城市...",
+            wind_side: "侧风",
+            wind_head: "逆风",
+            wind_tail: "顺风",
+            eff_short: "效率"
         },
         ai_coach: {
             target_reached: "恭喜！您已达到目标",
