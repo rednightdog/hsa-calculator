@@ -50,14 +50,14 @@ export const metadata: Metadata = {
   verification: {
     google: "GTf1eSbP1hhxj8WJ9eV7pLQo-rAg26gZ8LF2ErFc6XE",
   },
-  manifest: "/manifest.webmanifest", // Next.js auto-generates this from manifest.ts
+  manifest: "/manifest.json",
   appleWebApp: {
-    title: "Fish Gear Guru",
+    title: "Fishing Gear Guru",
     statusBarStyle: "black-translucent",
   },
   icons: {
-    icon: "/app-icon.jpg",
-    apple: "/app-icon.jpg",
+    icon: "/fishing-gear-guru-icon.jpg",
+    apple: "/fishing-gear-guru-icon.jpg",
   },
 };
 
